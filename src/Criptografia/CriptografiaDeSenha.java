@@ -1,4 +1,4 @@
-package Tela1.Criptografia;
+package Criptografia;
 
 public class CriptografiaDeSenha {
 	private String[] alfabeto= {

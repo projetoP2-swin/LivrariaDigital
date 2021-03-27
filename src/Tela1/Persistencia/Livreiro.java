@@ -1,4 +1,4 @@
-package Tela1;
+package Tela1.Persistencia;
 
 public class Livreiro {
 	private String nome;

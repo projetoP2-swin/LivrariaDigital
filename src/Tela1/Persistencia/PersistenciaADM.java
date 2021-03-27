@@ -1,4 +1,4 @@
-package Tela1;
+package Tela1.Persistencia;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -11,11 +11,12 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 	
 	public void salvarCentral(Object livreiro) throws Exception {
 		File arquivo = new File("livreiro-db.xml");
-		if(arquivo.exists()==false) {
+		String xml=null;
+		if(!arquivo.exists()) {
 			arquivo.createNewFile();
+			xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 		}
 		PrintWriter pw = new PrintWriter(arquivo);
-		String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 		xStream.alias("Livreiro", livreiro.getClass());
 		xml += xStream.toXML(livreiro);
 		pw.write(xml);

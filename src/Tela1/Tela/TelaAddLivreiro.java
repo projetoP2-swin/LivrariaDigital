@@ -1,13 +1,9 @@
-package Tela1;
+package Tela1.Tela;
 
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import Tela1.Ouvintes.OuvinteDaClasseTelaAddLivreiro;
 import TelaPadrao.TelaPadrao;
@@ -28,7 +24,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	
 	public void addImagemUser() {
-		ImageIcon imagemUser = new ImageIcon("img/livreiro.png");
+		ImageIcon imagemUser = new ImageIcon("img/addLivreiro/livreiro.png");
 		JLabel boasVindas = new JLabel();
 		
 		boasVindas.setBounds(145, 10, 110, 110);
@@ -71,6 +67,10 @@ public class TelaAddLivreiro extends TelaPadrao{
 		this.nome = new JTextField();
 		this.email = new JTextField();
 		this.senha = new JTextField();
+
+		JSeparator nomeSeparador = new JSeparator();
+		JSeparator emaileSeparador = new JSeparator();
+		JSeparator senhaSeparador = new JSeparator();
 		
 		JButton botao = new JButton("Enviar");
 
@@ -79,28 +79,52 @@ public class TelaAddLivreiro extends TelaPadrao{
 		
 		Font font = new Font("Arial",Font.BOLD,12);
 		
-		this.nome.setBounds(120, 157, 200, 25);
+		this.nome.setBounds(120, 153, 200, 25);
+		this.nome.setBorder(null);
 		this.nome.setFont(font);
 		
-		this.email.setBounds(120, 217, 200, 25);
+		this.email.setBounds(120, 213, 200, 25);
+		this.email.setBorder(null);
 		this.email.setFont(font);
 		
 		this.senha.setBounds(120, 275, 200, 25);
+		this.senha.setBorder(null);
 		this.senha.setFont(font);
 
-		
+		nomeSeparador.setBounds(115,177,200,100);
+		nomeSeparador.setOrientation(JSeparator.HORIZONTAL);
+		nomeSeparador.setBackground(Color.WHITE);
+
+		emaileSeparador.setBounds(115,237,200,100);
+		emaileSeparador.setOrientation(JSeparator.HORIZONTAL);
+		emaileSeparador.setBackground(Color.WHITE);
+
+		senhaSeparador.setBounds(115,299,200,100);
+		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
+		senhaSeparador.setBackground(Color.WHITE);
+
 		botao.setBounds(35, 330, 300, 30);
+		botao.setIcon(new ImageIcon("img/addLivreiro/botao.png"));
 		botao.setFont(font);
 		botao.setForeground(Color.BLACK);
+		//botao.setBorderPainted(false);
+		//botao.setContentAreaFilled(false);
+		//botao.setFocusPainted(false);
 		
 		this.jpPainel.add(nome);
+		this.jpPainel.add(nomeSeparador);
+
 		this.jpPainel.add(email);
+		this.jpPainel.add(emaileSeparador);
+
 		this.jpPainel.add(senha);
+		this.jpPainel.add(senhaSeparador);
+
 		this.jpPainel.add(botao);
 	}
 	
 	public void addImgLivraria() {
-		ImageIcon imagem = new  ImageIcon("img/livraria.png");
+		ImageIcon imagem = new  ImageIcon("img/addLivreiro/livraria.png");
 		JLabel lbImg = new JLabel();
 		
 		lbImg.setBounds(390, 70, 300, 225);
@@ -109,7 +133,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	public TelaAddLivreiro(String titulo) {
 		super(titulo);
-	
+
 		this.addPainel();
 		this.addImagemUser();
 		this.addFormLabel();
