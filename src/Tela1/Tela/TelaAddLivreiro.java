@@ -24,7 +24,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	
 	public void addImagemUser() {
-		ImageIcon imagemUser = new ImageIcon("img/addLivreiro/livreiro.png");
+		ImageIcon imagemUser = new ImageIcon("img/addLivreiro/user2.png");
 		JLabel boasVindas = new JLabel();
 		
 		boasVindas.setBounds(145, 10, 110, 110);
@@ -34,13 +34,13 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	
 	public void addFormLabel() {
-		JLabel boasVindas = new JLabel("Livreiro");
+		JLabel boasVindas = new JLabel("Cadastro do Livreiro");
 		JLabel nome = new JLabel("Nome:");
 		JLabel email = new JLabel("Email:");
 		JLabel senha = new JLabel("Senha:");
 		Font font = new Font("Arial",Font.BOLD,15);
 		
-		boasVindas.setBounds(168, 75, 100, 100);
+		boasVindas.setBounds(125, 75, 130, 100);
 		boasVindas.setFont(new Font("Arial",Font.BOLD,13));
 		boasVindas.setForeground(Color.WHITE);
 		
@@ -103,7 +103,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
 		senhaSeparador.setBackground(Color.WHITE);
 
-		botao.setBounds(35, 330, 300, 30);
+		botao.setBounds(50, 315, 270, 30);
 		botao.setIcon(new ImageIcon("img/addLivreiro/botao.png"));
 		botao.setFont(font);
 		botao.setForeground(Color.BLACK);
@@ -124,10 +124,10 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	
 	public void addImgLivraria() {
-		ImageIcon imagem = new  ImageIcon("img/addLivreiro/livraria.png");
+		ImageIcon imagem = new  ImageIcon("img/addLivreiro/tela1.png");
 		JLabel lbImg = new JLabel();
 		
-		lbImg.setBounds(390, 70, 300, 225);
+		lbImg.setBounds(360, 0, 330, 400);
 		lbImg.setIcon(imagem);
 		this.add(lbImg);
 	}
