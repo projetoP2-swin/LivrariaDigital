@@ -11,5 +11,18 @@ public class Livreiro {
 		this.senha=senha;
 		
 	}
+	public Livreiro(){
 
+	}
+	public String getNome() {
+		return nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
 }

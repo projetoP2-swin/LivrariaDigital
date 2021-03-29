@@ -8,6 +8,7 @@ import Criptografia.CriptografiaDeSenha;
 import Tela1.Persistencia.Livreiro;
 import Tela1.Persistencia.PersistenciaADM;
 import Tela1.Tela.TelaAddLivreiro;
+import Tela2.User.Tela.TelaUser;
 
 public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	private final TelaAddLivreiro livreiroInfo;
@@ -36,6 +37,8 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 				p.salvarCentral(livreiro);
 				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
 				livreiroInfo.dispose();
+				TelaUser telaUser = new TelaUser("Livraria Digital - User");
+				telaUser.setVisible(true);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(livreiroInfo, "Houve um problema ao salvar os dados");
 			}

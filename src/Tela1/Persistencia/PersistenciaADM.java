@@ -1,6 +1,8 @@
 package Tela1.Persistencia;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.PrintWriter;
 
 import com.thoughtworks.xstream.XStream;
@@ -20,22 +22,19 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 		xStream.alias("Livreiro", livreiro.getClass());
 		xml += xStream.toXML(livreiro);
 		pw.write(xml);
-		pw.flush();
 		pw.close();
 	}
-	
-	// TODO recuperação de dados
-	/*public CentralDeInformacoes recuperarCentral(String NomeArquivo) throws Exception {
-		File arquivo = new File(NomeArquivo);
-		
+
+
+	public Livreiro recuperarLivreiro() throws Exception {
+		File arquivo = new File("livreiro-db.xml");
+		xStream.alias("Livreiro", Livreiro.class);
 		if(arquivo.exists()) {
-			FileInputStream fis = new FileInputStream(arquivo);
-			return (CentralDeInformacoes) xStream.fromXML(fis);
-		
-		} else {
-			CentralDeInformacoes central = new CentralDeInformacoes();
-			return central;
+			FileReader fr = new FileReader(arquivo);
+			return (Livreiro) xStream.fromXML(fr);
+
 		}
-		
-	}*/
+		return null;
+
+	}
 }

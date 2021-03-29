@@ -5,8 +5,8 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
-import Tela1.Tela.TelaAddLivreiro;
-import Tela2.User.TelaUser;
+import ClasseMain.ExisteLivreiro.ExisteLivreiroQuestion;
+import TelaPadrao.TelaPadrao;
 import net.infonode.gui.laf.InfoNodeLookAndFeel;
 import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 
@@ -26,11 +26,11 @@ public class Main {
 
 
 				UIManager.setLookAndFeel(new InfoNodeLookAndFeel(theme));
-				TelaAddLivreiro livreiro = new TelaAddLivreiro("Livraria Digital - Adicionar Livreiro");
-				livreiro.setVisible(true);
-				TelaUser user = new TelaUser("Livraria Digital - User");
-				user.setVisible(true);
+				TelaPadrao tela = new ExisteLivreiroQuestion().primeiraTelaFactory();
+				tela.setVisible(true);
+
 			} catch (Exception e) {
+		    	e.printStackTrace();
 				JOptionPane.showMessageDialog(null,
 						"Ocorreu um problema, entre em contato com o desenvolvedor");
 

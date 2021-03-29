@@ -133,6 +133,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	public TelaAddLivreiro(String titulo) {
 		super(titulo);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		this.addPainel();
 		this.addImagemUser();
