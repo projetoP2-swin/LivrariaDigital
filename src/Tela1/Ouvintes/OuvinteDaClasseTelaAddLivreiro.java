@@ -5,44 +5,48 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import Criptografia.CriptografiaDeSenha;
-import Tela1.Persistencia.Livreiro;
-import Tela1.Persistencia.PersistenciaADM;
+import Persistencia.Livreiro.Livreiro;
+import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela1.Tela.TelaAddLivreiro;
-import Tela2.User.Tela.TelaUser;
+import Tela2.ADM.Tela.TelaADM;
 
 public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
-	private final TelaAddLivreiro livreiroInfo;
-	
+	private TelaAddLivreiro livreiroInfo;
+
 	public OuvinteDaClasseTelaAddLivreiro(TelaAddLivreiro livreiroInfo ) {
-		this.livreiroInfo = livreiroInfo;	
+		this.livreiroInfo = livreiroInfo;
+	}
+
+	public String[] permitirCadastroSe(){
+		String info[] = {livreiroInfo.getNome(),livreiroInfo.getEmail(),livreiroInfo.getSenha(),""};
+		info[3]= info[0].equals("") || info[1].equals("") || info[2].equals("")?"1":"0";
+		return info;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		String info[]= this.permitirCadastroSe();
 
-		String nome = livreiroInfo.getNome();
-		String email=livreiroInfo.getEmail();
-		String senha = livreiroInfo.getSenha();
-
-		boolean condicao = nome.equals("") || email.equals("") || senha.equals("");
-		if(condicao) {
+		if(info[3].equals("1")) {
 			JOptionPane.showMessageDialog(livreiroInfo, "Não deixe campos em branco");
-		}else {
+		}else if(info[1].contains("@")) {
 			PersistenciaADM p = new PersistenciaADM();
 			CriptografiaDeSenha criptografia = new CriptografiaDeSenha();
-			senha = criptografia.criptografia(senha);
-			Livreiro livreiro = new Livreiro(nome, email, senha);
-			
+
 			try {
+				info[2] = criptografia.criptografia(info[2]);
+				Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
 				p.salvarCentral(livreiro);
 				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
 				livreiroInfo.dispose();
-				TelaUser telaUser = new TelaUser("Livraria Digital - User");
-				telaUser.setVisible(true);
+				TelaADM telaADM = new TelaADM("Livraria Digital - User");
+				telaADM.setVisible(true);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(livreiroInfo, "Houve um problema ao salvar os dados");
 			}
 			
+		}else{
+			JOptionPane.showMessageDialog(livreiroInfo, "Digite um email válido");
 		}
 
 	}

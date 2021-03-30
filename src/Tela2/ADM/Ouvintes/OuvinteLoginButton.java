@@ -1,19 +1,20 @@
-package Tela2.User.Ouvintes;
+package Tela2.ADM.Ouvintes;
 
 import Criptografia.CriptografiaDeSenha;
-import Tela1.Persistencia.Livreiro;
-import Tela1.Persistencia.PersistenciaADM;
-import Tela2.User.Tela.TelaUser;
+import Persistencia.Livreiro.Livreiro;
+import Persistencia.PersistenciaLivreiro.PersistenciaADM;
+import Tela2.ADM.EsqueceuASenha.RecuperarSenha;
+import Tela2.ADM.Tela.TelaADM;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OuvinteLoginButton implements ActionListener {
-    private TelaUser telaUser;
+    private TelaADM telaADM;
 
-    public OuvinteLoginButton(TelaUser telaUser){
-        this.telaUser=telaUser;
+    public OuvinteLoginButton(TelaADM telaADM){
+        this.telaADM = telaADM;
     }
 
     public boolean isLogin(){
@@ -22,8 +23,8 @@ public class OuvinteLoginButton implements ActionListener {
             Livreiro dadosLivreiro= persistencia.recuperarLivreiro();
             String email = dadosLivreiro.getEmail();
             String senha = new CriptografiaDeSenha().descriptografia(dadosLivreiro.getSenha());
-            return telaUser.getSenha().equals(senha)&&
-                   telaUser.getEmail().equals(email);
+            return telaADM.getSenha().equals(senha)&&
+                   telaADM.getEmail().equals(email);
 
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -32,15 +33,20 @@ public class OuvinteLoginButton implements ActionListener {
     }
     public void login(){
         boolean condicao = this.isLogin();
-        if(condicao == true){
-            JOptionPane.showMessageDialog(telaUser,"Você está logado");
+        if(condicao){
+            JOptionPane.showMessageDialog(telaADM,"Você está logado");
         }else{
-            JOptionPane.showMessageDialog(telaUser,"Email ou senha incorreto");
+            JOptionPane.showMessageDialog(telaADM,"Email ou senha incorreto(s)");
         }
     }
 
     public void esqueceuASenha(){
-
+        try{
+            RecuperarSenha recuperarSenha = new RecuperarSenha(telaADM);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(telaADM, "Houve algum problema","Recuperação de senha",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     @Override

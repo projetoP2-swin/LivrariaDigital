@@ -1,20 +1,19 @@
-package Tela2.User.Tela;
+package Tela2.ADM.Tela;
 
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 
-import Tela2.User.Ouvintes.OuvinteLoginButton;
+import Tela2.ADM.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
-public class TelaUser extends TelaPadrao {
+public class TelaADM extends TelaPadrao {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel jpPainel =  new JPanel();
 	private JTextField email;
-	private JTextField senha;
+	private JPasswordField senha;
 	
 	public void addPainel() {
 		this.jpPainel.setBounds(200, 15, 300, 330);
@@ -77,18 +76,21 @@ public class TelaUser extends TelaPadrao {
 	
 	public void inputsAndButton() {
 		this.email = new JTextField();
-		this.senha = new JTextField();
+		this.senha = new JPasswordField();
 		Font font = new Font("Arial",Font.BOLD,12);
+
 		JSeparator emailSeparador = new JSeparator();
 		JSeparator senhaSeparador = new JSeparator();
 		
-		email.setBounds(90, 150, 175, 25);
+		email.setBounds(90, 153, 175, 25);
 		email.setFont(font);
+		email.setForeground(new Color(128, 255, 128));
 		email.setBorder(null);
 		this.jpPainel.add(email);
 		
-		senha.setBounds(90, 189, 175, 25);
+		senha.setBounds(90, 192, 175, 25);
 		senha.setFont(font);
+		senha.setForeground(new Color(128, 255, 128));
 		senha.setBorder(null);
 		this.jpPainel.add(senha);
 		
@@ -108,6 +110,7 @@ public class TelaUser extends TelaPadrao {
 		entrar.addActionListener(ouvinte);
 
 		entrar.setBounds(120, 240, 60, 25);
+		entrar.setBackground(new Color(102, 102, 102));
 		entrar.setFont(font);
 		entrar.setBorder(null);
 		this.jpPainel.add(entrar);
@@ -123,7 +126,7 @@ public class TelaUser extends TelaPadrao {
 		
 	}
 
-	public TelaUser(String titulo) {
+	public TelaADM(String titulo) {
 		super(titulo);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
