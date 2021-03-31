@@ -1,7 +1,7 @@
 package Criptografia;
 
 public class CriptografiaDeSenha {
-	private String[] alfabeto= {
+	private final String[] alfabeto= {
 			"ú","Ú","y","r","j","k"," ","f",
 			"o","q","a","h","v","ç","p","b",
 			"g","s","m","d","t","z","c","i",
@@ -17,13 +17,14 @@ public class CriptografiaDeSenha {
 			"!","]","[","(",")","{","}",
 			"=","_","Ç","\n","í","Í","#"
 	};
+	private static  StringBuilder contador= new StringBuilder();
 
 	public String[] getAlfabeto() {
 		return alfabeto;
 	}
 
 	public String criptografia(String senha) {
-		 String codigosCriptografia[] = {
+		 String[] codigosCriptografia = {
 				"cxr89,","fhH52,","3fgg7,","0829g,","5jfb2,","gca7d,","z1zca,","12cc9,",
 				"aa5bc,","0820t,","1137g,","5jf4c,","3fg21,","z1zbz,","08291,","2448g,",
 				"12ct1,","61bgg,","g5582,","12ca9,","61bt4,","8tz0g,","244cd,","5jfa0,",
@@ -39,21 +40,21 @@ public class CriptografiaDeSenha {
 				"a784c,","bag58,","ba1ba,","2f149,","64b01,","64cg0,","64dfa,",
 				"887bc,","abtur,","ciub4,","enop9,","i7858,","cac67,","ff650,"
 		};
-		String contador="";
-		String lista[]=senha.split("");
-		for(int i=0;i<lista.length;i++) {
-			for(int j =0;j<this.alfabeto.length;j++) {
-				if(lista[i].equals(this.alfabeto[j])) {
-					contador += codigosCriptografia[j];
+		contador.setLength(0);
+		String[] lista =senha.split("");
+		for (String s : lista) {
+			for (int j = 0; j < this.alfabeto.length; j++) {
+				if (s.equals(this.alfabeto[j])) {
+					contador.append(codigosCriptografia[j]);
 				}
 			}
 
 		}
-		return contador;
+		return contador.toString();
 	}
 	
 	public String descriptografia(String senha) {
-		String codigoDescriptografia[]= {
+		String[] codigoDescriptografia = {
 				"cxr89","fhH52","3fgg7","0829g","5jfb2","gca7d","z1zca","12cc9",
                 "aa5bc","0820t","1137g","5jf4c","3fg21","z1zbz","08291","2448g",
                 "12ct1","61bgg","g5582","12ca9","61bt4","8tz0g","244cd","5jfa0",
@@ -69,16 +70,17 @@ public class CriptografiaDeSenha {
                 "a784c","bag58","ba1ba","2f149","64b01","64cg0","64dfa",
                 "887bc","abtur","ciub4","enop9","i7858","cac67","ff650"
 		};
-		String contador="";
-		String lista[]=senha.split(",");
-		for(int i=0;i<lista.length;i++) {
-			for(int j =0;j<codigoDescriptografia.length;j++) {
-				if(codigoDescriptografia[j].equals(lista[i])) {
-					contador += alfabeto[j];
+		contador.setLength(0);
+		String[] lista =senha.split(",");
+		for (String s : lista) {
+			for (int j = 0; j < codigoDescriptografia.length; j++) {
+				if (codigoDescriptografia[j].equals(s)) {
+					contador.append(alfabeto[j]);
 				}
 			}
-			
+
 		}
-		return contador;
+		return contador.toString();
 	}
+
 }

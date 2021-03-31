@@ -10,17 +10,16 @@ import TelaPadrao.TelaPadrao;
 
 public class TelaAddLivreiro extends TelaPadrao{
 
-	private static final long serialVersionUID = 1L;
-	private JPanel jpPainel =  new JPanel();
+	private final JPanel JP_PAINEL =  new JPanel();
 	private JTextField nome;
 	private JTextField email;
 	private JTextField senha;
 	
 	public void addPainel() {
-		this.jpPainel.setBounds(0, 0, 370, 400);
-		this.jpPainel.setBackground(Color.DARK_GRAY);
-		this.jpPainel.setLayout(null);
-		this.add(jpPainel);
+		this.JP_PAINEL.setBounds(0, 0, 370, 400);
+		this.JP_PAINEL.setBackground(Color.DARK_GRAY);
+		this.JP_PAINEL.setLayout(null);
+		this.add(JP_PAINEL);
 	}
 	
 	public void addImagemUser() {
@@ -30,7 +29,7 @@ public class TelaAddLivreiro extends TelaPadrao{
 		boasVindas.setBounds(145, 10, 110, 110);
 		boasVindas.setIcon(imagemUser);
 		
-		this.jpPainel.add(boasVindas);
+		this.JP_PAINEL.add(boasVindas);
 	}
 	
 	public void addFormLabel() {
@@ -57,10 +56,10 @@ public class TelaAddLivreiro extends TelaPadrao{
 		senha.setFont(font);
 		senha.setForeground(Color.WHITE);
 		
-		this.jpPainel.add(boasVindas);
-		this.jpPainel.add(nome);
-		this.jpPainel.add(email);
-		this.jpPainel.add(senha);
+		this.JP_PAINEL.add(boasVindas);
+		this.JP_PAINEL.add(nome);
+		this.JP_PAINEL.add(email);
+		this.JP_PAINEL.add(senha);
 	}
 	
 	public void addInputsAndButton() {
@@ -107,20 +106,17 @@ public class TelaAddLivreiro extends TelaPadrao{
 		botao.setIcon(new ImageIcon("img/addLivreiro/botao.png"));
 		botao.setFont(font);
 		botao.setForeground(Color.BLACK);
-		//botao.setBorderPainted(false);
-		//botao.setContentAreaFilled(false);
-		//botao.setFocusPainted(false);
 		
-		this.jpPainel.add(nome);
-		this.jpPainel.add(nomeSeparador);
+		this.JP_PAINEL.add(nome);
+		this.JP_PAINEL.add(nomeSeparador);
 
-		this.jpPainel.add(email);
-		this.jpPainel.add(emaileSeparador);
+		this.JP_PAINEL.add(email);
+		this.JP_PAINEL.add(emaileSeparador);
 
-		this.jpPainel.add(senha);
-		this.jpPainel.add(senhaSeparador);
+		this.JP_PAINEL.add(senha);
+		this.JP_PAINEL.add(senhaSeparador);
 
-		this.jpPainel.add(botao);
+		this.JP_PAINEL.add(botao);
 	}
 	
 	public void addImgLivraria() {

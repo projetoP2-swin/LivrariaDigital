@@ -4,12 +4,13 @@ public class Livreiro {
 	private String nome;
 	private String email;
 	private String senha;
-	
+	private String numeroDeRecuperacao;
+
 	public Livreiro(String nome,String email,String senha) {
 		this.nome=nome;
 		this.email=email;
 		this.senha=senha;
-		
+
 	}
 	public Livreiro(){
 
@@ -36,5 +37,13 @@ public class Livreiro {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getNumeroDeRecuperacao() {
+		return numeroDeRecuperacao;
+	}
+
+	public void setNumeroDeRecuperacao(String numeroDeRecuperacao) {
+		this.numeroDeRecuperacao = numeroDeRecuperacao;
 	}
 }

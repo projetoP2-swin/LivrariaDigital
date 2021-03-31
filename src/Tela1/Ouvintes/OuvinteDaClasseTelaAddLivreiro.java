@@ -18,17 +18,21 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	}
 
 	public String[] permitirCadastroSe(){
-		String info[] = {livreiroInfo.getNome(),livreiroInfo.getEmail(),livreiroInfo.getSenha(),""};
+		String[] info = {livreiroInfo.getNome(),livreiroInfo.getEmail(),livreiroInfo.getSenha(),""};
+
+		//info[3] trabalha como um valor booleando.
+		//A ideia é recuperar todos os dados do Livreiro em um método simples.
 		info[3]= info[0].equals("") || info[1].equals("") || info[2].equals("")?"1":"0";
 		return info;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		String info[]= this.permitirCadastroSe();
+		String[] info = this.permitirCadastroSe();
 
 		if(info[3].equals("1")) {
 			JOptionPane.showMessageDialog(livreiroInfo, "Não deixe campos em branco");
+
 		}else if(info[1].contains("@")) {
 			PersistenciaADM p = new PersistenciaADM();
 			CriptografiaDeSenha criptografia = new CriptografiaDeSenha();
@@ -44,7 +48,7 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(livreiroInfo, "Houve um problema ao salvar os dados");
 			}
-			
+
 		}else{
 			JOptionPane.showMessageDialog(livreiroInfo, "Digite um email válido");
 		}

@@ -17,20 +17,40 @@ import javax.mail.internet.MimeMessage;
 public class RecuperarSenha {
 
     private static TelaADM telaAdm;
-    private static long codigo = System.currentTimeMillis();
-    private static String email;
-    private static String nome;
-    private String tituloDasJanelas="Recuperação de senha";
+    private static final long CODIGO = System.currentTimeMillis();
+    private static final String TITULO_DAS_JANELAS="Recuperação de senha";
+
+    private String email;
+    private String nome;
+    private final PersistenciaADM PERSISTENCIA_ADM = new PersistenciaADM();
+    private  Livreiro livreiro = PERSISTENCIA_ADM.recuperarLivreiro();
+
+
+    public void gerenciarEnvioDeEmail(){
+        if(livreiro.getNumeroDeRecuperacao()==null ||
+                !livreiro.getNumeroDeRecuperacao().equals(Long.toString(CODIGO)) ){
+            this.envioDeEmail();
+        }
+    }
+
+    public void addNumeroDeRecuperacao(String codigo) throws Exception {
+        livreiro.setNumeroDeRecuperacao(codigo);
+        PERSISTENCIA_ADM.salvarCentral(livreiro);
+
+    }
 
     public RecuperarSenha(TelaADM telaAdm) throws Exception {
         RecuperarSenha.telaAdm = telaAdm;
-        String email = this.pegaEmailEscondido();
-        this.envioDeEmail();
-        String resultado = JOptionPane.showInputDialog(telaAdm,
-                "<html>Enviamos um código de recuperação para: <br>"+email+"<br><br>Digite o código: <html>",
-                this.tituloDasJanelas,JOptionPane.QUESTION_MESSAGE).replace(" ","");
+        String emailMETHOD = this.pegaEmailEscondido();
 
-        String codigoAsString = Long.toString(codigo);
+        this.gerenciarEnvioDeEmail();
+        this.addNumeroDeRecuperacao(Long.toString(CODIGO));
+
+        String resultado = JOptionPane.showInputDialog(telaAdm,
+                "<html>Enviamos um código de recuperação para: <br>"+emailMETHOD+"<br><br>Digite o código: <html>",
+                RecuperarSenha.TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE).replace(" ","");
+
+        String codigoAsString = Long.toString(CODIGO);
         if(resultado.equals(codigoAsString)){
             this.codigoCorreto();
         }else{
@@ -41,41 +61,46 @@ public class RecuperarSenha {
 
     public void codigoCorreto() throws Exception {
         String senha =JOptionPane.showInputDialog(telaAdm,"Digite sua nova senha: ",
-                this.tituloDasJanelas,JOptionPane.QUESTION_MESSAGE);
+                TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE);
 
-        PersistenciaADM persistenciaADM = new PersistenciaADM();
-        Livreiro livreiro = persistenciaADM.recuperarLivreiro();
+
         senha = new CriptografiaDeSenha().criptografia(senha);
         livreiro.setSenha(senha);
-        persistenciaADM.salvarCentral(livreiro);
+        PERSISTENCIA_ADM.salvarCentral(livreiro);
 
         JOptionPane.showMessageDialog(telaAdm,"Senha alterada com sucesso",
-                this.tituloDasJanelas,JOptionPane.INFORMATION_MESSAGE);
+                TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
     }
 
     public void codigoIncorreto(){
         JOptionPane.showMessageDialog(telaAdm,"Seu codigo está errado, tente novamente.",
-                this.tituloDasJanelas,JOptionPane.INFORMATION_MESSAGE);
+                TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public String pegaEmailEscondido() throws Exception {
-        PersistenciaADM persistencia = new PersistenciaADM();
+    public String pegaEmailEscondido(){
 
-        RecuperarSenha.email = persistencia.recuperarLivreiro().getEmail();
-        RecuperarSenha.nome =  persistencia.recuperarLivreiro().getNome();
+        this.email = livreiro.getEmail();
+        this.nome =  livreiro.getNome();
 
         String resultado= email.substring(2,email.indexOf("@"));
-        resultado = email.substring(0,2)  + "*".repeat(resultado.length()) + email.substring(email.indexOf("@"));
+
+        resultado = email.substring(0,2)+
+                "*".repeat(resultado.length())+
+                email.substring(email.indexOf("@"));
+
         return resultado;
     }
 
 
-    public boolean envioDeEmail() {
-        String senha="Um2Tres456";
-        String emailRemetente = "projetop2002@gmail.com";
-        String emailDestino = RecuperarSenha.email;
+    public void envioDeEmail() {
+        String senha="EstanteDigital.//0210@#";
+        String emailRemetente = "estante.digital2@gmail.com";
+        String emailDestino = this.email;
         String assunto = "Recuperação de senha";
-        String mensagem = "Olá, "+RecuperarSenha.nome+"\nSeu código de recuperação é:\n"+ Long.toString(codigo);
+        String mensagem = "Olá, "+
+                this.nome+
+                "\nSeu código de recuperação é:\n"+
+                CODIGO;
 
         Properties props = new Properties();
         props.put("mail.smtp.user", emailRemetente);
@@ -104,16 +129,16 @@ public class RecuperarSenha {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(emailRemetente));
 
-            Address toUser[]= InternetAddress.parse(emailDestino);
+            Address[] toUser = InternetAddress.parse(emailDestino);
             message.setRecipients(Message.RecipientType.TO,toUser);
             message.setSubject(assunto);
             message.setText(mensagem);
             Transport.send(message);
-            return true;
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(telaAdm,"Algo deu errado",
-                    this.tituloDasJanelas,JOptionPane.INFORMATION_MESSAGE);
-            return false;
+                    TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
+
         }
 
     }

@@ -9,25 +9,17 @@ import Tela2.ADM.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
 public class TelaADM extends TelaPadrao {
-	
-	private static final long serialVersionUID = 1L;
-	private JPanel jpPainel =  new JPanel();
+
+	private final JPanel JP_PAINEL =  new JPanel();
 	private JTextField email;
 	private JPasswordField senha;
 	
 	public void addPainel() {
-		this.jpPainel.setBounds(200, 15, 300, 330);
-		this.jpPainel.setBackground(Color.DARK_GRAY);
-		this.jpPainel.setLayout(null);
-		//this.jpPainel.setBorder(LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-		//this.jpPainel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-		this.add(jpPainel);
+		this.JP_PAINEL.setBounds(200, 15, 300, 330);
+		this.JP_PAINEL.setBackground(Color.DARK_GRAY);
+		this.JP_PAINEL.setLayout(null);
+		this.add(JP_PAINEL);
 	}
-	
-	/*private Border LineBorder(Color color, int i, boolean b) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 
 	public void background() {
 		ImageIcon img = new ImageIcon("img/addLivreiro/livros.png");
@@ -45,7 +37,7 @@ public class TelaADM extends TelaPadrao {
 		boasVindas.setBounds(0, 20, 300, 100);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);
 		boasVindas.setIcon(imagemUser);
-		this.jpPainel.add(boasVindas);
+		this.JP_PAINEL.add(boasVindas);
 	}
 	
 	public void formLabel() {
@@ -59,17 +51,17 @@ public class TelaADM extends TelaPadrao {
 		login.setForeground(Color.WHITE);
 
 
-		this.jpPainel.add(login);
+		this.JP_PAINEL.add(login);
 		
 		email.setBounds(0, 155, 80, 20);
 		email.setFont(font);
 		email.setForeground(Color.white);
-		this.jpPainel.add(email);
+		this.JP_PAINEL.add(email);
 		
 		senha.setBounds(0, 195, 80, 20);
 		senha.setFont(font);
 		senha.setForeground(Color.WHITE);
-		this.jpPainel.add(senha);
+		this.JP_PAINEL.add(senha);
 		
 		
 	}
@@ -86,23 +78,23 @@ public class TelaADM extends TelaPadrao {
 		email.setFont(font);
 		email.setForeground(new Color(128, 255, 128));
 		email.setBorder(null);
-		this.jpPainel.add(email);
+		this.JP_PAINEL.add(email);
 		
 		senha.setBounds(90, 192, 175, 25);
 		senha.setFont(font);
 		senha.setForeground(new Color(128, 255, 128));
 		senha.setBorder(null);
-		this.jpPainel.add(senha);
+		this.JP_PAINEL.add(senha);
 		
 		emailSeparador.setBounds(90,177,175,10);
 		emailSeparador.setOrientation(JSeparator.HORIZONTAL);
 		emailSeparador.setBackground(Color.WHITE);
-		this.jpPainel.add(emailSeparador);
+		this.JP_PAINEL.add(emailSeparador);
 		
 		senhaSeparador.setBounds(90,217,175,10);
 		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
 		senhaSeparador.setBackground(Color.WHITE);
-		this.jpPainel.add(senhaSeparador);
+		this.JP_PAINEL.add(senhaSeparador);
 		
 		JButton entrar = new JButton("Entrar");
 
@@ -113,7 +105,7 @@ public class TelaADM extends TelaPadrao {
 		entrar.setBackground(new Color(102, 102, 102));
 		entrar.setFont(font);
 		entrar.setBorder(null);
-		this.jpPainel.add(entrar);
+		this.JP_PAINEL.add(entrar);
 		
 		JButton esqueceu = new JButton("Esqueceu a senha?");
 		esqueceu.addActionListener(ouvinte);
@@ -122,7 +114,7 @@ public class TelaADM extends TelaPadrao {
 		esqueceu.setFont(font);
 		esqueceu.setBackground(null);
 		esqueceu.setBorder(null);
-		this.jpPainel.add(esqueceu);
+		this.JP_PAINEL.add(esqueceu);
 		
 	}
 

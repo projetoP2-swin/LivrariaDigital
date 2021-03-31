@@ -23,14 +23,16 @@ public class OuvinteLoginButton implements ActionListener {
             Livreiro dadosLivreiro= persistencia.recuperarLivreiro();
             String email = dadosLivreiro.getEmail();
             String senha = new CriptografiaDeSenha().descriptografia(dadosLivreiro.getSenha());
+
             return telaADM.getSenha().equals(senha)&&
-                   telaADM.getEmail().equals(email);
+                    telaADM.getEmail().equals(email);
 
         } catch (Exception exception) {
             exception.printStackTrace();
+            return false;
         }
-        return false;
     }
+
     public void login(){
         boolean condicao = this.isLogin();
         if(condicao){
@@ -42,7 +44,7 @@ public class OuvinteLoginButton implements ActionListener {
 
     public void esqueceuASenha(){
         try{
-            RecuperarSenha recuperarSenha = new RecuperarSenha(telaADM);
+            new RecuperarSenha(telaADM);
         }catch(Exception e){
             JOptionPane.showMessageDialog(telaADM, "Houve algum problema","Recuperação de senha",
                     JOptionPane.INFORMATION_MESSAGE);

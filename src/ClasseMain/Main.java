@@ -13,7 +13,6 @@ import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 public class Main {
 
 	public static void main(String[] args) {
-		//TODO verificação se ja existe livreiro
 		    try {
 		    	InfoNodeLookAndFeelTheme theme = new InfoNodeLookAndFeelTheme("My Theme",
 		    			new Color(166, 166, 166),
