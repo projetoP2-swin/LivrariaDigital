@@ -1,7 +1,7 @@
 package ClasseMain.ExisteLivreiro;
 
 import Tela1.Tela.TelaAddLivreiro;
-import Tela2.ADM.Tela.TelaADM;
+import Tela2_ADM.Tela.TelaADM;
 import TelaPadrao.TelaPadrao;
 
 import java.io.File;

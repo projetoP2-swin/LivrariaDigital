@@ -1,8 +1,8 @@
-package Tela2.ADM.EsqueceuASenha;
+package Tela2_ADM.EsqueceuASenha;
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
-import Tela2.ADM.Tela.TelaADM;
+import Tela2_ADM.Tela.TelaADM;
 
 import javax.swing.*;
 import java.awt.*;

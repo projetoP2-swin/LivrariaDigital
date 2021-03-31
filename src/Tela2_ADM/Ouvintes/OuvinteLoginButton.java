@@ -1,13 +1,11 @@
-package Tela2.ADM.Ouvintes;
+package Tela2_ADM.Ouvintes;
 
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
-import Tela2.ADM.EsqueceuASenha.RecuperarSenha;
-import Tela2.ADM.Tela.TelaADM;
+import Tela2_ADM.Tela.TelaADM;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

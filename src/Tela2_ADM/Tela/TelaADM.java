@@ -1,12 +1,12 @@
-package Tela2.ADM.Tela;
+package Tela2_ADM.Tela;
 
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
 
-import Tela2.ADM.Ouvintes.OuvinteDoJLabel;
-import Tela2.ADM.Ouvintes.OuvinteLoginButton;
+import Tela2_ADM.Ouvintes.OuvinteDoJLabel;
+import Tela2_ADM.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
 public class TelaADM extends TelaPadrao {
@@ -23,7 +23,7 @@ public class TelaADM extends TelaPadrao {
 	}
 
 	public void background() {
-		ImageIcon img = new ImageIcon("img/addLivreiro/livros.png");
+		ImageIcon img = new ImageIcon(getClass().getResource("../../img/addLivreiro/livros.png"));
 		JLabel imgb = new JLabel();
 		
 		imgb.setBounds(0, 0, 700, 400);
@@ -33,7 +33,7 @@ public class TelaADM extends TelaPadrao {
 	}
 	
 	public void imagemUser() {
-		ImageIcon imagemUser = new ImageIcon("img/addLivreiro/user2.png");
+		ImageIcon imagemUser = new ImageIcon(getClass().getResource("../../img/addLivreiro/userADM.png"));
 		JLabel boasVindas = new JLabel();
 		boasVindas.setBounds(0, 20, 300, 100);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);

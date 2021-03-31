@@ -1,7 +1,7 @@
-package Tela2.ADM.Ouvintes;
+package Tela2_ADM.Ouvintes;
 
-import Tela2.ADM.EsqueceuASenha.RecuperarSenha;
-import Tela2.ADM.Tela.TelaADM;
+import Tela2_ADM.EsqueceuASenha.RecuperarSenha;
+import Tela2_ADM.Tela.TelaADM;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +34,8 @@ public class OuvinteDoJLabel implements MouseListener {
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
-        ImageIcon gif = new ImageIcon("img/addLivreiro/CarregandoGIF/Book.gif");
+        ImageIcon gif = new ImageIcon(getClass().getResource(
+                "../../img/addLivreiro/CarregandoGIF/Book.gif"));
         label.setText("");
         label.setIcon(gif);
         thread.start();

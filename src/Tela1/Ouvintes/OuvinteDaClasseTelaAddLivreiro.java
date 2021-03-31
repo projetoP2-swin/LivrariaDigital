@@ -8,7 +8,7 @@ import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela1.Tela.TelaAddLivreiro;
-import Tela2.ADM.Tela.TelaADM;
+import Tela2_ADM.Tela.TelaADM;
 
 public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	private TelaAddLivreiro livreiroInfo;
