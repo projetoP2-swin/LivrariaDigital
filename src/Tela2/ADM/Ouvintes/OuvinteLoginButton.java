@@ -7,6 +7,7 @@ import Tela2.ADM.EsqueceuASenha.RecuperarSenha;
 import Tela2.ADM.Tela.TelaADM;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -42,25 +43,14 @@ public class OuvinteLoginButton implements ActionListener {
         }
     }
 
-    public void esqueceuASenha(){
-        try{
-            new RecuperarSenha(telaADM);
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(telaADM, "Houve algum problema","Recuperação de senha",
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
+
+
+
 
     @Override
     public void actionPerformed(ActionEvent e){
-        JButton b = (JButton) e.getSource();
-        String nomeBtn = b.getText();
-
-        if(nomeBtn.equals("Entrar")){
             this.login();
-        }else{
-            this.esqueceuASenha();
-        }
+
 
 
 

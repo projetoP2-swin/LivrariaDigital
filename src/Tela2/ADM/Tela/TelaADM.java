@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.*;
 
+import Tela2.ADM.Ouvintes.OuvinteDoJLabel;
 import Tela2.ADM.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
@@ -106,14 +107,15 @@ public class TelaADM extends TelaPadrao {
 		entrar.setFont(font);
 		entrar.setBorder(null);
 		this.JP_PAINEL.add(entrar);
-		
-		JButton esqueceu = new JButton("Esqueceu a senha?");
-		esqueceu.addActionListener(ouvinte);
 
-		esqueceu.setBounds(0, 280, 300, 25);
+		OuvinteDoJLabel ouvinteDoJLabel = new OuvinteDoJLabel(this);
+		JLabel esqueceu = new JLabel("Esqueceu a senha?",JLabel.CENTER);
+		esqueceu.addMouseListener(ouvinteDoJLabel);
+
+		esqueceu.setBounds(0, 280, 300, 40);
 		esqueceu.setFont(font);
-		esqueceu.setBackground(null);
-		esqueceu.setBorder(null);
+
+
 		this.JP_PAINEL.add(esqueceu);
 		
 	}

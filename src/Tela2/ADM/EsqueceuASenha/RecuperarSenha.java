@@ -22,8 +22,8 @@ public class RecuperarSenha {
 
     private String email;
     private String nome;
-    private final PersistenciaADM PERSISTENCIA_ADM = new PersistenciaADM();
-    private  Livreiro livreiro = PERSISTENCIA_ADM.recuperarLivreiro();
+    private PersistenciaADM PERSISTENCIA_ADM = new PersistenciaADM();
+    private Livreiro livreiro = PERSISTENCIA_ADM.recuperarLivreiro();
 
 
     public void gerenciarEnvioDeEmail(){
@@ -36,26 +36,6 @@ public class RecuperarSenha {
     public void addNumeroDeRecuperacao(String codigo) throws Exception {
         livreiro.setNumeroDeRecuperacao(codigo);
         PERSISTENCIA_ADM.salvarCentral(livreiro);
-
-    }
-
-    public RecuperarSenha(TelaADM telaAdm) throws Exception {
-        RecuperarSenha.telaAdm = telaAdm;
-        String emailMETHOD = this.pegaEmailEscondido();
-
-        this.gerenciarEnvioDeEmail();
-        this.addNumeroDeRecuperacao(Long.toString(CODIGO));
-
-        String resultado = JOptionPane.showInputDialog(telaAdm,
-                "<html>Enviamos um código de recuperação para: <br>"+emailMETHOD+"<br><br>Digite o código: <html>",
-                RecuperarSenha.TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE).replace(" ","");
-
-        String codigoAsString = Long.toString(CODIGO);
-        if(resultado.equals(codigoAsString)){
-            this.codigoCorreto();
-        }else{
-            this.codigoIncorreto();
-        }
 
     }
 
@@ -97,6 +77,7 @@ public class RecuperarSenha {
         String emailRemetente = "estante.digital2@gmail.com";
         String emailDestino = this.email;
         String assunto = "Recuperação de senha";
+
         String mensagem = "Olá, "+
                 this.nome+
                 "\nSeu código de recuperação é:\n"+
@@ -139,6 +120,30 @@ public class RecuperarSenha {
             JOptionPane.showMessageDialog(telaAdm,"Algo deu errado",
                     TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
 
+        }
+
+    }
+
+    public RecuperarSenha(TelaADM telaAdm,JLabel label) throws Exception {
+        RecuperarSenha.telaAdm = telaAdm;
+        String emailMETHOD = this.pegaEmailEscondido();
+
+        this.gerenciarEnvioDeEmail();
+        this.addNumeroDeRecuperacao(Long.toString(CODIGO));
+
+        //Saindo da tela de Load do jLabel
+        label.setText("Esqueceu sua senha?");
+        label.setIcon(null);
+
+        String resultado = JOptionPane.showInputDialog(telaAdm,
+                "<html>Enviamos um código de recuperação para: <br>"+emailMETHOD+"<br><br>Digite o código: <html>",
+                RecuperarSenha.TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE).replace(" ","");
+
+        String codigoAsString = Long.toString(CODIGO);
+        if(resultado.equals(codigoAsString)){
+            this.codigoCorreto();
+        }else{
+            this.codigoIncorreto();
         }
 
     }
