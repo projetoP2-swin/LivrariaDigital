@@ -50,18 +50,14 @@ public class TelaADM extends TelaPadrao {
 		login.setBounds(0, 120, 300, 30);
 		login.setFont(new Font("Arial",Font.BOLD,13));
 		login.setForeground(Color.WHITE);
-
-
 		this.JP_PAINEL.add(login);
 		
 		email.setBounds(0, 155, 80, 20);
 		email.setFont(font);
-		email.setForeground(Color.white);
 		this.JP_PAINEL.add(email);
 		
 		senha.setBounds(0, 195, 80, 20);
 		senha.setFont(font);
-		senha.setForeground(Color.WHITE);
 		this.JP_PAINEL.add(senha);
 		
 		

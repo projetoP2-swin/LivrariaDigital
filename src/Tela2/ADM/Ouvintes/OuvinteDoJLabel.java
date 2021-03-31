@@ -34,7 +34,7 @@ public class OuvinteDoJLabel implements MouseListener {
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
-        ImageIcon gif = new ImageIcon("img/addLivreiro/CarregandoGIF/load.gif");
+        ImageIcon gif = new ImageIcon("img/addLivreiro/CarregandoGIF/Book.gif");
         label.setText("");
         label.setIcon(gif);
         thread.start();

@@ -5,6 +5,7 @@ import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela2.ADM.Tela.TelaADM;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.Message;
@@ -133,6 +134,7 @@ public class RecuperarSenha {
 
         //Saindo da tela de Load do jLabel
         label.setText("Esqueceu sua senha?");
+        label.setForeground(Color.WHITE);
         label.setIcon(null);
 
         String resultado = JOptionPane.showInputDialog(telaAdm,

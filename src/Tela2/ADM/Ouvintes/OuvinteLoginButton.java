@@ -44,15 +44,9 @@ public class OuvinteLoginButton implements ActionListener {
     }
 
 
-
-
-
     @Override
     public void actionPerformed(ActionEvent e){
             this.login();
-
-
-
 
     }
 }

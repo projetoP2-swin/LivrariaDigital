@@ -26,35 +26,37 @@ public class TelaAddLivreiro extends TelaPadrao{
 		ImageIcon imagemUser = new ImageIcon("img/addLivreiro/user2.png");
 		JLabel boasVindas = new JLabel();
 		
-		boasVindas.setBounds(145, 10, 110, 110);
+		boasVindas.setBounds(0, 10, 370, 110);
+		boasVindas.setHorizontalAlignment(JLabel.CENTER);
 		boasVindas.setIcon(imagemUser);
 		
 		this.JP_PAINEL.add(boasVindas);
 	}
 	
 	public void addFormLabel() {
-		JLabel boasVindas = new JLabel("Cadastro do Livreiro");
-		JLabel nome = new JLabel("Nome:");
-		JLabel email = new JLabel("Email:");
-		JLabel senha = new JLabel("Senha:");
+		JLabel boasVindas = new JLabel("Cadastro do Livreiro",JLabel.CENTER);
+		JLabel nome = new JLabel("Nome:",JLabel.RIGHT);
+		JLabel email = new JLabel("Email:",JLabel.RIGHT);
+		JLabel senha = new JLabel("Senha:",JLabel.RIGHT);
 		Font font = new Font("Arial",Font.BOLD,15);
 		
-		boasVindas.setBounds(125, 75, 130, 100);
+		boasVindas.setBounds(0, 120, 370, 25);
 		boasVindas.setFont(new Font("Arial",Font.BOLD,13));
 		boasVindas.setForeground(Color.WHITE);
+
 		
-		nome.setBounds(50, 120, 100, 100);
+		nome.setBounds(0, 150, 100, 30);
 		nome.setFont(font);
-		nome.setForeground(Color.WHITE);
+
 		
 		
-		email.setBounds(50, 180, 100, 100);
+		email.setBounds(0, 200, 100, 30);
 		email.setFont(font);
-		email.setForeground(Color.WHITE);
+
 		
-		senha.setBounds(50, 240, 100, 100);
+		senha.setBounds(0, 250, 100, 30);
 		senha.setFont(font);
-		senha.setForeground(Color.WHITE);
+
 		
 		this.JP_PAINEL.add(boasVindas);
 		this.JP_PAINEL.add(nome);
@@ -82,11 +84,11 @@ public class TelaAddLivreiro extends TelaPadrao{
 		this.nome.setBorder(null);
 		this.nome.setFont(font);
 		
-		this.email.setBounds(120, 213, 200, 25);
+		this.email.setBounds(120, 203, 200, 25);
 		this.email.setBorder(null);
 		this.email.setFont(font);
 		
-		this.senha.setBounds(120, 275, 200, 25);
+		this.senha.setBounds(120, 253, 200, 25);
 		this.senha.setBorder(null);
 		this.senha.setFont(font);
 
@@ -94,11 +96,11 @@ public class TelaAddLivreiro extends TelaPadrao{
 		nomeSeparador.setOrientation(JSeparator.HORIZONTAL);
 		nomeSeparador.setBackground(Color.WHITE);
 
-		emaileSeparador.setBounds(115,237,200,100);
+		emaileSeparador.setBounds(115,227,200,100);
 		emaileSeparador.setOrientation(JSeparator.HORIZONTAL);
 		emaileSeparador.setBackground(Color.WHITE);
 
-		senhaSeparador.setBounds(115,299,200,100);
+		senhaSeparador.setBounds(115,277,200,100);
 		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
 		senhaSeparador.setBackground(Color.WHITE);
 
