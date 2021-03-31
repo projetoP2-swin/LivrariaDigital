@@ -23,7 +23,7 @@ public class TelaADM extends TelaPadrao {
 	}
 
 	public void background() {
-		ImageIcon img = new ImageIcon(getClass().getResource("../../img/addLivreiro/livros.png"));
+		ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
 		JLabel imgb = new JLabel();
 		
 		imgb.setBounds(0, 0, 700, 400);
@@ -33,7 +33,7 @@ public class TelaADM extends TelaPadrao {
 	}
 	
 	public void imagemUser() {
-		ImageIcon imagemUser = new ImageIcon(getClass().getResource("../../img/addLivreiro/userADM.png"));
+		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
 		JLabel boasVindas = new JLabel();
 		boasVindas.setBounds(0, 20, 300, 100);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);
