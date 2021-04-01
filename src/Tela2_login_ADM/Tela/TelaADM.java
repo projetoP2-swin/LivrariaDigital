@@ -1,12 +1,12 @@
-package Tela2_ADM.Tela;
+package Tela2_login_ADM.Tela;
 
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
 
-import Tela2_ADM.Ouvintes.OuvinteDoJLabel;
-import Tela2_ADM.Ouvintes.OuvinteLoginButton;
+import Tela2_login_ADM.Ouvintes.OuvinteDoEsqueceuASenha;
+import Tela2_login_ADM.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
 public class TelaADM extends TelaPadrao {
@@ -104,9 +104,9 @@ public class TelaADM extends TelaPadrao {
 		entrar.setBorder(null);
 		this.JP_PAINEL.add(entrar);
 
-		OuvinteDoJLabel ouvinteDoJLabel = new OuvinteDoJLabel(this);
+		OuvinteDoEsqueceuASenha ouvinteDoEsqueceuASenha = new OuvinteDoEsqueceuASenha(this);
 		JLabel esqueceu = new JLabel("Esqueceu a senha?",JLabel.CENTER);
-		esqueceu.addMouseListener(ouvinteDoJLabel);
+		esqueceu.addMouseListener(ouvinteDoEsqueceuASenha);
 
 		esqueceu.setBounds(0, 280, 300, 40);
 		esqueceu.setFont(font);

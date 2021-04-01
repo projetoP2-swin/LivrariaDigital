@@ -1,11 +1,11 @@
-package Tela1.Tela;
+package Tela1_cadastro_ADM.Tela;
 
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.*;
 
-import Tela1.Ouvintes.OuvinteDaClasseTelaAddLivreiro;
+import Tela1_cadastro_ADM.Ouvintes.OuvinteDaClasseTelaAddLivreiro;
 import TelaPadrao.TelaPadrao;
 
 public class TelaAddLivreiro extends TelaPadrao{
@@ -122,10 +122,10 @@ public class TelaAddLivreiro extends TelaPadrao{
 	}
 	
 	public void addImgLivraria() {
-		ImageIcon imagem = new  ImageIcon("./img/img_ADM/img/tela1.png");
+		ImageIcon imagem = new  ImageIcon("img/img_ADM/img/tela1.png");
 		JLabel lbImg = new JLabel();
 		
-		lbImg.setBounds(360, 0, 330, 400);
+		lbImg.setBounds(370, 0, 330, 400);
 		lbImg.setIcon(imagem);
 		this.add(lbImg);
 	}

@@ -12,9 +12,6 @@ public class Livreiro {
 		this.senha=senha;
 
 	}
-	public Livreiro(){
-
-	}
 	public String getNome() {
 		return nome;
 	}

@@ -1,8 +1,8 @@
-package Tela2_ADM.EsqueceuASenha;
+package Tela2_login_ADM.EsqueceuASenha;
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
-import Tela2_ADM.Tela.TelaADM;
+import Tela2_login_ADM.Tela.TelaADM;
 
 import javax.swing.*;
 import java.awt.*;
@@ -69,6 +69,7 @@ public class RecuperarSenha {
                 "*".repeat(resultado.length())+
                 email.substring(email.indexOf("@"));
 
+
         return resultado;
     }
 
@@ -88,7 +89,7 @@ public class RecuperarSenha {
         props.put("mail.smtp.user", emailRemetente);
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "25");
-        props.put("mail.debug", "true");
+        props.put("mail.debug", "false");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable","true");
         props.put("mail.smtp.EnableSSL.enable","true");

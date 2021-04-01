@@ -1,4 +1,4 @@
-package Tela1.Ouvintes;
+package Tela1_cadastro_ADM.Ouvintes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
-import Tela1.Tela.TelaAddLivreiro;
-import Tela2_ADM.Tela.TelaADM;
+import Tela1_cadastro_ADM.Tela.TelaAddLivreiro;
+import Tela2_login_ADM.Tela.TelaADM;
 
 public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	private TelaAddLivreiro livreiroInfo;

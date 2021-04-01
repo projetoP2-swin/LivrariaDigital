@@ -1,9 +1,9 @@
-package Tela2_ADM.Ouvintes;
+package Tela2_login_ADM.Ouvintes;
 
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
-import Tela2_ADM.Tela.TelaADM;
+import Tela2_login_ADM.Tela.TelaADM;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
