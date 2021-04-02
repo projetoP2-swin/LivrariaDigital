@@ -49,7 +49,7 @@ public class OuvinteDoEsqueceuASenha implements MouseListener {
     public void mouseEntered(MouseEvent e) {
         JLabel label = (JLabel) e.getSource();
         label.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        label.setForeground(new Color(51, 255, 51));
+        label.setForeground(new Color(252, 83, 28));
     }
 
     @Override

@@ -35,7 +35,7 @@ public class TelaADM extends TelaPadrao {
 	public void imagemUser() {
 		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
 		JLabel boasVindas = new JLabel();
-		boasVindas.setBounds(0, 20, 300, 100);
+		boasVindas.setBounds(0, 2, 300, 100);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);
 		boasVindas.setIcon(imagemUser);
 		this.JP_PAINEL.add(boasVindas);
@@ -47,16 +47,16 @@ public class TelaADM extends TelaPadrao {
 		JLabel senha = new JLabel("Senha:",JLabel.RIGHT);
 		Font font = new Font("Arial",Font.BOLD,12);
 		
-		login.setBounds(0, 120, 300, 30);
+		login.setBounds(0, 105, 300, 30);
 		login.setFont(new Font("Arial",Font.BOLD,13));
 		login.setForeground(Color.WHITE);
 		this.JP_PAINEL.add(login);
 		
-		email.setBounds(0, 155, 80, 20);
+		email.setBounds(0, 145, 80, 20);
 		email.setFont(font);
 		this.JP_PAINEL.add(email);
 		
-		senha.setBounds(0, 195, 80, 20);
+		senha.setBounds(0, 185, 80, 20);
 		senha.setFont(font);
 		this.JP_PAINEL.add(senha);
 		
@@ -71,24 +71,24 @@ public class TelaADM extends TelaPadrao {
 		JSeparator emailSeparador = new JSeparator();
 		JSeparator senhaSeparador = new JSeparator();
 		
-		email.setBounds(90, 153, 175, 25);
+		email.setBounds(90, 142, 175, 25);
 		email.setFont(font);
-		email.setForeground(new Color(128, 255, 128));
+		email.setForeground(new Color(128, 196, 255));
 		email.setBorder(null);
 		this.JP_PAINEL.add(email);
 		
-		senha.setBounds(90, 192, 175, 25);
+		senha.setBounds(90, 182, 175, 25);
 		senha.setFont(font);
-		senha.setForeground(new Color(128, 255, 128));
+		senha.setForeground(new Color(128, 196, 255));
 		senha.setBorder(null);
 		this.JP_PAINEL.add(senha);
 		
-		emailSeparador.setBounds(90,177,175,10);
+		emailSeparador.setBounds(90,167,170,10);
 		emailSeparador.setOrientation(JSeparator.HORIZONTAL);
 		emailSeparador.setBackground(Color.WHITE);
 		this.JP_PAINEL.add(emailSeparador);
 		
-		senhaSeparador.setBounds(90,217,175,10);
+		senhaSeparador.setBounds(90,207,170,10);
 		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
 		senhaSeparador.setBackground(Color.WHITE);
 		this.JP_PAINEL.add(senhaSeparador);
@@ -98,7 +98,7 @@ public class TelaADM extends TelaPadrao {
 		OuvinteLoginButton ouvinte = new OuvinteLoginButton(this);
 		entrar.addActionListener(ouvinte);
 
-		entrar.setBounds(120, 240, 60, 25);
+		entrar.setBounds(123, 220, 60, 25);
 		entrar.setBackground(new Color(102, 102, 102));
 		entrar.setFont(font);
 		entrar.setBorder(null);
@@ -107,12 +107,23 @@ public class TelaADM extends TelaPadrao {
 		OuvinteDoEsqueceuASenha ouvinteDoEsqueceuASenha = new OuvinteDoEsqueceuASenha(this);
 		JLabel esqueceu = new JLabel("Esqueceu a senha?",JLabel.CENTER);
 		esqueceu.addMouseListener(ouvinteDoEsqueceuASenha);
-
-		esqueceu.setBounds(0, 280, 300, 40);
+		esqueceu.setBounds(0, 257, 300, 30);
 		esqueceu.setFont(font);
-
-
 		this.JP_PAINEL.add(esqueceu);
+
+		JLabel ou = new JLabel("Ou");
+		ou.setBounds(80, 305, 300, 15);
+		ou.setFont(new Font("Arial",Font.BOLD,12));
+		ou.setForeground(Color.GRAY);
+		this.JP_PAINEL.add(ou);
+
+
+		JButton soucliente = new JButton("Sou Cliente");
+		soucliente.setBounds(105, 300, 100, 25);
+		soucliente.setBackground(new Color(102, 102, 102));
+		soucliente.setFont(font);
+		soucliente.setBorder(null);
+		this.JP_PAINEL.add(soucliente);
 		
 	}
 

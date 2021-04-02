@@ -16,10 +16,10 @@ public class Main {
 		    try {
 		    	InfoNodeLookAndFeelTheme theme = new InfoNodeLookAndFeelTheme("My Theme",
 		    			new Color(166, 166, 166),
-		    			new Color(0, 170, 0),
+		    			new Color(252, 83, 28),
 						Color.DARK_GRAY,
 		    			Color.WHITE,
-		    			new Color(0, 170, 0),
+		    			new Color(252, 83, 28),
 		    			Color.WHITE,
 		    			0.8);
 

@@ -81,14 +81,17 @@ public class TelaAddLivreiro extends TelaPadrao{
 		Font font = new Font("Arial",Font.BOLD,12);
 		
 		this.nome.setBounds(120, 153, 200, 25);
+		this.nome.setForeground(new Color(128, 196, 255));
 		this.nome.setBorder(null);
 		this.nome.setFont(font);
 		
 		this.email.setBounds(120, 203, 200, 25);
+		this.email.setForeground(new Color(128, 196, 255));
 		this.email.setBorder(null);
 		this.email.setFont(font);
 		
 		this.senha.setBounds(120, 253, 200, 25);
+		this.senha.setForeground(new Color(128, 196, 255));
 		this.senha.setBorder(null);
 		this.senha.setFont(font);
 
