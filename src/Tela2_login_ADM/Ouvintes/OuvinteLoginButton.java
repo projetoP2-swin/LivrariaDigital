@@ -1,6 +1,7 @@
 package Tela2_login_ADM.Ouvintes;
 
 import Criptografia.CriptografiaDeSenha;
+import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela2_login_ADM.Tela.TelaADM;
@@ -19,7 +20,8 @@ public class OuvinteLoginButton implements ActionListener {
     public boolean isLogin(){
         try {
             PersistenciaADM persistencia = new PersistenciaADM();
-            Livreiro dadosLivreiro= persistencia.recuperarLivreiro();
+            CentralDeInformacoes central= (CentralDeInformacoes) persistencia.recuperarLivreiro();
+            Livreiro dadosLivreiro = central.getLivreiro();
             String email = dadosLivreiro.getEmail();
             String senha = new CriptografiaDeSenha().descriptografia(dadosLivreiro.getSenha());
 

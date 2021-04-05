@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TelaCadastroCliente extends TelaPadrao {
-
+    //TODO pegar genero, pegar aniversario e 3 generos de livro
     private final JPanel JP_PAINEL =  new JPanel();
     private JTextField nomec;
     private JTextField emailc;
@@ -66,7 +66,7 @@ public class TelaCadastroCliente extends TelaPadrao {
         this.JP_PAINEL.add(senhac);
     }
 
-    public void addInputsAndButton() {
+    public void addInputs() {
         this.nomec = new JTextField();
         this.emailc = new JTextField();
         this.senhac = new JTextField();
@@ -74,8 +74,6 @@ public class TelaCadastroCliente extends TelaPadrao {
         JSeparator nomeSeparador = new JSeparator();
         JSeparator emaileSeparador = new JSeparator();
         JSeparator senhaSeparador = new JSeparator();
-
-        JButton botao = new JButton("Enviar");
 
         Font font = new Font("Arial",Font.BOLD,12);
 
@@ -106,10 +104,7 @@ public class TelaCadastroCliente extends TelaPadrao {
         senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
         senhaSeparador.setBackground(Color.WHITE);
 
-        botao.setBounds(50, 315, 270, 30);
-        botao.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
-        botao.setFont(font);
-        botao.setForeground(Color.BLACK);
+
 
         this.JP_PAINEL.add(nomec);
         this.JP_PAINEL.add(nomeSeparador);
@@ -120,16 +115,34 @@ public class TelaCadastroCliente extends TelaPadrao {
         this.JP_PAINEL.add(senhac);
         this.JP_PAINEL.add(senhaSeparador);
 
-        this.JP_PAINEL.add(botao);
+    }
+    public void addBotoes(){
+        JButton enviar = new JButton("Enviar");
+        JButton login = new JButton("Voltar");
+        Font font = new Font("Arial",Font.BOLD,12);
+
+        enviar.setBounds(200, 315, 135, 30);
+        enviar.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
+        enviar.setFont(font);
+        enviar.setForeground(Color.BLACK);
+
+        login.setBounds(40,315,135,30);
+        login.setFont(font);
+        login.setForeground(Color.BLACK);
+
+        this.JP_PAINEL.add(login);
+        this.JP_PAINEL.add(enviar);
     }
 
     public TelaCadastroCliente(String titulo) {
         super(titulo);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.addPainel();
         this.addImagemUser();
         this.addImgLivraria();
         this.addFormLabel();
-        this.addInputsAndButton();
+        this.addInputs();
+        this.addBotoes();
     }
 
     public String getNomec() {

@@ -1,5 +1,6 @@
 package Tela2_login_ADM.EsqueceuASenha;
 import Criptografia.CriptografiaDeSenha;
+import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela2_login_ADM.Tela.TelaADM;
@@ -24,7 +25,8 @@ public class RecuperarSenha {
     private String email;
     private String nome;
     private PersistenciaADM PERSISTENCIA_ADM = new PersistenciaADM();
-    private Livreiro livreiro = PERSISTENCIA_ADM.recuperarLivreiro();
+    private CentralDeInformacoes central = new CentralDeInformacoes();
+    private Livreiro livreiro = PERSISTENCIA_ADM.recuperarLivreiro().getLivreiro();
 
 
     public void gerenciarEnvioDeEmail(){
@@ -36,7 +38,8 @@ public class RecuperarSenha {
 
     public void addNumeroDeRecuperacao(String codigo) throws Exception {
         livreiro.setNumeroDeRecuperacao(codigo);
-        PERSISTENCIA_ADM.salvarCentral(livreiro);
+        central.addLivreiro(livreiro);
+        PERSISTENCIA_ADM.salvarCentral(central);
 
     }
 
@@ -47,7 +50,7 @@ public class RecuperarSenha {
 
         senha = new CriptografiaDeSenha().criptografia(senha);
         livreiro.setSenha(senha);
-        PERSISTENCIA_ADM.salvarCentral(livreiro);
+        PERSISTENCIA_ADM.salvarCentral(central);
 
         JOptionPane.showMessageDialog(telaAdm,"Senha alterada com sucesso",
                 TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);

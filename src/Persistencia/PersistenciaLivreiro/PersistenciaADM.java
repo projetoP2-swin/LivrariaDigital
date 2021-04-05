@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
 
+import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
@@ -11,7 +12,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 public class PersistenciaADM {
 private XStream xStream = new XStream(new DomDriver("UTF-8"));
 	
-	public void salvarCentral(Object livreiro) throws Exception {
+	public void salvarCentral(CentralDeInformacoes livreiro) throws Exception {
 		File arquivo = new File("livreiro-db.xml");
 		String xml="";
 		if(!arquivo.exists()) {
@@ -19,19 +20,19 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 			xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 		}
 		PrintWriter pw = new PrintWriter(arquivo);
-		xStream.alias("Livreiro", livreiro.getClass());
+		//xStream.alias("Livreiro", livreiro.getClass());
 		xml += xStream.toXML(livreiro);
 		pw.write(xml);
 		pw.close();
 	}
 
 
-	public Livreiro recuperarLivreiro() throws Exception {
+	public CentralDeInformacoes recuperarLivreiro() throws Exception {
 		File arquivo = new File("livreiro-db.xml");
-		xStream.alias("Livreiro", Livreiro.class);
+		//xStream.alias("Livreiro", Livreiro.class);
 		if(arquivo.exists()) {
 			FileReader fr = new FileReader(arquivo);
-			return (Livreiro) xStream.fromXML(fr);
+			return (CentralDeInformacoes) xStream.fromXML(fr);
 		}
 		return null;
 

@@ -1,5 +1,4 @@
 package Tela4_cadastro_cliente.Tela;
-
 import TelaPadrao.TelaPadrao;
 import net.infonode.gui.laf.InfoNodeLookAndFeel;
 import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
@@ -7,7 +6,7 @@ import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 import javax.swing.*;
 import java.awt.*;
 
-public class TesteMain {
+public class main {
 
     public static void main (String[] args) {
         try {

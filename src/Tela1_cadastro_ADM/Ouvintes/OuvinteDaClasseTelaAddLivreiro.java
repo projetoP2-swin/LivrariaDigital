@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import Criptografia.CriptografiaDeSenha;
+import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaLivreiro.PersistenciaADM;
 import Tela1_cadastro_ADM.Tela.TelaAddLivreiro;
@@ -40,7 +41,8 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 			try {
 				info[2] = criptografia.criptografia(info[2]);
 				Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
-				p.salvarCentral(livreiro);
+				new CentralDeInformacoes().addLivreiro(livreiro);
+
 				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
 				livreiroInfo.dispose();
 				TelaADM telaADM = new TelaADM("Livraria Digital - User");
