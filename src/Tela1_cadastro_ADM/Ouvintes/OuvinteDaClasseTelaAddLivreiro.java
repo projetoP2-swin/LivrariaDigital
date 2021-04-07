@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
-import Persistencia.PersistenciaLivreiro.PersistenciaADM;
+import Persistencia.PersistenciaAll.Persistencia;
 import Tela1_cadastro_ADM.Tela.TelaAddLivreiro;
 import Tela2_login_ADM.Tela.TelaADM;
 
@@ -35,13 +35,14 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 			JOptionPane.showMessageDialog(livreiroInfo, "Não deixe campos em branco");
 
 		}else if(info[1].contains("@")) {
-			PersistenciaADM p = new PersistenciaADM();
-			CriptografiaDeSenha criptografia = new CriptografiaDeSenha();
+			Persistencia p = new Persistencia();
 
 			try {
-				info[2] = criptografia.criptografia(info[2]);
+				info[2] = CriptografiaDeSenha.criptografia(info[2]);
 				Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
-				new CentralDeInformacoes().addLivreiro(livreiro);
+				CentralDeInformacoes central = new CentralDeInformacoes();
+				central.addLivreiro(livreiro);
+				central.salvar();
 
 				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
 				livreiroInfo.dispose();

@@ -3,8 +3,9 @@ package Tela2_login_ADM.Ouvintes;
 import Criptografia.CriptografiaDeSenha;
 import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
-import Persistencia.PersistenciaLivreiro.PersistenciaADM;
+import Persistencia.PersistenciaAll.Persistencia;
 import Tela2_login_ADM.Tela.TelaADM;
+import Tela3_login_Cliente.Tela.TelaLoginCliente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,11 +20,14 @@ public class OuvinteLoginButton implements ActionListener {
 
     public boolean isLogin(){
         try {
-            PersistenciaADM persistencia = new PersistenciaADM();
-            CentralDeInformacoes central= (CentralDeInformacoes) persistencia.recuperarLivreiro();
+            Persistencia persistencia = new Persistencia();
+            CentralDeInformacoes central= persistencia.recuperar();
             Livreiro dadosLivreiro = central.getLivreiro();
+            if(dadosLivreiro==null){
+                return false;
+            }
             String email = dadosLivreiro.getEmail();
-            String senha = new CriptografiaDeSenha().descriptografia(dadosLivreiro.getSenha());
+            String senha = CriptografiaDeSenha.descriptografia(dadosLivreiro.getSenha());
 
             return telaADM.getSenha().equals(senha)&&
                     telaADM.getEmail().equals(email);
@@ -46,7 +50,14 @@ public class OuvinteLoginButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
+        JButton botao = (JButton) e.getSource();
+        String nome = botao.getText();
+        if(nome.equals("Entrar")){
             this.login();
+        }else{
+            telaADM.dispose();
+            new TelaLoginCliente("Livraria Digital - Login Usuario");
+        }
 
     }
 }

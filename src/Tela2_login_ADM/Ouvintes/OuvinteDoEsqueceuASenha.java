@@ -1,6 +1,6 @@
 package Tela2_login_ADM.Ouvintes;
 
-import Tela2_login_ADM.EsqueceuASenha.RecuperarSenha;
+import Tela2_login_ADM.EsqueceuASenha.RecuperarSenhaADM;
 import Tela2_login_ADM.Tela.TelaADM;
 
 import javax.swing.*;
@@ -24,10 +24,10 @@ public class OuvinteDoEsqueceuASenha implements MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         JLabel label = (JLabel) e.getSource();
-        label.setText("dasdas");
+
         Thread thread = new Thread(() -> {
             try{
-                new RecuperarSenha(telaADM,label);
+                new RecuperarSenhaADM(telaADM,label);
             }catch(Exception ex){
                 JOptionPane.showMessageDialog(telaADM,
                         "Houve algum problema","Recuperação de senha",

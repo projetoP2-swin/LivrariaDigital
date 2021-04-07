@@ -1,7 +1,8 @@
 package Tela2_login_ADM.Tela;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
@@ -13,8 +14,9 @@ public class TelaADM extends TelaPadrao {
 
 	private final JPanel JP_PAINEL =  new JPanel();
 	private JTextField email;
+
 	private JPasswordField senha;
-	
+
 	public void addPainel() {
 		this.JP_PAINEL.setBounds(200, 15, 300, 330);
 		this.JP_PAINEL.setBackground(Color.DARK_GRAY);
@@ -22,7 +24,7 @@ public class TelaADM extends TelaPadrao {
 		this.add(JP_PAINEL);
 	}
 
-	public void background() {
+	public void addBackground() {
 		ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
 		JLabel imgb = new JLabel();
 		
@@ -32,7 +34,7 @@ public class TelaADM extends TelaPadrao {
 		
 	}
 	
-	public void imagemUser() {
+	public void addImagemUser() {
 		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
 		JLabel boasVindas = new JLabel();
 		boasVindas.setBounds(0, 2, 300, 100);
@@ -41,7 +43,7 @@ public class TelaADM extends TelaPadrao {
 		this.JP_PAINEL.add(boasVindas);
 	}
 	
-	public void formLabel() {
+	public void addFormLabel() {
 		JLabel login = new JLabel("Login do Livreiro",JLabel.CENTER);
 		JLabel email = new JLabel("E-mail:",JLabel.RIGHT);
 		JLabel senha = new JLabel("Senha:",JLabel.RIGHT);
@@ -63,9 +65,10 @@ public class TelaADM extends TelaPadrao {
 		
 	}
 	
-	public void inputsAndButton() {
+	public void addInputs() {
 		this.email = new JTextField();
 		this.senha = new JPasswordField();
+
 		Font font = new Font("Arial",Font.BOLD,12);
 
 		JSeparator emailSeparador = new JSeparator();
@@ -92,12 +95,17 @@ public class TelaADM extends TelaPadrao {
 		senhaSeparador.setOrientation(JSeparator.HORIZONTAL);
 		senhaSeparador.setBackground(Color.WHITE);
 		this.JP_PAINEL.add(senhaSeparador);
+
+
 		
+	}
+	public void addButtons(){
 		JButton entrar = new JButton("Entrar");
-
 		OuvinteLoginButton ouvinte = new OuvinteLoginButton(this);
-		entrar.addActionListener(ouvinte);
+		Font font = new Font("Arial",Font.BOLD,12);
 
+
+		entrar.addActionListener(ouvinte);
 		entrar.setBounds(123, 220, 60, 25);
 		entrar.setBackground(new Color(102, 102, 102));
 		entrar.setFont(font);
@@ -111,33 +119,31 @@ public class TelaADM extends TelaPadrao {
 		esqueceu.setFont(font);
 		this.JP_PAINEL.add(esqueceu);
 
-		JLabel ou = new JLabel("Ou");
-		ou.setBounds(80, 305, 300, 15);
-		ou.setFont(new Font("Arial",Font.BOLD,12));
-		ou.setForeground(Color.GRAY);
-		this.JP_PAINEL.add(ou);
-
 
 		JButton soucliente = new JButton("Sou Cliente");
-		soucliente.setBounds(105, 300, 100, 25);
+		soucliente.setBounds(100, 300, 100, 25);
 		soucliente.setBackground(new Color(102, 102, 102));
 		soucliente.setFont(font);
 		soucliente.setBorder(null);
+		soucliente.addActionListener(ouvinte);
+
+
+
 		this.JP_PAINEL.add(soucliente);
-		
+
 	}
 
 	public TelaADM(String titulo) {
 		super(titulo);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		
+
 		this.addPainel();
-		
-		this.background();
-		this.imagemUser();
-		this.formLabel();
-		this.inputsAndButton();
+		this.addBackground();
+		this.addImagemUser();
+		this.addFormLabel();
+		this.addInputs();
+		this.addButtons();
+		this.setVisible(true);
+
 		
 	}
 

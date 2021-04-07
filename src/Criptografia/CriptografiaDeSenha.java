@@ -1,7 +1,7 @@
 package Criptografia;
 
 public class CriptografiaDeSenha {
-	private final String[] alfabeto= {
+	private static String[] alfabeto= {
 			"ú","Ú","y","r","j","k"," ","f",
 			"o","q","a","h","v","ç","p","b",
 			"g","s","m","d","t","z","c","i",
@@ -23,7 +23,7 @@ public class CriptografiaDeSenha {
 		return alfabeto;
 	}
 
-	public String criptografia(String senha) {
+	public static String criptografia(String senha) {
 		 String[] codigosCriptografia = {
 				"cxr89,","fhH52,","3fgg7,","0829g,","5jfb2,","gca7d,","z1zca,","12cc9,",
 				"aa5bc,","0820t,","1137g,","5jf4c,","3fg21,","z1zbz,","08291,","2448g,",
@@ -43,8 +43,8 @@ public class CriptografiaDeSenha {
 		contador.setLength(0);
 		String[] lista =senha.split("");
 		for (String s : lista) {
-			for (int j = 0; j < this.alfabeto.length; j++) {
-				if (s.equals(this.alfabeto[j])) {
+			for (int j = 0; j < alfabeto.length; j++) {
+				if (s.equals(alfabeto[j])) {
 					contador.append(codigosCriptografia[j]);
 				}
 			}
@@ -53,7 +53,7 @@ public class CriptografiaDeSenha {
 		return contador.toString();
 	}
 	
-	public String descriptografia(String senha) {
+	public static String descriptografia(String senha) {
 		String[] codigoDescriptografia = {
 				"cxr89","fhH52","3fgg7","0829g","5jfb2","gca7d","z1zca","12cc9",
                 "aa5bc","0820t","1137g","5jf4c","3fg21","z1zbz","08291","2448g",

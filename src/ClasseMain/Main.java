@@ -16,7 +16,7 @@ public class Main {
 		    try {
 		    	InfoNodeLookAndFeelTheme theme = new InfoNodeLookAndFeelTheme("My Theme",
 		    			new Color(166, 166, 166),
-		    			new Color(252, 83, 28),
+		    			new Color(255, 255, 255),
 						Color.DARK_GRAY,
 		    			Color.WHITE,
 		    			new Color(252, 83, 28),
@@ -25,8 +25,8 @@ public class Main {
 
 
 				UIManager.setLookAndFeel(new InfoNodeLookAndFeel(theme));
-				TelaPadrao tela = new ExisteLivreiroQuestion().primeiraTelaFactory();
-				tela.setVisible(true);
+				new ExisteLivreiroQuestion().primeiraTelaFactory();
+
 
 			} catch (Exception e) {
 		    	e.printStackTrace();

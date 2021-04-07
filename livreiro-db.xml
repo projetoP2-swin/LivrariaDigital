@@ -1,8 +1,30 @@
-<Persistencia.Central__de__informacoes.CentralDeInformacoes>
+<CentralDeInformacoes>
   <livreiro>
-    <nome>teste</nome>
-    <email>victorqueiroz90@outlook.com</email>
-    <senha>a35e9,a35e9,77tyx,6zc2f,1137g,g5582,aa5bc,g5582,12cd6,6zc2f,08291,1137g,5jfa0,a35e9,a35e9,29183,</senha>
-    <numeroDeRecuperacao>1617639173185</numeroDeRecuperacao>
+    <nome>Claudia</nome>
+    <email>dinhaa0210@hotmail.com</email>
+    <senha>95767,95767,95767,e47bf,95767,</senha>
+    <numeroDeRecuperacao>1617820628651</numeroDeRecuperacao>
   </livreiro>
-</Persistencia.Central__de__informacoes.CentralDeInformacoes>
+  <usuario>
+    <Persistencia.Usuario.Usuario>
+      <nome>victor</nome>
+      <email>victorqueiroz90@outlook.com</email>
+      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+      <numeroDeRecuperacao>1617820751892</numeroDeRecuperacao>
+      <genero>Masculino</genero>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+    </Persistencia.Usuario.Usuario>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario"/>
+    <Persistencia.Usuario.Usuario>
+      <nome>Joao victor Lacerda de queiroz</nome>
+      <email>victor.queiroz@academico.ifpb.edu.br</email>
+      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+      <numeroDeRecuperacao>1617823825123</numeroDeRecuperacao>
+      <genero>Masculino</genero>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+    </Persistencia.Usuario.Usuario>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
+  </usuario>
+</CentralDeInformacoes>

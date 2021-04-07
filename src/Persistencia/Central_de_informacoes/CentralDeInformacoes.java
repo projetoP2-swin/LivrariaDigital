@@ -1,31 +1,41 @@
 package Persistencia.Central_de_informacoes;
 
 import Persistencia.Livreiro.Livreiro;
-import Persistencia.PersistenciaLivreiro.PersistenciaADM;
+import Persistencia.PersistenciaAll.Persistencia;
 import Persistencia.Usuario.Usuario;
+
+import java.util.ArrayList;
 
 public class CentralDeInformacoes {
     private Livreiro livreiro;
-    private Usuario usuario;
+    private ArrayList<Usuario> usuario = new ArrayList<Usuario>();
 
-    public boolean addLivreiro(Livreiro livreiro) {
-        PersistenciaADM pADM = new PersistenciaADM();
-        this.livreiro = livreiro;
-        try{
-            pADM.salvarCentral(this);
-            return true;
+    private static Persistencia pADM = new Persistencia();
 
-        }catch(Exception e){
-            System.out.println(e);
-            return false;
+    public void salvar(){
+        Persistencia persistencia = new Persistencia();
+        try {
+            persistencia.salvarCentral(this);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
+    public void addLivreiro(Livreiro livreiro) {
+        this.livreiro = livreiro;
+
+    }
+
+    public void addUser(Usuario usuario){
+        this.usuario.add(usuario);
+    }
+
+    
     public Livreiro getLivreiro() {
         return livreiro;
     }
 
-    public Usuario getUsuario() {
+    public ArrayList<Usuario> getUsuario() {
         return usuario;
     }
 }

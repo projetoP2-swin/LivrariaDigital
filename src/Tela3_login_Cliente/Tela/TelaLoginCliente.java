@@ -1,5 +1,7 @@
 package Tela3_login_Cliente.Tela;
 
+import Tela3_login_Cliente.Ouvintes.OuvinteClienteEsqueceuASenha;
+import Tela3_login_Cliente.Ouvintes.OuvinteDosButtons;
 import TelaPadrao.TelaPadrao;
 
 import javax.swing.*;
@@ -18,7 +20,7 @@ public class TelaLoginCliente extends TelaPadrao {
         this.add(JP_PAINEL);
     }
 
-    public void background() {
+    public void addBackground() {
         ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
         JLabel imgb = new JLabel();
 
@@ -28,7 +30,7 @@ public class TelaLoginCliente extends TelaPadrao {
 
     }
 
-    public void imagemUser() {
+    public void addImagemUser() {
         ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
         JLabel boasVindas = new JLabel();
         boasVindas.setBounds(0, 2, 300, 100);
@@ -37,7 +39,7 @@ public class TelaLoginCliente extends TelaPadrao {
         this.JP_PAINEL.add(boasVindas);
     }
 
-    public void formLabel() {
+    public void addFormLabel() {
         JLabel login = new JLabel("Login do Cliente",JLabel.CENTER);
         JLabel email = new JLabel("E-mail:",JLabel.RIGHT);
         JLabel senha = new JLabel("Senha:",JLabel.RIGHT);
@@ -58,7 +60,7 @@ public class TelaLoginCliente extends TelaPadrao {
 
     }
 
-    public void inputsAndButton() {
+    public void addInputs() {
         this.email = new JTextField();
         this.senha = new JPasswordField();
         Font font = new Font("Arial",Font.BOLD,12);
@@ -88,49 +90,51 @@ public class TelaLoginCliente extends TelaPadrao {
         senhaSeparador.setBackground(Color.WHITE);
         this.JP_PAINEL.add(senhaSeparador);
 
-        JButton entrar = new JButton("Entrar");
-
-        //OuvinteLoginButton ouvinte = new OuvinteLoginButton(this);
-        //entrar.addActionListener(ouvinte);
-
-        entrar.setBounds(70, 220, 60, 25);
-        entrar.setBackground(new Color(102, 102, 102));
-        entrar.setFont(font);
-        entrar.setBorder(null);
-        this.JP_PAINEL.add(entrar);
-
         JLabel ou = new JLabel("ou");
         ou.setBounds(138, 225, 300, 15);
         ou.setFont(new Font("Arial",Font.BOLD,12));
         ou.setForeground(Color.GRAY);
         this.JP_PAINEL.add(ou);
 
+        JLabel esqueceu = new JLabel("Esqueceu a senha?",JLabel.CENTER);
+        OuvinteClienteEsqueceuASenha ouvinte = new OuvinteClienteEsqueceuASenha(this);
+        esqueceu.setBounds(0, 257, 300, 30);
+        esqueceu.setFont(font);
+        esqueceu.addMouseListener(ouvinte);
+        this.JP_PAINEL.add(esqueceu);
+
+
+    }
+    public void addButtons(){
+        Font font = new Font("Arial",Font.BOLD,12);
+        OuvinteDosButtons ouvinte = new OuvinteDosButtons(this);
+
+
+        JButton entrar = new JButton("Entrar");
+        entrar.setBounds(70, 220, 60, 25);
+        entrar.setBackground(new Color(102, 102, 102));
+        entrar.setFont(font);
+        entrar.setBorder(null);
+        entrar.addActionListener(ouvinte);
+        this.JP_PAINEL.add(entrar);
+
         JButton cadastre = new JButton("Cadastre-se");
         cadastre.setBounds(160, 220, 100, 25);
         cadastre.setBackground(new Color(102, 102, 102));
         cadastre.setFont(font);
         cadastre.setBorder(null);
+        cadastre.addActionListener(ouvinte);
         this.JP_PAINEL.add(cadastre);
 
 
-        JLabel esqueceu = new JLabel("Esqueceu a senha?",JLabel.CENTER);
-        esqueceu.setBounds(0, 257, 300, 30);
-        esqueceu.setFont(font);
-        this.JP_PAINEL.add(esqueceu);
 
-       /* JLabel ou2 = new JLabel("Ou");
-        ou2.setBounds(80, 305, 300, 15);
-        ou2.setFont(new Font("Arial",Font.BOLD,12));
-        ou2.setForeground(Color.GRAY);
-        this.JP_PAINEL.add(ou2);*/
-
-
-        JButton soulivreiro = new JButton("Sou Livreiro");
-        soulivreiro.setBounds(100, 300, 100, 25);
-        soulivreiro.setBackground(new Color(102, 102, 102));
-        soulivreiro.setFont(font);
-        soulivreiro.setBorder(null);
-        this.JP_PAINEL.add(soulivreiro);
+        JButton souLivreiro = new JButton("Sou Livreiro");
+        souLivreiro.setBounds(100, 300, 100, 25);
+        souLivreiro.setBackground(new Color(102, 102, 102));
+        souLivreiro.setFont(font);
+        souLivreiro.setBorder(null);
+        souLivreiro.addActionListener(ouvinte);
+        this.JP_PAINEL.add(souLivreiro);
 
     }
 
@@ -140,10 +144,12 @@ public class TelaLoginCliente extends TelaPadrao {
         super(titulo);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.addPainel();
-        this.background();
-        this.imagemUser();
-        this.formLabel();
-        this.inputsAndButton();
+        this.addBackground();
+        this.addImagemUser();
+        this.addFormLabel();
+        this.addInputs();
+        this.addButtons();
+        this.setVisible(true);
 
     }
 
