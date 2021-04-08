@@ -43,8 +43,7 @@ public class RecuperarSenhaADM extends EnviarEmail {
     }
 
     public void codigoCorreto() throws Exception {
-        String senha =JOptionPane.showInputDialog(telaAdm,"Digite sua nova senha: ",
-                TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE);
+        String senha =this.showInputDialog_QUESTION("Digite sua nova senha: ");
 
 
         senha = CriptografiaDeSenha.criptografia(senha);
@@ -53,13 +52,11 @@ public class RecuperarSenhaADM extends EnviarEmail {
         central.salvar();
 
 
-        JOptionPane.showMessageDialog(telaAdm,"Senha alterada com sucesso",
-                TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
+        this.showMessageDialog_INFORMATION("Senha alterada com sucesso");
     }
 
     public void codigoIncorreto(){
-        JOptionPane.showMessageDialog(telaAdm,"Seu codigo está errado, tente novamente.",
-                TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
+        this.showMessageDialog_INFORMATION("Seu codigo está errado, tente novamente.");
     }
 
     public String pegaEmailEscondido(){
@@ -89,9 +86,10 @@ public class RecuperarSenhaADM extends EnviarEmail {
         label.setForeground(Color.WHITE);
         label.setIcon(null);
 
-        String resultado = JOptionPane.showInputDialog(telaAdm,
-                "<html>Enviamos um código de recuperação para: <br>"+emailMETHOD+"<br><br>Digite o código: <html>",
-                TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE).replace(" ","");
+        String resultado = this.showInputDialog_QUESTION(
+                "<html>Enviamos um código de recuperação para: <br>"+
+                emailMETHOD+
+                "<br><br>Digite o código: <html>");
 
         String codigoAsString = Long.toString(CODIGO);
         if(resultado.equals(codigoAsString)){
@@ -121,4 +119,7 @@ public class RecuperarSenhaADM extends EnviarEmail {
     public TelaPadrao getTelaDeReferencia() {
         return telaAdm;
     }
+
+
+
 }

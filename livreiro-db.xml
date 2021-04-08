@@ -1,16 +1,16 @@
 <CentralDeInformacoes>
   <livreiro>
     <nome>Claudia</nome>
-    <email>dinhaa0210@hotmail.com</email>
+    <email>victorqueiroz90@outlook.com</email>
     <senha>95767,95767,95767,e47bf,95767,</senha>
-    <numeroDeRecuperacao>1617820628651</numeroDeRecuperacao>
+    <numeroDeRecuperacao>1617841855526</numeroDeRecuperacao>
   </livreiro>
   <usuario>
     <Persistencia.Usuario.Usuario>
       <nome>victor</nome>
       <email>victorqueiroz90@outlook.com</email>
       <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
-      <numeroDeRecuperacao>1617820751892</numeroDeRecuperacao>
+      <numeroDeRecuperacao>1617840904966</numeroDeRecuperacao>
       <genero>Masculino</genero>
       <dataDeNascimento>13/09/2001</dataDeNascimento>
     </Persistencia.Usuario.Usuario>
@@ -26,5 +26,16 @@
     <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
     <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
     <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
+    <Persistencia.Usuario.Usuario>
+      <nome>Joao</nome>
+      <email>victorqueiroz0181@gmail.com</email>
+      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+      <numeroDeRecuperacao>1617839664725</numeroDeRecuperacao>
+      <genero>Masculino</genero>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+    </Persistencia.Usuario.Usuario>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[7]"/>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[7]"/>
+    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario"/>
   </usuario>
 </CentralDeInformacoes>

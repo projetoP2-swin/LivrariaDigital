@@ -34,18 +34,18 @@ public class RecuperarSenhaCliente extends EnviarEmail {
             label.setForeground(Color.WHITE);
             label.setText("Esqueceu a senha?");
 
-            String codigo = JOptionPane.showInputDialog(telaClientes,"Digite o código: ");
+            String codigo= this.showInputDialog_QUESTION("Digite o código: ");
             if(codigo.equals(this.getCodigo())){
                 this.codigoCorreto();
             }else{
                 this.codigoIncorreto();
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(telaClientes,"Houve um erro");
+            this.showMessageDialog_INFORMATION("Houve um erro");
         }
     }
     public void codigoCorreto() throws Exception {
-        String novaSenha = JOptionPane.showInputDialog(telaClientes,"Digite sua nova senha: ");
+        String novaSenha = this.showInputDialog_QUESTION("Digite sua nova senha: ");
         if(novaSenha==null){
             throw new Exception("Digite algo");
         }
@@ -53,10 +53,11 @@ public class RecuperarSenhaCliente extends EnviarEmail {
         user.setSenha(novaSenha);
         central.addUser(user);
         central.salvar();
+        this.showMessageDialog_INFORMATION("Senha alterada com sucesso!");
 
     }
     public void codigoIncorreto(){
-        JOptionPane.showMessageDialog(telaClientes,"Seu código está errado");
+        this.showMessageDialog_INFORMATION("Seu código está errado");
     }
 
     public void gerenciarEnvioDeEmail(){
@@ -104,9 +105,8 @@ public class RecuperarSenhaCliente extends EnviarEmail {
 
     }
     public void verificaSeExisteEmail(){
-        String emailDigitado = JOptionPane.showInputDialog(telaClientes,
-                "<html>Digite seu email<br> para recuperação de senha: <html>",
-                TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE);
+        String emailDigitado = this.showInputDialog_QUESTION(
+                "<html>Digite seu email<br> para recuperação de senha: <html>");
         if(emailDigitado!=null){
             for(Usuario user: central.getUsuario()){
                 if(user.getEmail().equals(emailDigitado)){
@@ -121,9 +121,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
         if(user!=null){
             this.iniciaThread();
         }else{
-            JOptionPane.showMessageDialog(telaClientes,
-                    "Não existe uma conta com esse email",
-                    TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE);
+            this.showMessageDialog_INFORMATION("Não existe uma conta com esse email");
         }
     }
 

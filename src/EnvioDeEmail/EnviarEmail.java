@@ -65,4 +65,15 @@ public abstract class EnviarEmail implements Abstratos {
         }
 
     }
+
+    public void showMessageDialog_INFORMATION(String mensagem){
+        JOptionPane.showMessageDialog(this.getTelaDeReferencia(),
+                mensagem,TITULO_DAS_JANELAS,JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public String showInputDialog_QUESTION(String mensagem){
+        return JOptionPane.showInputDialog(this.getTelaDeReferencia(),
+                mensagem,TITULO_DAS_JANELAS,JOptionPane.QUESTION_MESSAGE);
+    }
+
 }

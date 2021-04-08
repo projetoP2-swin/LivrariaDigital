@@ -214,7 +214,6 @@ public class TelaCadastroCliente extends TelaPadrao {
     public TelaCadastroCliente(String titulo) {
         super(titulo);
         try{
-            //JScrollPane scroll = new JScrollPane(this.JP_PAINEL);
             this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.addImagemUser();
             this.addImgLivraria();

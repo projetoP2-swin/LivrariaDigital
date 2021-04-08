@@ -37,6 +37,7 @@ public class OuvinteDosButtons implements ActionListener {
 
         Usuario user = new Usuario(info[0], info[1], info[2],info[3],info[4]);
         central.addUser(user);
+        this.dataIsValida();
         central.salvar();
         JOptionPane.showMessageDialog(telaCadastroCliente,"Cadastro realizado com sucesso!");
         this.fechaJanela();
@@ -101,8 +102,8 @@ public class OuvinteDosButtons implements ActionListener {
         JButton botao =(JButton) e.getSource();
         try {
             if(botao.getText().equals("Enviar")){
-                this.dataIsValida();
                 this.cadastroDeClientes();
+
             }else{
                 this.fechaJanela();
             }

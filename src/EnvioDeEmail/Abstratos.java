@@ -7,4 +7,5 @@ public interface Abstratos {
     public String getNome();
     public String getCodigo();
     public TelaPadrao getTelaDeReferencia();
+
 }
