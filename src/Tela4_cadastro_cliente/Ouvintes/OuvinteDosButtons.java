@@ -34,8 +34,11 @@ public class OuvinteDosButtons implements ActionListener {
     public void cadastroDeClientes() throws Exception {
         String[] info= this.permitirCadastroSe();
         info[2]=CriptografiaDeSenha.criptografia(info[2]);
+        info[6]= (String) telaCadastroCliente.getGenero1().getSelectedItem();
+        info[7]= (String) telaCadastroCliente.getGenero2().getSelectedItem();
+        info[8]= (String) telaCadastroCliente.getGenero3().getSelectedItem();
 
-        Usuario user = new Usuario(info[0], info[1], info[2],info[3],info[4]);
+        Usuario user = new Usuario(info[0], info[1], info[2],info[3],info[4], info[6], info[7], info[8]);
         central.addUser(user);
         this.dataIsValida();
         central.salvar();
@@ -63,6 +66,8 @@ public class OuvinteDosButtons implements ActionListener {
 
 
     }
+
+
     public void dataIsValida() throws Exception {
         String data =telaCadastroCliente.getData();
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
@@ -81,7 +86,7 @@ public class OuvinteDosButtons implements ActionListener {
         String[] info = {telaCadastroCliente.getNome(),
                 telaCadastroCliente.getEmail(),
                 telaCadastroCliente.getSenha(),
-                "",telaCadastroCliente.getData(),""};
+                "",telaCadastroCliente.getData(),"", "", "", ""};
 
         JRadioButton masculino = telaCadastroCliente.getRB_MASCULINO();
         JRadioButton feminino = telaCadastroCliente.getRB_FEMININO();

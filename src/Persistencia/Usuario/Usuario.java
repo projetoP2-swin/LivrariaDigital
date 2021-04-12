@@ -5,26 +5,29 @@ public class Usuario {
     private String email;
     private String senha;
     private String numeroDeRecuperacao;
-    private String genero;
+    private String sexo;
     private String dataDeNascimento;
-    //private String genero1, genero2, genero3;
+    private String genero1, genero2, genero3;
 
     public Usuario(String nome, String email,
-                   String senha, String genero,
-                   String dataDeNascimento) {
+                   String senha, String sexo,
+                   String dataDeNascimento, String genero1, String genero2, String genero3) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.genero = genero;
+        this.sexo = sexo;
         this.dataDeNascimento = dataDeNascimento;
+        this.genero1 = genero1;
+        this.genero2 = genero2;
+        this.genero3 = genero3;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public String getDataDeNascimento() {
@@ -67,13 +70,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-   /* public String getGenero() {
-        return genero;
-    }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
 
     public String getGenero1() {
         return genero1;
@@ -97,5 +94,5 @@ public class Usuario {
 
     public void setGenero3(String genero3) {
         this.genero3 = genero3;
-    }*/
+    }
 }

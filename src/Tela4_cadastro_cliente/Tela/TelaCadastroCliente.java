@@ -19,21 +19,23 @@ public class TelaCadastroCliente extends TelaPadrao {
     private JFormattedTextField datac;
     private final JRadioButton RB_MASCULINO = new JRadioButton("Masculino", false);
     private final JRadioButton RB_FEMININO = new JRadioButton("Feminino", false);
-
+    private JComboBox<String> genero1;
+    private JComboBox<String> genero2;
+    private JComboBox<String> genero3;
 
 
     public void addPainel() { ;
         this.JP_PAINEL.setBounds(330, 0, 370, 400);
         this.JP_PAINEL.setBackground(Color.DARK_GRAY);
         this.JP_PAINEL.setLayout(null);
-        this.JP_PAINEL.setPreferredSize(new Dimension(0,500));
+        this.JP_PAINEL.setPreferredSize(new Dimension(0,530));
 
     }
     public void addScrollPane(){
         this.addPainel();
         JScrollPane scroll = new JScrollPane(JP_PAINEL);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.setBounds(330, 0,370 , 375);
+        scroll.setBounds(330, 0,357 , 365);
 
         this.add(scroll);
 
@@ -65,6 +67,7 @@ public class TelaCadastroCliente extends TelaPadrao {
         JLabel emailc = new JLabel("Email:",JLabel.RIGHT);
         JLabel senhac = new JLabel("Senha:",JLabel.RIGHT);
         JLabel datac = new JLabel("Nascimento:", JLabel.RIGHT);
+        JLabel generoc = new JLabel("Selecione  seus 3 gêneros preferidos:", JLabel.RIGHT);
         Font font = new Font("Arial",Font.BOLD,15);
 
         boasVindas.setBounds(150, 10, 370, 25);
@@ -94,14 +97,60 @@ public class TelaCadastroCliente extends TelaPadrao {
         senhac.setBounds(0, 250, 100, 30);
         senhac.setFont(font);
 
+        generoc.setBounds(15, 300, 300, 30 );
+        generoc.setFont(font);
 
         this.JP_PAINEL.add(boasVindas);
         this.JP_PAINEL.add(nomec);
         this.JP_PAINEL.add(datac);
         this.JP_PAINEL.add(emailc);
         this.JP_PAINEL.add(senhac);
+        this.JP_PAINEL.add(generoc);
         this.JP_PAINEL.add(sexoc);
         this.JP_PAINEL.add(nomeSeparador);
+    }
+
+    public JComboBox<String> getGenero1() {
+        return genero1;
+    }
+
+    public JComboBox<String> getGenero2() {
+        return genero2;
+    }
+
+    public JComboBox<String> getGenero3() {
+        return genero3;
+    }
+
+
+    public void addCombos () {
+        String[] generos = {"Literatura brasileira", "Literatura estrangeira",
+                "Infanto juvenil", "Artes", "Biografias",
+                "Poesia", "Gibi", "Revista de Notícias", "Autoajuda",
+                "Religião", "Saúde", "Paradidático", "Formação profissional"};
+        Font font = new Font("Arial",Font.BOLD,13);
+
+        genero1 = new JComboBox(generos);
+        genero1.setBackground(Color.DARK_GRAY);
+        genero1.setFont(font);
+        genero1.setBounds(50, 340, 250, 30 );
+
+        genero2 = new JComboBox(generos);
+        genero2.setBackground(Color.DARK_GRAY);
+        genero2.setSelectedIndex(3);
+        genero2.setFont(font);
+        genero2.setBounds(50, 390, 250, 30 );
+
+        genero3 = new JComboBox(generos);
+        genero3.setSelectedIndex(5);
+        genero3.setBackground(Color.DARK_GRAY);
+        genero3.setFont(font);
+        genero3.setBounds(50, 440, 250, 30 );
+
+        this.JP_PAINEL.add(genero1);
+        this.JP_PAINEL.add(genero2);
+        this.JP_PAINEL.add(genero3);
+
     }
 
     public void radioSexo () {
@@ -194,13 +243,13 @@ public class TelaCadastroCliente extends TelaPadrao {
         Font font = new Font("Arial",Font.BOLD,12);
 
 
-        enviar.setBounds(190, 315, 135, 30);
+        enviar.setBounds(190, 485, 135, 30);
         enviar.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
         enviar.setFont(font);
         enviar.addActionListener(ouvinte);
         enviar.setForeground(Color.BLACK);
 
-        voltar.setBounds(40,315,135,30);
+        voltar.setBounds(40,485,135,30);
         voltar.setFont(font);
         voltar.addActionListener(ouvinte);
         voltar.setForeground(Color.BLACK);
@@ -219,6 +268,7 @@ public class TelaCadastroCliente extends TelaPadrao {
             this.addImgLivraria();
             this.addFormLabel();
             this.addInputs();
+            this.addCombos();
             this.addBotoes();
             this.radioSexo();
             this.addScrollPane();
