@@ -1,4 +1,4 @@
-package Utilitarios.Persistencia.Livreiro;
+package Utilitarios.Persistencia.Central_de_informacoes.Livreiro;
 
 public class Livreiro {
 	private String nome;

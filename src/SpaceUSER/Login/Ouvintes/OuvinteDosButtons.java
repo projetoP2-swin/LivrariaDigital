@@ -1,9 +1,9 @@
 package SpaceUSER.Login.Ouvintes;
 
 import Utilitarios.criptografia.CriptografiaDeSenha;
-import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-import Utilitarios.Persistencia.Usuario.Usuario;
+import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import SpaceADM.login.Tela.TelaADM;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import SpaceUSER.Cadastro.Tela.TelaCadastroCliente;
@@ -54,9 +54,9 @@ public class OuvinteDosButtons implements ActionListener {
             telaLoginCliente.dispose();
         }
         if(nomeBtn.equals("Sou Livreiro")){
-            new TelaADM("Livraria Digital - Livreiro");
+            new TelaADM();
         }else if(nomeBtn.equals("Cadastre-se")){
-            new TelaCadastroCliente("Livraria Digital - Cadastro Clientes");
+            new TelaCadastroCliente();
         }else{
             this.estaLodadoQuestion();
         }

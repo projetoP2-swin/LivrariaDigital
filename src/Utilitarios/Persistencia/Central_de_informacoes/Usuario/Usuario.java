@@ -1,4 +1,4 @@
-package Utilitarios.Persistencia.Usuario;
+package Utilitarios.Persistencia.Central_de_informacoes.Usuario;
 
 public class Usuario {
     private String nome;

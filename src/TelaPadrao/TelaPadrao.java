@@ -13,7 +13,7 @@ public abstract class TelaPadrao extends JFrame{
 		Container div = this.getContentPane();
 		div.setBackground(new Color(179, 179, 179));
 		
-		this.setTitle(titulo);
+		this.setTitle("Livraria Digital - "+titulo);
 		this.setLayout(null);
 		this.setSize(700,400);
 		this.setResizable(false);

@@ -1,6 +1,6 @@
 package Utilitarios.EnvioDeEmail;
 
-import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
 import javax.mail.*;

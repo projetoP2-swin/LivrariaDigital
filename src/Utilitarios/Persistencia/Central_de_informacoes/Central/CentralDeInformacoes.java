@@ -1,8 +1,11 @@
-package Utilitarios.Persistencia.Central_de_informacoes;
+package Utilitarios.Persistencia.Central_de_informacoes.Central;
 
-import Utilitarios.Persistencia.Livreiro.Livreiro;
+
+
+
+import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
+import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-import Utilitarios.Persistencia.Usuario.Usuario;
 
 import java.util.ArrayList;
 

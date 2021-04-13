@@ -1,7 +1,7 @@
 package SpaceADM.Home.Tela;
 
-import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
-import Utilitarios.Persistencia.Livreiro.Livreiro;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import TelaPadrao.TelaPadrao;
 
@@ -113,8 +113,8 @@ public class TelaHomeADM extends TelaPadrao {
 
     }
 
-    public TelaHomeADM(String titulo) {
-        super(titulo);
+    public TelaHomeADM() {
+        super("Home - Livreiro");
         this.addPainel();
         this.addBackground();
         this.addLabels();

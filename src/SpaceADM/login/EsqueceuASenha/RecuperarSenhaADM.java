@@ -1,7 +1,7 @@
 package SpaceADM.login.EsqueceuASenha;
 import Utilitarios.criptografia.CriptografiaDeSenha;
 import Utilitarios.EnvioDeEmail.EnviarEmail;
-import Utilitarios.Persistencia.Livreiro.Livreiro;
+import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import SpaceADM.login.Tela.TelaADM;
 import TelaPadrao.TelaPadrao;
 

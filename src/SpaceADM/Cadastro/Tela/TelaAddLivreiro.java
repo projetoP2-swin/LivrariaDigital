@@ -133,8 +133,8 @@ public class TelaAddLivreiro extends TelaPadrao{
 		lbImg.setIcon(imagem);
 		this.add(lbImg);
 	}
-	public TelaAddLivreiro(String titulo) {
-		super(titulo);
+	public TelaAddLivreiro() {
+		super("Adicionar Livreiro");
 		this.addPainel();
 		this.addImagemUser();
 		this.addFormLabel();

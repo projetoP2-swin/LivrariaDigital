@@ -26,14 +26,14 @@ public class TelaCadastroCliente extends TelaPadrao {
         this.JP_PAINEL.setBounds(330, 0, 370, 400);
         this.JP_PAINEL.setBackground(Color.DARK_GRAY);
         this.JP_PAINEL.setLayout(null);
-        this.JP_PAINEL.setPreferredSize(new Dimension(0,530));
+        this.JP_PAINEL.setPreferredSize(new Dimension(0,560));
 
     }
     public void addScrollPane(){
         this.addPainel();
         JScrollPane scroll = new JScrollPane(JP_PAINEL);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.setBounds(330, 0,357 , 365);
+        scroll.setBounds(330, 0,370 , 375);
 
         this.add(scroll);
 
@@ -44,7 +44,6 @@ public class TelaCadastroCliente extends TelaPadrao {
         JLabel boasVindas = new JLabel();
 
         boasVindas.setBounds(5, 10, 100, 110);
-        //boasVindas.setHorizontalAlignment(JLabel.CENTER);
         boasVindas.setIcon(imagemUser);
 
         this.JP_PAINEL.add(boasVindas);
@@ -95,7 +94,7 @@ public class TelaCadastroCliente extends TelaPadrao {
         senhac.setBounds(0, 250, 100, 30);
         senhac.setFont(font);
 
-        generoc.setBounds(15, 300, 300, 30 );
+        generoc.setBounds(0, 320, 355, 30 );
         generoc.setFont(font);
 
         this.JP_PAINEL.add(boasVindas);
@@ -127,24 +126,30 @@ public class TelaCadastroCliente extends TelaPadrao {
                 "Poesia", "Gibi", "Revista de Notícias", "Autoajuda",
                 "Religião", "Saúde", "Paradidático", "Formação profissional"};
         Font font = new Font("Arial",Font.BOLD,13);
+        JSeparator separador = new JSeparator();
+        separador.setBounds(15, 310, 325, 30);
+        separador.setOrientation(JSeparator.HORIZONTAL);
+        separador.setBackground(Color.WHITE);
+        this.JP_PAINEL.add(separador);
+
 
         genero1 = new JComboBox(generos);
         genero1.setBackground(Color.DARK_GRAY);
         genero1.setSelectedIndex(0);
         genero1.setFont(font);
-        genero1.setBounds(50, 340, 250, 30 );
+        genero1.setBounds(50, 360, 250, 30 );
 
         genero2 = new JComboBox(generos);
         genero2.setBackground(Color.DARK_GRAY);
         genero2.setSelectedIndex(0);
         genero2.setFont(font);
-        genero2.setBounds(50, 390, 250, 30 );
+        genero2.setBounds(50, 410, 250, 30 );
 
         genero3 = new JComboBox(generos);
         genero3.setSelectedIndex(0);
         genero3.setBackground(Color.DARK_GRAY);
         genero3.setFont(font);
-        genero3.setBounds(50, 440, 250, 30 );
+        genero3.setBounds(50, 460, 250, 30 );
 
         this.JP_PAINEL.add(genero1);
         this.JP_PAINEL.add(genero2);
@@ -241,13 +246,13 @@ public class TelaCadastroCliente extends TelaPadrao {
         Font font = new Font("Arial",Font.BOLD,12);
 
 
-        enviar.setBounds(190, 485, 135, 30);
+        enviar.setBounds(190, 515, 135, 30);
         enviar.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
         enviar.setFont(font);
         enviar.addActionListener(ouvinte);
         enviar.setForeground(Color.BLACK);
 
-        voltar.setBounds(40,485,135,30);
+        voltar.setBounds(25,515,135,30);
         voltar.setFont(font);
         voltar.addActionListener(ouvinte);
         voltar.setForeground(Color.BLACK);
@@ -258,8 +263,8 @@ public class TelaCadastroCliente extends TelaPadrao {
 
 
 
-    public TelaCadastroCliente(String titulo) {
-        super(titulo);
+    public TelaCadastroCliente() {
+        super("Cadastro Clientes");
         try{
             this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.addImagemUser();

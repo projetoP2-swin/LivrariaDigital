@@ -16,9 +16,9 @@ public class ExisteLivreiroQuestion {
     public TelaPadrao primeiraTelaFactory() throws Exception{
         boolean condicao = ExisteLivreiroQuestion.existLivreiro();
         if(condicao){
-            return new TelaLoginCliente("Livraria Digital - Login Clientes");
+            return new TelaLoginCliente();
         }else{
-            return new TelaAddLivreiro("Livraria Digital - Adicionar Livreiro");
+            return new TelaAddLivreiro();
         }
     }
 

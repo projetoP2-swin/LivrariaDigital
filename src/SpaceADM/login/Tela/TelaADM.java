@@ -131,8 +131,8 @@ public class TelaADM extends TelaPadrao {
 
 	}
 
-	public TelaADM(String titulo) {
-		super(titulo);
+	public TelaADM() {
+		super("Livreiro");
 
 		this.addPainel();
 		this.addBackground();

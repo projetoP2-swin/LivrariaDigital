@@ -140,8 +140,8 @@ public class TelaLoginCliente extends TelaPadrao {
 
 
 
-    public TelaLoginCliente(String titulo) {
-        super(titulo);
+    public TelaLoginCliente() {
+        super("Login Usuario");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.addPainel();
         this.addBackground();

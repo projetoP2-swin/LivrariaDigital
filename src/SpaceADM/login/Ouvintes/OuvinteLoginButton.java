@@ -4,8 +4,8 @@ package SpaceADM.login.Ouvintes;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceADM.login.Tela.TelaADM;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
-import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
-import Utilitarios.Persistencia.Livreiro.Livreiro;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import Utilitarios.criptografia.CriptografiaDeSenha;
 
@@ -40,7 +40,7 @@ public class OuvinteLoginButton implements ActionListener {
         boolean condicao = this.isLogin();
         if(condicao){
             telaADM.dispose();
-            TelaHomeADM tela = new TelaHomeADM("Home - Livreiro");
+            TelaHomeADM tela = new TelaHomeADM();
             tela.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(telaADM,"Email ou senha incorreto(s)");
@@ -56,7 +56,7 @@ public class OuvinteLoginButton implements ActionListener {
             this.login();
         }else{
             telaADM.dispose();
-            new TelaLoginCliente("Livraria Digital - Login Usuario");
+            new TelaLoginCliente();
         }
 
     }

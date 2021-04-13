@@ -4,8 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
 
-import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
-import Utilitarios.Persistencia.Livreiro.Livreiro;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
+
+import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
