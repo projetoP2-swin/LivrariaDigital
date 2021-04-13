@@ -1,8 +1,7 @@
 package ClasseMain.ExisteLivreiro;
 
-import Tela1_cadastro_ADM.Tela.TelaAddLivreiro;
-import Tela2_login_ADM.Tela.TelaADM;
-import Tela3_login_Cliente.Tela.TelaLoginCliente;
+import SpaceADM.Cadastro.Tela.TelaAddLivreiro;
+import SpaceUSER.Login.Tela.TelaLoginCliente;
 import TelaPadrao.TelaPadrao;
 
 import java.io.File;
