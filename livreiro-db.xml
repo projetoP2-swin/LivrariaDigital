@@ -1,51 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <CentralDeInformacoes>
   <livreiro>
-    <nome>Claudia</nome>
-    <email>victorqueiroz90@outlook.com</email>
-    <senha>95767,95767,95767,e47bf,95767,</senha>
-    <numeroDeRecuperacao>1617841855526</numeroDeRecuperacao>
+    <nome>Karlos Macêdo</nome>
+    <email>almeidakarlos02@gmail.com</email>
+    <senha>29183,292d0,53gd1,29183,292d0,53gd1,</senha>
   </livreiro>
-  <usuario>
-    <Persistencia.Usuario.Usuario>
-      <nome>victor</nome>
-      <email>victorqueiroz90@outlook.com</email>
-      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
-      <numeroDeRecuperacao>1617840904966</numeroDeRecuperacao>
-      <genero>Masculino</genero>
-      <dataDeNascimento>13/09/2001</dataDeNascimento>
-    </Persistencia.Usuario.Usuario>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario"/>
-    <Persistencia.Usuario.Usuario>
-      <nome>Joao victor Lacerda de queiroz</nome>
-      <email>victor.queiroz@academico.ifpb.edu.br</email>
-      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
-      <numeroDeRecuperacao>1617823825123</numeroDeRecuperacao>
-      <genero>Masculino</genero>
-      <dataDeNascimento>13/09/2001</dataDeNascimento>
-    </Persistencia.Usuario.Usuario>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[3]"/>
-    <Persistencia.Usuario.Usuario>
-      <nome>Joao</nome>
-      <email>victorqueiroz0181@gmail.com</email>
-      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
-      <numeroDeRecuperacao>1617839664725</numeroDeRecuperacao>
-      <genero>Masculino</genero>
-      <dataDeNascimento>13/09/2001</dataDeNascimento>
-    </Persistencia.Usuario.Usuario>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[7]"/>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario[7]"/>
-    <Persistencia.Usuario.Usuario reference="../Persistencia.Usuario.Usuario"/>
-    <Persistencia.Usuario.Usuario>
-      <nome>Karlos</nome>
-      <email>almeidakarlos02@gmail.com</email>
-      <senha>29183,292d0,53gd1,29183,292d0,53gd1,</senha>
-      <genero>Masculino</genero>
-      <dataDeNascimento>16/09/2001</dataDeNascimento>
-      <genero1>Literatura brasileira</genero1>
-      <genero2>Saúde</genero2>
-      <genero3>Revista de Notícias</genero3>
-    </Persistencia.Usuario.Usuario>
-  </usuario>
+  <usuario/>
 </CentralDeInformacoes>

@@ -5,6 +5,7 @@ import Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Persistencia.Livreiro.Livreiro;
 import Persistencia.PersistenciaAll.Persistencia;
 import Tela2_login_ADM.Tela.TelaADM;
+import Tela2_login_ADM.Tela.TelaHomeADM;
 import Tela3_login_Cliente.Tela.TelaLoginCliente;
 
 import javax.swing.*;
@@ -41,7 +42,9 @@ public class OuvinteLoginButton implements ActionListener {
     public void login(){
         boolean condicao = this.isLogin();
         if(condicao){
-            JOptionPane.showMessageDialog(telaADM,"Você está logado");
+            telaADM.dispose();
+            TelaHomeADM tela = new TelaHomeADM("Home - Livreiro");
+            tela.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(telaADM,"Email ou senha incorreto(s)");
         }
