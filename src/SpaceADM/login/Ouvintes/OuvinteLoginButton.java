@@ -1,7 +1,7 @@
 package SpaceADM.login.Ouvintes;
 
 
-import SpaceADM.Home.TelaHomeADM;
+import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceADM.login.Tela.TelaADM;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;

@@ -59,16 +59,16 @@ public class TelaCadastroCliente extends TelaPadrao {
     }
 
     public void addFormLabel() {
-        JLabel boasVindas = new JLabel("Cadastro do Cliente");
+        JLabel boasVindas = new JLabel("Cadastro do Cliente",JLabel.CENTER);
         JLabel nomec = new JLabel("Nome:",JLabel.RIGHT);
         JLabel sexoc = new JLabel("Sexo:",JLabel.RIGHT);
         JLabel emailc = new JLabel("Email:",JLabel.RIGHT);
         JLabel senhac = new JLabel("Senha:",JLabel.RIGHT);
         JLabel datac = new JLabel("Nascimento:", JLabel.RIGHT);
-        JLabel generoc = new JLabel("Selecione  seus 3 gêneros preferidos:", JLabel.RIGHT);
+        JLabel generoc = new JLabel("Selecione 3 gêneros", JLabel.CENTER);
         Font font = new Font("Arial",Font.BOLD,15);
 
-        boasVindas.setBounds(150, 10, 370, 25);
+        boasVindas.setBounds(0, 10, 370, 25);
         boasVindas.setFont(new Font("Arial",Font.BOLD,13));
         boasVindas.setForeground(Color.WHITE);
 
@@ -122,7 +122,7 @@ public class TelaCadastroCliente extends TelaPadrao {
 
 
     public void addCombos () {
-        String[] generos = {"Literatura brasileira", "Literatura estrangeira",
+        String[] generos = {".","Literatura brasileira", "Literatura estrangeira",
                 "Infanto juvenil", "Artes", "Biografias",
                 "Poesia", "Gibi", "Revista de Notícias", "Autoajuda",
                 "Religião", "Saúde", "Paradidático", "Formação profissional"};
@@ -130,17 +130,18 @@ public class TelaCadastroCliente extends TelaPadrao {
 
         genero1 = new JComboBox(generos);
         genero1.setBackground(Color.DARK_GRAY);
+        genero1.setSelectedIndex(0);
         genero1.setFont(font);
         genero1.setBounds(50, 340, 250, 30 );
 
         genero2 = new JComboBox(generos);
         genero2.setBackground(Color.DARK_GRAY);
-        genero2.setSelectedIndex(3);
+        genero2.setSelectedIndex(0);
         genero2.setFont(font);
         genero2.setBounds(50, 390, 250, 30 );
 
         genero3 = new JComboBox(generos);
-        genero3.setSelectedIndex(5);
+        genero3.setSelectedIndex(0);
         genero3.setBackground(Color.DARK_GRAY);
         genero3.setFont(font);
         genero3.setBounds(50, 440, 250, 30 );

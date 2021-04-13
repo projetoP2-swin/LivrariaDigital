@@ -18,7 +18,7 @@ public abstract class TelaPadrao extends JFrame{
 		this.setSize(700,400);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 

@@ -1,4 +1,4 @@
-package SpaceADM.Home;
+package SpaceADM.Home.Tela;
 
 import Utilitarios.Persistencia.Central_de_informacoes.CentralDeInformacoes;
 import Utilitarios.Persistencia.Livreiro.Livreiro;
@@ -60,7 +60,7 @@ public class TelaHomeADM extends TelaPadrao {
         JButton loja = new JButton("Ver a loja");
         JButton interessados = new JButton("Mais interessados");
         JButton visualizados = new JButton("Mais visualizados");
-        JButton planilha = new JButton("Gerar planilha");
+        JButton planilha = new JButton("Carregar planilha");
         JButton sair = new JButton("Sair");
 
 

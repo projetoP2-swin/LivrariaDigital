@@ -33,13 +33,10 @@ public class OuvinteDosButtons implements ActionListener {
     public void cadastroDeClientes() throws Exception {
         String[] info= this.permitirCadastroSe();
         info[2]= CriptografiaDeSenha.criptografia(info[2]);
-        info[6]= (String) telaCadastroCliente.getGenero1().getSelectedItem();
-        info[7]= (String) telaCadastroCliente.getGenero2().getSelectedItem();
-        info[8]= (String) telaCadastroCliente.getGenero3().getSelectedItem();
 
-        Usuario user = new Usuario(info[0], info[1], info[2],info[3],info[4], info[6], info[7], info[8]);
-        central.addUser(user);
         this.dataIsValida();
+        Usuario user = new Usuario(info[0], info[1], info[2],info[3],info[4], info[5], info[6], info[7]);
+        central.addUser(user);
         central.salvar();
         JOptionPane.showMessageDialog(telaCadastroCliente,"Cadastro realizado com sucesso!");
         this.fechaJanela();
@@ -57,7 +54,7 @@ public class OuvinteDosButtons implements ActionListener {
             }
             return info;
 
-        }else if(info[5].equals("1")){
+        }else if(info[8].equals("1")){
             throw new Exception("Não deixe campos em branco");
         }
         throw new Exception("Insira um email válido");
@@ -89,7 +86,11 @@ public class OuvinteDosButtons implements ActionListener {
         String[] info = {telaCadastroCliente.getNome(),
                 telaCadastroCliente.getEmail(),
                 telaCadastroCliente.getSenha(),
-                "",telaCadastroCliente.getData(),"", "", "", ""};
+                "",
+                telaCadastroCliente.getData(),
+        (String)telaCadastroCliente.getGenero1().getSelectedItem(),
+        (String)telaCadastroCliente.getGenero2().getSelectedItem(),
+        (String)telaCadastroCliente.getGenero3().getSelectedItem(), ""};
 
         JRadioButton masculino = telaCadastroCliente.getRB_MASCULINO();
         JRadioButton feminino = telaCadastroCliente.getRB_FEMININO();
@@ -99,9 +100,11 @@ public class OuvinteDosButtons implements ActionListener {
         }else if(feminino.isSelected()){
             info[3]="Feminino";
         }
-        info[5]= info[0].equals("") || info[1].equals("") ||
-                info[2].equals("") ||info[3].equals("")  ||
-                info[4].equals("")?"1":"0";
+        info[8]= info[0].equals("") || info[1].equals("") ||
+                info[2].equals("")  || info[3].equals("") ||
+                info[4].equals("")  || info[5].equals(".")||
+                info[6].equals(".") || info[7].equals(".")?"1":"0";
+
         return info;
     }
 
