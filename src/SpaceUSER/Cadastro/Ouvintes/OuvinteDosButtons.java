@@ -6,7 +6,7 @@ import SpaceUSER.Login.Tela.TelaLoginCliente;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

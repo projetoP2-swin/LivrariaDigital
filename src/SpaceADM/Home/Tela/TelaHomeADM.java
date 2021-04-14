@@ -1,7 +1,7 @@
 package SpaceADM.Home.Tela;
 
+import SpaceADM.Home.Ouvinte.OuvinteDosButtons;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
-import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import TelaPadrao.TelaPadrao;
 
@@ -11,7 +11,7 @@ import java.awt.*;
 public class TelaHomeADM extends TelaPadrao {
 
     private final JPanel JP_PAINEL =  new JPanel();
-    private String nomeLivreiro;
+
 
     public void addPainel() {
         this.JP_PAINEL.setBounds(200, 15, 300, 330);
@@ -20,16 +20,14 @@ public class TelaHomeADM extends TelaPadrao {
         this.add(JP_PAINEL);
     }
 
-    public void setNomeLivreiro(String nomeLivreiro) {
-        this.nomeLivreiro = nomeLivreiro;
-    }
 
     public String getNomeLivreiro() {
-        Persistencia persistencia = Persistencia.getUnicaInstancia();
-        CentralDeInformacoes central= persistencia.recuperar();
-        Livreiro dadosLivreiro = central.getLivreiro();
         try{
-            return dadosLivreiro.getNome();
+            Persistencia persistencia = Persistencia.getUnicaInstancia();
+            CentralDeInformacoes central= persistencia.recuperar();
+            String [] nome = central.getLivreiro().getNome().split(" ");
+
+            return nome[0]+" "+nome[1];
         }catch (Exception e){
             return "Livreiro";
         }
@@ -56,6 +54,8 @@ public class TelaHomeADM extends TelaPadrao {
     public void addButtons() {
         Color cor = new Color(102, 102, 102);
         Font font = new Font("Arial",Font.BOLD,13);
+
+        OuvinteDosButtons ouvinte = new OuvinteDosButtons(this);
         JButton cadastrar = new JButton("Cadastrar Livro");
         JButton loja = new JButton("Ver a loja");
         JButton interessados = new JButton("Mais interessados");
@@ -90,6 +90,7 @@ public class TelaHomeADM extends TelaPadrao {
         planilha.setBorder(null);
 
         sair.setBounds(75, 290, 150, 25);
+        sair.addActionListener(ouvinte);
         sair.setFont(font);
         sair.setBackground(cor);
         sair.setBorder(null);
@@ -119,6 +120,7 @@ public class TelaHomeADM extends TelaPadrao {
         this.addBackground();
         this.addLabels();
         this.addButtons();
+        this.setVisible(true);
     }
 
 

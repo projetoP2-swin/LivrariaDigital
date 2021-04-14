@@ -1,4 +1,4 @@
-package Utilitarios.criptografia;
+package Utilitarios.Criptografia;
 
 public class CriptografiaDeSenha {
 	private static String[] alfabeto= {

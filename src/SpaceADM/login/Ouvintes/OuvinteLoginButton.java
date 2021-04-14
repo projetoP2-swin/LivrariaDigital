@@ -1,50 +1,60 @@
 package SpaceADM.login.Ouvintes;
 
 
+import Interfaces.Package_Space.Login;
 import SpaceADM.Home.Tela.TelaHomeADM;
-import SpaceADM.login.Tela.TelaADM;
+import SpaceADM.login.Tela.TelaLoginADM;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
 import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class OuvinteLoginButton implements ActionListener {
-    private TelaADM telaADM;
+public class OuvinteLoginButton implements ActionListener, Login {
+    private TelaLoginADM telaLoginADM;
+    private CentralDeInformacoes central;
 
-    public OuvinteLoginButton(TelaADM telaADM){
-        this.telaADM = telaADM;
+    public OuvinteLoginButton(TelaLoginADM telaLoginADM){
+        this.telaLoginADM = telaLoginADM;
     }
 
-    public boolean isLogin(){
+    public Object isLogin(){
         try {
             Persistencia persistencia = Persistencia.getUnicaInstancia();
-            CentralDeInformacoes central= persistencia.recuperar();
+            this.central= persistencia.recuperar();
             Livreiro dadosLivreiro = central.getLivreiro();
             String email = dadosLivreiro.getEmail();
             String senha = CriptografiaDeSenha.descriptografia(dadosLivreiro.getSenha());
 
-            return telaADM.getSenha().equals(senha)&&
-                    telaADM.getEmail().equals(email);
+            return telaLoginADM.getSenha().equals(senha)&&
+                    telaLoginADM.getEmail().equals(email);
 
-        } catch (Exception exception) {
-            return false;
+        } catch (Exception e) {
+            return null;
         }
     }
 
     public void login(){
-        boolean condicao = this.isLogin();
+        boolean condicao = (boolean) this.isLogin();
         if(condicao){
-            telaADM.dispose();
-            TelaHomeADM tela = new TelaHomeADM();
-            tela.setVisible(true);
+            LoginSingleton loginSingleton = LoginSingleton.getUnicaInstancia();
+            loginSingleton.setLivreiro(true);
+            central.addLogin(loginSingleton);
+            central.salvar();
+            telaLoginADM.dispose();
+
+            new TelaHomeADM();
         }else{
-            JOptionPane.showMessageDialog(telaADM,"Email ou senha incorreto(s)");
+            JOptionPane.showMessageDialog(telaLoginADM,"Email ou senha incorreto(s)");
         }
+
+
+
     }
 
 
@@ -55,7 +65,7 @@ public class OuvinteLoginButton implements ActionListener {
         if(nome.equals("Entrar")){
             this.login();
         }else{
-            telaADM.dispose();
+            telaLoginADM.dispose();
             new TelaLoginCliente();
         }
 

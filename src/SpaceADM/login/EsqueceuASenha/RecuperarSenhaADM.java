@@ -1,8 +1,8 @@
 package SpaceADM.login.EsqueceuASenha;
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.EnvioDeEmail.EnviarEmail;
 import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
-import SpaceADM.login.Tela.TelaADM;
+import SpaceADM.login.Tela.TelaLoginADM;
 import TelaPadrao.TelaPadrao;
 
 import javax.swing.*;
@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class RecuperarSenhaADM extends EnviarEmail {
 
-    private static TelaADM telaAdm;
+    private static TelaLoginADM telaLoginAdm;
     private static final long CODIGO = System.currentTimeMillis();
 
     private String email;
@@ -64,8 +64,8 @@ public class RecuperarSenhaADM extends EnviarEmail {
         return resultado;
     }
 
-    public RecuperarSenhaADM(TelaADM telaAdm, JLabel label) throws Exception {
-        RecuperarSenhaADM.telaAdm = telaAdm;
+    public RecuperarSenhaADM(TelaLoginADM telaLoginAdm, JLabel label) throws Exception {
+        RecuperarSenhaADM.telaLoginAdm = telaLoginAdm;
         String emailMETHOD = this.pegaEmailEscondido();
 
         this.gerenciarEnvioDeEmail();
@@ -107,7 +107,7 @@ public class RecuperarSenhaADM extends EnviarEmail {
 
     @Override
     public TelaPadrao getTelaDeReferencia() {
-        return telaAdm;
+        return telaLoginAdm;
     }
 
 

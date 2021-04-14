@@ -1,7 +1,7 @@
 package SpaceADM.login.Ouvintes;
 
 import SpaceADM.login.EsqueceuASenha.RecuperarSenhaADM;
-import SpaceADM.login.Tela.TelaADM;
+import SpaceADM.login.Tela.TelaLoginADM;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,10 +9,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class OuvinteDoEsqueceuASenha implements MouseListener {
-    private TelaADM telaADM;
+    private TelaLoginADM telaLoginADM;
 
-    public OuvinteDoEsqueceuASenha(TelaADM telaADM){
-        this.telaADM = telaADM;
+    public OuvinteDoEsqueceuASenha(TelaLoginADM telaLoginADM){
+        this.telaLoginADM = telaLoginADM;
     }
 
 
@@ -27,9 +27,9 @@ public class OuvinteDoEsqueceuASenha implements MouseListener {
 
         Thread thread = new Thread(() -> {
             try{
-                new RecuperarSenhaADM(telaADM,label);
+                new RecuperarSenhaADM(telaLoginADM,label);
             }catch(Exception ex){
-                JOptionPane.showMessageDialog(telaADM,
+                JOptionPane.showMessageDialog(telaLoginADM,
                         "Houve algum problema","Recuperação de senha",
                         JOptionPane.INFORMATION_MESSAGE);
             }

@@ -1,10 +1,12 @@
 package SpaceUSER.Login.Ouvintes;
 
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Interfaces.Package_Space.Login;
+import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
-import SpaceADM.login.Tela.TelaADM;
+import SpaceADM.login.Tela.TelaLoginADM;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import SpaceUSER.Cadastro.Tela.TelaCadastroCliente;
 
@@ -12,38 +14,48 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class OuvinteDosButtons implements ActionListener {
+public class OuvinteLoginButtons implements ActionListener, Login {
     private TelaLoginCliente telaLoginCliente;
-
-    public OuvinteDosButtons(TelaLoginCliente telaLoginCliente){
+    private CentralDeInformacoes central;
+    public OuvinteLoginButtons(TelaLoginCliente telaLoginCliente){
         this.telaLoginCliente = telaLoginCliente;
 
     }
-    public String isLogin(){
+    @Override
+    //
+    public Object isLogin(){
         String email = telaLoginCliente.getEmail();
 
         String senha = telaLoginCliente.getSenha();
 
         Persistencia persistencia = Persistencia.getUnicaInstancia();
-        CentralDeInformacoes central = persistencia.recuperar();
+        central = persistencia.recuperar();
 
         for(Usuario user: central.getUsuario()){
             if(user.getEmail().equals(email) &&
                CriptografiaDeSenha.descriptografia(user.getSenha()).equals(senha)){
-                return user.getNome();
+                System.out.println(central.getUsuario().size());
+                return central.getUsuario().indexOf(user);
 
             }
         }
         return null;
     }
-    public void estaLodadoQuestion(){
-        String b = this.isLogin();
-        if(b!=null){
-            JOptionPane.showMessageDialog(telaLoginCliente,"<html>Você está logado<br>"+
-                    ",Seja bem vindo, <html>"+b);
-        }else{
-            JOptionPane.showMessageDialog(telaLoginCliente,"Email ou senha incorretos");
+    public void login(){
+        String mensagem;
+        try{
+            int b = (int) this.isLogin();
+            LoginSingleton login = LoginSingleton.getUnicaInstancia();
+            login.setUsuario(b);
+            central.addLogin(login);
+            central.salvar();
+            mensagem = "<html>Você está logado<br>"+
+                    ",Seja bem vindo, <html>";
+
+        }catch(Exception e){
+            mensagem = "Email ou senha incorretos";
         }
+        JOptionPane.showMessageDialog(telaLoginCliente,mensagem);
     }
 
     @Override
@@ -54,11 +66,11 @@ public class OuvinteDosButtons implements ActionListener {
             telaLoginCliente.dispose();
         }
         if(nomeBtn.equals("Sou Livreiro")){
-            new TelaADM();
+            new TelaLoginADM();
         }else if(nomeBtn.equals("Cadastre-se")){
             new TelaCadastroCliente();
         }else{
-            this.estaLodadoQuestion();
+            this.login();
         }
 
     }

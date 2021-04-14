@@ -5,13 +5,14 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
-
+import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
 import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
+
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-public class Persistencia {
-private XStream xStream = new XStream(new DomDriver("UTF-8"));
+public class Persistencia{
+	private XStream xStream = new XStream(new DomDriver("UTF-8"));
 	private static Persistencia unicaInstancia;
 
 	private Persistencia(){
@@ -22,13 +23,12 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 			unicaInstancia = new Persistencia();
 		}
 		return unicaInstancia;
-
 	}
 
 
 
-	public void salvarCentral(CentralDeInformacoes livreiro) throws Exception {
-		File arquivo = new File("livreiro-db.xml");
+	public void salvarCentral(CentralDeInformacoes central) throws Exception {
+		File arquivo = new File("DataBase.xml");
 		String xml="";
 		if(!arquivo.exists()) {
 			arquivo.createNewFile();
@@ -36,9 +36,8 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 		}
 
 		PrintWriter pw = new PrintWriter(arquivo);
-		xStream.alias("CentralDeInformacoes", livreiro.getClass());
-		xStream.alias("Livreiro",livreiro.getLivreiro().getClass());
-		xml += xStream.toXML(livreiro);
+		this.alias();
+		xml += xStream.toXML(central);
 		pw.write(xml);
 		pw.close();
 	}
@@ -46,9 +45,8 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 
 	public CentralDeInformacoes recuperar() {
 		try{
-			File arquivo = new File("livreiro-db.xml");
-			xStream.alias("CentralDeInformacoes", CentralDeInformacoes.class);
-			xStream.alias("Livreiro", Livreiro.class);
+			File arquivo = new File("DataBase.xml");
+			this.alias();
 			if(arquivo.exists()) {
 				FileReader fr = new FileReader(arquivo);
 				return (CentralDeInformacoes) xStream.fromXML(fr);
@@ -56,6 +54,12 @@ private XStream xStream = new XStream(new DomDriver("UTF-8"));
 		}catch(Exception ignored){
 		}
 		return null;
+
+	}
+	public void alias(){
+		xStream.alias("CentralDeInformacoes", CentralDeInformacoes.class);
+		xStream.alias("Livreiro", Livreiro.class);
+		xStream.alias("Login", LoginSingleton.class);
 
 	}
 

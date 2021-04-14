@@ -1,5 +1,6 @@
 package Utilitarios.EnvioDeEmail;
 
+import Interfaces.Package_Utilitarios.EnvioDeEmail;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
@@ -9,7 +10,7 @@ import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.util.Properties;
 
-public abstract class EnviarEmail implements Abstratos {
+public abstract class EnviarEmail implements EnvioDeEmail {
     public final String TITULO_DAS_JANELAS="Recuperação de senha";
     public Persistencia persistencia = Persistencia.getUnicaInstancia();
     public CentralDeInformacoes central = persistencia.recuperar();

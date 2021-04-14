@@ -1,6 +1,6 @@
 package SpaceUSER.Login.EsqueceuASenha;
 
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.EnvioDeEmail.EnviarEmail;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import SpaceUSER.Login.Tela.TelaLoginCliente;

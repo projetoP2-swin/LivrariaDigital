@@ -8,7 +8,7 @@ import SpaceADM.login.Ouvintes.OuvinteDoEsqueceuASenha;
 import SpaceADM.login.Ouvintes.OuvinteLoginButton;
 import TelaPadrao.TelaPadrao;
 
-public class TelaADM extends TelaPadrao {
+public class TelaLoginADM extends TelaPadrao {
 
 	private final JPanel JP_PAINEL =  new JPanel();
 	private JTextField email;
@@ -131,7 +131,7 @@ public class TelaADM extends TelaPadrao {
 
 	}
 
-	public TelaADM() {
+	public TelaLoginADM() {
 		super("Livreiro");
 
 		this.addPainel();

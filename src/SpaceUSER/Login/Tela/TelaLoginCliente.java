@@ -1,7 +1,7 @@
 package SpaceUSER.Login.Tela;
 
 import SpaceUSER.Login.Ouvintes.OuvinteClienteEsqueceuASenha;
-import SpaceUSER.Login.Ouvintes.OuvinteDosButtons;
+import SpaceUSER.Login.Ouvintes.OuvinteLoginButtons;
 import TelaPadrao.TelaPadrao;
 
 import javax.swing.*;
@@ -107,7 +107,7 @@ public class TelaLoginCliente extends TelaPadrao {
     }
     public void addButtons(){
         Font font = new Font("Arial",Font.BOLD,12);
-        OuvinteDosButtons ouvinte = new OuvinteDosButtons(this);
+        OuvinteLoginButtons ouvinte = new OuvinteLoginButtons(this);
 
 
         JButton entrar = new JButton("Entrar");
@@ -141,7 +141,7 @@ public class TelaLoginCliente extends TelaPadrao {
 
 
     public TelaLoginCliente() {
-        super("Login Usuario");
+        super("LoginSingleton Usuario");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.addPainel();
         this.addBackground();

@@ -4,12 +4,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import Utilitarios.criptografia.CriptografiaDeSenha;
+import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import SpaceADM.Cadastro.Tela.TelaAddLivreiro;
-import SpaceADM.login.Tela.TelaADM;
+import SpaceADM.login.Tela.TelaLoginADM;
 
 public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	private TelaAddLivreiro livreiroInfo;
@@ -46,8 +46,8 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 
 				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
 				livreiroInfo.dispose();
-				TelaADM telaADM = new TelaADM();
-				telaADM.setVisible(true);
+				TelaLoginADM telaLoginADM = new TelaLoginADM();
+				telaLoginADM.setVisible(true);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(livreiroInfo, "Houve um problema ao salvar os dados");
 			}
