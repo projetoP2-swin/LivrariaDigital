@@ -24,38 +24,51 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 		//info[3] trabalha como um valor booleando.
 		//A ideia é recuperar todos os dados do Livreiro em um método simples.
 		info[3]= info[0].equals("") || info[1].equals("") || info[2].equals("")?"1":"0";
+		info[3]= info[0].split(" ").length<2?"2":info[3];
 		return info;
+	}
+	public void cadastro(){
+		String[] info = this.permitirCadastroSe();
+
+		if(info[3].equals("2")){
+			this.showMessageDialog("Digite seu nome completo");
+		}else{
+			if(info[3].equals("1")) {
+				this.showMessageDialog("Não deixe campos em branco");
+
+			}else if(info[1].contains("@")) {
+				Persistencia p = Persistencia.getUnicaInstancia();
+
+				try {
+					info[2] = CriptografiaDeSenha.criptografia(info[2]);
+					Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
+					CentralDeInformacoes central = new CentralDeInformacoes();
+					central.addLivreiro(livreiro);
+					central.salvar();
+
+					this.showMessageDialog("Dados Salvos com sucesso");
+					livreiroInfo.dispose();
+					TelaLoginADM telaLoginADM = new TelaLoginADM();
+					telaLoginADM.setVisible(true);
+				} catch (Exception e) {
+					this.showMessageDialog("Houve um problema ao salvar os dados");
+				}
+
+			}else{
+				this.showMessageDialog("Digite um email válido");
+			}
+		}
+
+
+	}
+	public void  showMessageDialog(String msg){
+		JOptionPane.showMessageDialog(livreiroInfo, msg);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		String[] info = this.permitirCadastroSe();
-
-		if(info[3].equals("1")) {
-			JOptionPane.showMessageDialog(livreiroInfo, "Não deixe campos em branco");
-
-		}else if(info[1].contains("@")) {
-			Persistencia p = Persistencia.getUnicaInstancia();
-
-			try {
-				info[2] = CriptografiaDeSenha.criptografia(info[2]);
-				Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
-				CentralDeInformacoes central = new CentralDeInformacoes();
-				central.addLivreiro(livreiro);
-				central.salvar();
-
-				JOptionPane.showMessageDialog(livreiroInfo, "Dados Salvos com sucesso");
-				livreiroInfo.dispose();
-				TelaLoginADM telaLoginADM = new TelaLoginADM();
-				telaLoginADM.setVisible(true);
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(livreiroInfo, "Houve um problema ao salvar os dados");
-			}
-
-		}else{
-			JOptionPane.showMessageDialog(livreiroInfo, "Digite um email válido");
-		}
-
+		this.cadastro();
 	}
+
 
 }
