@@ -30,36 +30,37 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 	public void cadastro(){
 		String[] info = this.permitirCadastroSe();
 
-		if(info[3].equals("1")){
-			this.showMessageDialog("Não deixe campos em branco");
-		}else if(info[3].equals("2")){
+		if(info[3].equals("2")){
 			this.showMessageDialog("Digite seu nome completo");
-
-		}else if(info[1].contains("@")) {
-			Persistencia p = Persistencia.getUnicaInstancia();
-
-			try {
-				info[2] = CriptografiaDeSenha.criptografia(info[2]);
-				Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
-				CentralDeInformacoes central = new CentralDeInformacoes();
-				central.addLivreiro(livreiro);
-				central.salvar();
-
-				this.showMessageDialog("Dados Salvos com sucesso");
-				livreiroInfo.dispose();
-				TelaLoginADM telaLoginADM = new TelaLoginADM();
-				telaLoginADM.setVisible(true);
-			} catch (Exception e) {
-				this.showMessageDialog("Houve um problema ao salvar os dados");
-			}
-
 		}else{
-			this.showMessageDialog("Digite um email válido");
+			if(info[3].equals("1")) {
+				this.showMessageDialog("Não deixe campos em branco");
+
+			}else if(info[1].contains("@")) {
+				Persistencia p = Persistencia.getUnicaInstancia();
+
+				try {
+					info[2] = CriptografiaDeSenha.criptografia(info[2]);
+					Livreiro livreiro = new Livreiro(info[0], info[1], info[2]);
+					CentralDeInformacoes central = new CentralDeInformacoes();
+					central.addLivreiro(livreiro);
+					central.salvar();
+
+					this.showMessageDialog("Dados Salvos com sucesso");
+					livreiroInfo.dispose();
+					TelaLoginADM telaLoginADM = new TelaLoginADM();
+					telaLoginADM.setVisible(true);
+				} catch (Exception e) {
+					this.showMessageDialog("Houve um problema ao salvar os dados");
+				}
+
+			}else{
+				this.showMessageDialog("Digite um email válido");
+			}
 		}
+
+
 	}
-
-
-
 	public void  showMessageDialog(String msg){
 		JOptionPane.showMessageDialog(livreiroInfo, msg);
 	}

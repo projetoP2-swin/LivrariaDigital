@@ -1,13 +1,24 @@
 <CentralDeInformacoes>
   <livreiro>
-    <nome>Victor Queiroz</nome>
-    <email>victorqueiroz90@gmail.com</email>
-    <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
-    <numeroDeRecuperacao>1618593588533</numeroDeRecuperacao>
+    <nome>Karlos Macêdo</nome>
+    <email>almeidakarlos02@gmail.com</email>
+    <senha>29183,292d0,53gd1,</senha>
+    <arraydelivros>
+      <SpaceLivros.ClassesDosLivros.Periodicos>
+        <quantidade>0</quantidade>
+        <preco>0.0</preco>
+        <anoPublicacao>0</anoPublicacao>
+        <numeroDaEdicao>0</numeroDaEdicao>
+        <generoarray>
+          <string>Gibi</string>
+          <string>Revista de notícias</string>
+        </generoarray>
+      </SpaceLivros.ClassesDosLivros.Periodicos>
+    </arraydelivros>
   </livreiro>
   <usuario/>
   <loginSingleton>
-    <livreiro>false</livreiro>
+    <livreiro>true</livreiro>
     <usuario>-1</usuario>
   </loginSingleton>
 </CentralDeInformacoes>
