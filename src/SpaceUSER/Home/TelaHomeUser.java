@@ -2,21 +2,18 @@ package SpaceUSER.Home;
 
 
 import TelaPadrao.TelaPadrao;
-import net.infonode.gui.laf.InfoNodeLookAndFeel;
-import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class TelaHomeUser extends TelaPadrao {
-    private JPanel painelTitulo;
+    private JPanel painelTitulo,panelComScroll;
     private JScrollPane scroll;
     private JTextField pesquisa;
-    //TODO mudar todos os cursores
+
     public TelaHomeUser() {
         super("Home");
         this.setSize(700,500);
-        this.getContentPane().setBackground(Color.LIGHT_GRAY);
         this.addJPainelTitulo();
         this.addLabelsIntoPainel();
         this.addImgGoToPerfil();
@@ -25,22 +22,23 @@ public class TelaHomeUser extends TelaPadrao {
         this.addPesquisa();
         this.addJScrollPane();
         this.addButtonDePesquisa();
+        this.addBackground();
         this.setVisible(true);
     }
 
     public void addJPainelTitulo(){
         painelTitulo = new JPanel();
         painelTitulo.setBounds(0,0,700,45);
+        painelTitulo.setBackground(new Color(204, 230, 255));
         painelTitulo.setLayout(new BorderLayout());
-        painelTitulo.setBackground(Color.GRAY);
-        this.add(painelTitulo);
+        this.add(this.painelTitulo);
     }
 
     public void addLabelsIntoPainel(){
         Font font = new Font("Arial",Font.BOLD,22);
         JSeparator separador = new JSeparator();
 
-        JLabel recomendados = new JLabel("Recomendados",JLabel.CENTER);
+        JLabel recomendados = new JLabel("Estante Virtual",JLabel.CENTER);
         recomendados.setFont(font);
         recomendados.setForeground(Color.BLACK);
 
@@ -50,6 +48,7 @@ public class TelaHomeUser extends TelaPadrao {
         this.add(separador);
 
         this.painelTitulo.add(recomendados, BorderLayout.CENTER);
+
 
     }
 
@@ -71,36 +70,43 @@ public class TelaHomeUser extends TelaPadrao {
 
         categoria.setBounds(25,50,210,30);
         categoria.setForeground(Color.BLACK);
+        categoria.setOpaque(true);
+        categoria.setBackground(new Color(252, 83, 28));
         categoria.setFont(font);
         this.add(categoria);
 
-        filtrar.setBounds(245,50,210,30);
+        filtrar.setBounds(235,50,230,30);
         filtrar.setForeground(Color.BLACK);
+        filtrar.setOpaque(true);
+        filtrar.setBackground(new Color(252, 83, 28));
         filtrar.setFont(font);
         this.add(filtrar);
 
         ordenar.setBounds(465,50,210,30);
         ordenar.setForeground(Color.BLACK);
+        ordenar.setOpaque(true);
+        ordenar.setBackground(new Color(252, 83, 28));
         ordenar.setFont(font);
         this.add(ordenar);
     }
     public void addComboBox(){
-        String []categorias={"",
+        String []categorias={"Todos os Livros",
+                "Recomendados",
                 "Literatura",
                 "Técnicos",
                 "Periódicos",
                 "Desenvolvimento Pessoal"};
 
-        String[] generos = {"","Literatura brasileira", "Literatura estrangeira",
+        String[] generos = {"Todos os Livros","Literatura brasileira", "Literatura estrangeira",
                 "Infanto juvenil", "Artes", "Biografias",
                 "Poesia", "Gibi", "Revista de Notícias", "Autoajuda",
                 "Religião", "Saúde", "Paradidático", "Formação profissional"};
 
-        String [] ordem ={"","A-Z","Mais Procurados","Menos procurados","Em Falta"};
+        String [] ordem ={"Todos os Livros","A-Z","Mais Procurados","Menos procurados","Em Falta"};
 
-        JComboBox<String> categoria = new JComboBox(categorias);
-        JComboBox<String> filtrar = new JComboBox(generos);
-        JComboBox<String> ordenar = new JComboBox(ordem);
+        JComboBox<String> categoria = new JComboBox<>(categorias);
+        JComboBox<String> filtrar = new JComboBox<>(generos);
+        JComboBox<String> ordenar = new JComboBox<>(ordem);
         Font font = new Font("Arial",Font.BOLD,13);
 
         categoria.setBackground(Color.GRAY);
@@ -110,9 +116,9 @@ public class TelaHomeUser extends TelaPadrao {
         categoria.setBounds(25, 80, 210, 30 );
         this.add(categoria);
 
+
         filtrar.setBackground(Color.GRAY);
         filtrar.setForeground(Color.BLACK);
-
         filtrar.setSelectedIndex(0);
         filtrar.setFont(font);
         filtrar.setBounds(245, 80, 210, 30 );
@@ -125,25 +131,25 @@ public class TelaHomeUser extends TelaPadrao {
         ordenar.setBounds(465, 80, 210, 30 );
         this.add(ordenar);
     }
+
     public void addPesquisa(){
         Font font = new Font("Arial",Font.BOLD,12);
 
         this.pesquisa = new JTextField();
         this.pesquisa.setBounds(465,120,150,25);
-        this.pesquisa.setBackground(Color.WHITE);
+        this.pesquisa.setBackground(new Color(204, 230, 255));
         this.pesquisa.setFont(font);
         this.pesquisa.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
         this.pesquisa.setForeground(Color.BLACK);
 
-
-
         this.add(this.pesquisa);
+
 
     }
     public void addButtonDePesquisa(){
         ImageIcon icon = new ImageIcon("img/loja/pesquisa.png");
 
-        JButton button = new JButton(icon);
+        JLabel button = new JLabel(icon);
 
         button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         button.setBackground(null);
@@ -152,32 +158,24 @@ public class TelaHomeUser extends TelaPadrao {
 
         this.add(button);
 
+
     }
+
     public void addJScrollPane(){
-        this.scroll = new JScrollPane();
+        this.panelComScroll = new JPanel();
+        this.panelComScroll.setBounds(50, 160, 600, 300);
+        this.panelComScroll.setBackground(new Color(204, 230, 255));
+        this.panelComScroll.setLayout(new GridLayout(6,5));
+        this.panelComScroll.setPreferredSize(new Dimension(0,560));
+
+
+        this.scroll = new JScrollPane(this.panelComScroll);
         this.scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.scroll.setBackground(Color.WHITE);
-        this.scroll.setBounds(26, 160,600 , 300);
+        this.scroll.setBounds(50, 160,600 , 300);
 
         this.add(this.scroll);
+
     }
 
-    public static void main(String[] args) {
-
-        InfoNodeLookAndFeelTheme theme = new InfoNodeLookAndFeelTheme("My Theme",
-                new Color(166, 166, 166),
-                new Color(255, 255, 255),
-                Color.DARK_GRAY,
-                Color.WHITE,
-                new Color(252, 83, 28),
-                Color.WHITE,
-                0.8);
-
-        try {
-            UIManager.setLookAndFeel(new InfoNodeLookAndFeel(theme));
-            TelaHomeUser tela = new TelaHomeUser();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
-    }
 }
+

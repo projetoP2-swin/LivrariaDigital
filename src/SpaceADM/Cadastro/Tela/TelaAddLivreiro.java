@@ -1,7 +1,6 @@
 package SpaceADM.Cadastro.Tela;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 
 import javax.swing.*;
 
@@ -14,25 +13,36 @@ public class TelaAddLivreiro extends TelaPadrao{
 	private JTextField nome;
 	private JTextField email;
 	private JTextField senha;
-	
+
+	public TelaAddLivreiro() {
+		super("Adicionar Livreiro");
+		this.addPainel();
+		this.addImagemUser();
+		this.addFormLabel();
+		this.addInputs();
+		this.addImgLivraria();
+		this.addButton();
+		this.setVisible(true);
+	}
+
 	public void addPainel() {
 		this.JP_PAINEL.setBounds(0, 0, 370, 400);
 		this.JP_PAINEL.setBackground(Color.DARK_GRAY);
 		this.JP_PAINEL.setLayout(null);
 		this.add(JP_PAINEL);
 	}
-	
+
 	public void addImagemUser() {
 		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
 		JLabel boasVindas = new JLabel();
-		
+
 		boasVindas.setBounds(0, 10, 370, 110);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);
 		boasVindas.setIcon(imagemUser);
-		
+
 		this.JP_PAINEL.add(boasVindas);
 	}
-	
+
 	public void addFormLabel() {
 		JLabel boasVindas = new JLabel("Cadastro do Livreiro",JLabel.CENTER);
 		JLabel nome = new JLabel("Nome:",JLabel.RIGHT);
@@ -63,31 +73,36 @@ public class TelaAddLivreiro extends TelaPadrao{
 
 
 	}
-	
+
 	public void addInputs() {
 		this.nome = new JTextField();
+
 		this.email = new JTextField();
+
 		this.senha = new JTextField();
 
 		JSeparator nomeSeparador = new JSeparator();
 		JSeparator emaileSeparador = new JSeparator();
 		JSeparator senhaSeparador = new JSeparator();
-		
+
 
 		Font font = new Font("Arial",Font.BOLD,12);
-		
+
+		this.nome.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 		this.nome.setBounds(120, 153, 200, 25);
 		this.nome.setForeground(new Color(128, 196, 255));
 		this.nome.setBorder(null);
 		this.nome.setFont(font);
 		this.JP_PAINEL.add(nome);
 
+		this.email.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 		this.email.setBounds(120, 203, 200, 25);
 		this.email.setForeground(new Color(128, 196, 255));
 		this.email.setBorder(null);
 		this.email.setFont(font);
 		this.JP_PAINEL.add(email);
 
+		this.senha.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 		this.senha.setBounds(120, 253, 200, 25);
 		this.senha.setForeground(new Color(128, 196, 255));
 		this.senha.setBorder(null);
@@ -120,11 +135,11 @@ public class TelaAddLivreiro extends TelaPadrao{
 		botao.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
 		botao.setFont(font);
 		botao.setForeground(Color.BLACK);
+
 		this.JP_PAINEL.add(botao);
 
 
 	}
-	
 	public void addImgLivraria() {
 		ImageIcon imagem = new  ImageIcon("img/img_ADM/img/tela1.png");
 		JLabel lbImg = new JLabel();
@@ -132,16 +147,6 @@ public class TelaAddLivreiro extends TelaPadrao{
 		lbImg.setBounds(370, 0, 330, 400);
 		lbImg.setIcon(imagem);
 		this.add(lbImg);
-	}
-	public TelaAddLivreiro() {
-		super("Adicionar Livreiro");
-		this.addPainel();
-		this.addImagemUser();
-		this.addFormLabel();
-		this.addInputs();
-		this.addImgLivraria();
-		this.addButton();
-		this.setVisible(true);
 	}
 
 	public String getNome() {

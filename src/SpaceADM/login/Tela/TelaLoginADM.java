@@ -15,6 +15,17 @@ public class TelaLoginADM extends TelaPadrao {
 
 	private JPasswordField senha;
 
+	public TelaLoginADM() {
+		super("Livreiro");
+		this.addPainel();
+		this.addImagemUser();
+		this.addFormLabel();
+		this.addInputs();
+		this.addButtons();
+		this.addBackground();
+		this.setVisible(true);
+	}
+
 	public void addPainel() {
 		this.JP_PAINEL.setBounds(200, 15, 300, 330);
 		this.JP_PAINEL.setBackground(Color.DARK_GRAY);
@@ -22,16 +33,6 @@ public class TelaLoginADM extends TelaPadrao {
 		this.add(JP_PAINEL);
 	}
 
-	public void addBackground() {
-		ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
-		JLabel imgb = new JLabel();
-		
-		imgb.setBounds(0, 0, 700, 400);
-		imgb.setIcon(img);
-		this.add(imgb);
-		
-	}
-	
 	public void addImagemUser() {
 		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
 		JLabel boasVindas = new JLabel();
@@ -40,29 +41,28 @@ public class TelaLoginADM extends TelaPadrao {
 		boasVindas.setIcon(imagemUser);
 		this.JP_PAINEL.add(boasVindas);
 	}
-	
+
 	public void addFormLabel() {
 		JLabel login = new JLabel("Login do Livreiro",JLabel.CENTER);
 		JLabel email = new JLabel("E-mail:",JLabel.RIGHT);
 		JLabel senha = new JLabel("Senha:",JLabel.RIGHT);
 		Font font = new Font("Arial",Font.BOLD,12);
-		
+
 		login.setBounds(0, 105, 300, 30);
 		login.setFont(new Font("Arial",Font.BOLD,13));
 		login.setForeground(Color.WHITE);
 		this.JP_PAINEL.add(login);
-		
+
 		email.setBounds(0, 145, 80, 20);
 		email.setFont(font);
 		this.JP_PAINEL.add(email);
-		
+
 		senha.setBounds(0, 185, 80, 20);
 		senha.setFont(font);
 		this.JP_PAINEL.add(senha);
-		
-		
+
+
 	}
-	
 	public void addInputs() {
 		this.email = new JTextField();
 		this.senha = new JPasswordField();
@@ -97,6 +97,7 @@ public class TelaLoginADM extends TelaPadrao {
 
 		
 	}
+
 	public void addButtons(){
 		JButton entrar = new JButton("Entrar");
 		OuvinteLoginButton ouvinte = new OuvinteLoginButton(this);
@@ -129,20 +130,6 @@ public class TelaLoginADM extends TelaPadrao {
 
 		this.JP_PAINEL.add(soucliente);
 
-	}
-
-	public TelaLoginADM() {
-		super("Livreiro");
-
-		this.addPainel();
-		this.addBackground();
-		this.addImagemUser();
-		this.addFormLabel();
-		this.addInputs();
-		this.addButtons();
-		this.setVisible(true);
-
-		
 	}
 
 	public String getEmail() {

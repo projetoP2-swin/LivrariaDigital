@@ -8,26 +8,29 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TelaLoginCliente extends TelaPadrao {
-
     private final JPanel JP_PAINEL =  new JPanel();
+
     private JTextField email;
     private JPasswordField senha;
+
+    public TelaLoginCliente() {
+        super("Login Usuario");
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.addPainel();
+        this.addImagemUser();
+        this.addFormLabel();
+        this.addInputs();
+        this.addButtons();
+        this.addBackground();
+        this.setVisible(true);
+
+    }
 
     public void addPainel() {
         this.JP_PAINEL.setBounds(200, 15, 300, 330);
         this.JP_PAINEL.setBackground(Color.DARK_GRAY);
         this.JP_PAINEL.setLayout(null);
         this.add(JP_PAINEL);
-    }
-
-    public void addBackground() {
-        ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
-        JLabel imgb = new JLabel();
-
-        imgb.setBounds(0, 0, 700, 400);
-        imgb.setIcon(img);
-        this.add(imgb);
-
     }
 
     public void addImagemUser() {
@@ -59,7 +62,6 @@ public class TelaLoginCliente extends TelaPadrao {
         this.JP_PAINEL.add(senha);
 
     }
-
     public void addInputs() {
         this.email = new JTextField();
         this.senha = new JPasswordField();
@@ -105,6 +107,7 @@ public class TelaLoginCliente extends TelaPadrao {
 
 
     }
+
     public void addButtons(){
         Font font = new Font("Arial",Font.BOLD,12);
         OuvinteLoginButtons ouvinte = new OuvinteLoginButtons(this);
@@ -139,19 +142,6 @@ public class TelaLoginCliente extends TelaPadrao {
     }
 
 
-
-    public TelaLoginCliente() {
-        super("LoginSingleton Usuario");
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.addPainel();
-        this.addBackground();
-        this.addImagemUser();
-        this.addFormLabel();
-        this.addInputs();
-        this.addButtons();
-        this.setVisible(true);
-
-    }
 
     public String getEmail() {
         return email.getText();

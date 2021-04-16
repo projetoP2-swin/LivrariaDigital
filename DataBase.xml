@@ -1,0 +1,13 @@
+<CentralDeInformacoes>
+  <livreiro>
+    <nome>Victor Queiroz</nome>
+    <email>victorqueiroz90@gmail.com</email>
+    <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+    <numeroDeRecuperacao>1618593588533</numeroDeRecuperacao>
+  </livreiro>
+  <usuario/>
+  <loginSingleton>
+    <livreiro>false</livreiro>
+    <usuario>-1</usuario>
+  </loginSingleton>
+</CentralDeInformacoes>
