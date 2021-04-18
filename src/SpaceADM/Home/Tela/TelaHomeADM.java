@@ -13,6 +13,15 @@ public class TelaHomeADM extends TelaPadrao {
     private final JPanel JP_PAINEL =  new JPanel();
 
 
+    public TelaHomeADM() {
+        super("Home - Livreiro");
+        this.addPainel();
+        this.addLabels();
+        this.addButtons();
+        this.addBackground();
+        this.setVisible(true);
+    }
+
     public void addPainel() {
         this.JP_PAINEL.setBounds(200, 15, 300, 330);
         this.JP_PAINEL.setBackground(Color.DARK_GRAY);
@@ -65,7 +74,6 @@ public class TelaHomeADM extends TelaPadrao {
 
 
         cadastrar.setBounds(75, 90, 150, 25);
-        cadastrar.addActionListener(ouvinte);
         cadastrar.setFont(font);
         cadastrar.setBackground(cor);
         cadastrar.setBorder(null);
@@ -106,23 +114,6 @@ public class TelaHomeADM extends TelaPadrao {
 
     }
 
-    public void addBackground() {
-        ImageIcon img = new ImageIcon("img/img_ADM/img/livros.png");
-        JLabel imgb = new JLabel();
-        imgb.setBounds(0, 0, 700, 400);
-        imgb.setIcon(img);
-        this.add(imgb);
-
-    }
-
-    public TelaHomeADM() {
-        super("Home - Livreiro");
-        this.addPainel();
-        this.addBackground();
-        this.addLabels();
-        this.addButtons();
-        this.setVisible(true);
-    }
 
 
 

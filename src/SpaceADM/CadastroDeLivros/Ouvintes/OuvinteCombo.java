@@ -1,0 +1,74 @@
+package SpaceADM.CadastroDeLivros.Ouvintes;
+
+
+
+import Interfaces.Package_SpaceADM.ComponentesAddNaTela;
+import SpaceADM.CadastroDeLivros.Factory.ChamaComponentesAddNaTela;
+import SpaceADM.CadastroDeLivros.Tela.Tela.TelaAddLivro;
+
+import javax.swing.*;;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class OuvinteCombo implements ActionListener {
+
+    private TelaAddLivro tela;
+    private ComponentesAddNaTela componentes;
+
+    public OuvinteCombo( TelaAddLivro tela) {
+        this.tela = tela;
+
+    }
+    public void addJButtons(){
+        JButton cancelar = new JButton("Cancelar");
+        JButton adicionar = new JButton("Adicionar");
+        Font font = new Font("Arial",Font.BOLD,13);
+        OuvinteDosJButtons ouvinte = new OuvinteDosJButtons(tela,componentes);
+
+        cancelar.setFont(font);
+        cancelar.setForeground(Color.BLACK);
+        cancelar.addActionListener(ouvinte);
+        cancelar.setBounds(15,componentes.getMaiorAltura()+50,110,30);
+
+        adicionar.setFont(font);
+        adicionar.setForeground(Color.BLACK);
+        adicionar.addActionListener(ouvinte);
+        adicionar.setBounds(155,componentes.getMaiorAltura()+50,110,30);
+
+        tela.JP_PAINEL.add(cancelar);
+        tela.JP_PAINEL.add(adicionar);
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JComboBox combo = (JComboBox) e.getSource();
+        int index = combo.getSelectedIndex();
+        tela.JP_PAINEL.removeAll();
+        tela.JP_PAINEL.setPreferredSize(new Dimension(0,320));
+        tela.addCabecalho(index);
+        if(index !=0){
+            componentes = ChamaComponentesAddNaTela.fabricaDeComponentes(index);
+            try{
+                tela.JP_PAINEL.setPreferredSize(new Dimension(0,componentes.getMaiorAltura()+100));
+                tela.addJLabelParaOtipo(componentes.getTipo());
+
+                for(JComponent c:componentes.getComponentes()){
+                    tela.JP_PAINEL.add(c);
+                }
+                tela.addFormLabel();
+                tela.addInputs();
+                this.addJButtons();
+
+            }catch (Exception ex){
+
+                System.out.println("Os componentes não foram desenvolvidos ainda");
+            }
+        }
+        tela.repaint();
+        tela.validate();
+
+    }
+}
+
