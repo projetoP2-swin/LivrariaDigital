@@ -23,7 +23,7 @@ public class TelaAddLivro extends TelaPadrao {
     }
 
     private JTextField titulo;
-    private JTextField imagem;
+    private JTextField ano;
     private JTextArea resumo;
     private JTextField idioma;
     private JComboBox<String> tipos;
@@ -87,7 +87,7 @@ public class TelaAddLivro extends TelaPadrao {
 
     public void addFormLabel() {
         JLabel titulo = new JLabel("Título:",JLabel.RIGHT);
-        JLabel imagem = new JLabel("Imagem:",JLabel.RIGHT);
+        JLabel ano = new JLabel("Ano de publicação:",JLabel.RIGHT);
         JLabel resumo = new JLabel("Resumo:",JLabel.RIGHT);
         JLabel idioma = new JLabel("Idioma:",JLabel.RIGHT);
         JLabel editora = new JLabel("Editora:",JLabel.RIGHT);
@@ -97,8 +97,8 @@ public class TelaAddLivro extends TelaPadrao {
         titulo.setBounds(0, 120, 80, 20);
         titulo.setFont(FONT);
 
-        imagem.setBounds(0, 155, 80, 20);
-        imagem.setFont(FONT);
+        ano.setBounds(0, 155, 160, 20);
+        ano.setFont(FONT);
 
         resumo.setBounds(0, 190, 80, 20);
         resumo.setFont(FONT);
@@ -116,7 +116,7 @@ public class TelaAddLivro extends TelaPadrao {
         preco.setFont(FONT);
 
         this.JP_PAINEL.add(resumo);
-        this.JP_PAINEL.add(imagem);
+        this.JP_PAINEL.add(ano);
         this.JP_PAINEL.add(titulo);
         this.JP_PAINEL.add(idioma);
         this.JP_PAINEL.add(editora);
@@ -134,10 +134,10 @@ public class TelaAddLivro extends TelaPadrao {
         titulo.setForeground(corPadrao);
         titulo.setFont(FONT);
 
-        imagem = new JTextField();
-        imagem.setBounds(85, 153, 180, 25);
-        imagem.setForeground(corPadrao);
-        imagem.setFont(FONT);
+        ano = new JTextField();
+        ano.setBounds(165, 153, 100, 25);
+        ano.setForeground(corPadrao);
+        ano.setFont(FONT);
 
         resumo = new JTextArea();
         JScrollPane painel = new JScrollPane(resumo);
@@ -167,7 +167,7 @@ public class TelaAddLivro extends TelaPadrao {
 
 
         this.JP_PAINEL.add(titulo);
-        this.JP_PAINEL.add(imagem);
+        this.JP_PAINEL.add(ano);
         this.JP_PAINEL.add(painel);
         this.JP_PAINEL.add(idioma);
         this.JP_PAINEL.add(editora);
@@ -181,8 +181,8 @@ public class TelaAddLivro extends TelaPadrao {
         return titulo.getText();
     }
 
-    public String getImagem() {
-        return imagem.getText();
+    public String getAno() {
+        return ano.getText();
     }
 
     public String getResumo() {

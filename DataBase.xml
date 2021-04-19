@@ -16,6 +16,7 @@
       <editora>Editora</editora>
       <quantidade>1</quantidade>
       <preco>2.0</preco>
+      <anoDePublicacao>0</anoDePublicacao>
       <autores>
         <string>Autores</string>
       </autores>
@@ -29,6 +30,7 @@
       <editora>Editora</editora>
       <quantidade>1</quantidade>
       <preco>2.0</preco>
+      <anoDePublicacao>0</anoDePublicacao>
       <numeroDaEdicao>555</numeroDaEdicao>
       <mesDeLancamento>Agosto</mesDeLancamento>
       <autor>Autor</autor>
@@ -42,6 +44,7 @@
       <editora>editora</editora>
       <quantidade>1</quantidade>
       <preco>2.0</preco>
+      <anoDePublicacao>0</anoDePublicacao>
       <autores>
         <string>autores1</string>
         <string>autores2</string>
@@ -56,12 +59,27 @@
       <editora>aditora</editora>
       <quantidade>1</quantidade>
       <preco>2.0</preco>
+      <anoDePublicacao>0</anoDePublicacao>
       <assunto>assunto</assunto>
       <autor>autor</autor>
     </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>dsadas</titulo>
+      <tipo>Literatura</tipo>
+      <resumo>dasdasdasddasdasdddasdasdasdasdasdas</resumo>
+      <idioma>ddas</idioma>
+      <genero>Artes</genero>
+      <editora>dasd</editora>
+      <quantidade>12</quantidade>
+      <preco>2.0</preco>
+      <anoDePublicacao>2018</anoDePublicacao>
+      <autores>
+        <string>ddasd</string>
+      </autores>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
   </livros>
   <loginSingleton>
-    <livreiro>false</livreiro>
+    <livreiro>true</livreiro>
     <usuario>-1</usuario>
   </loginSingleton>
 </CentralDeInformacoes>

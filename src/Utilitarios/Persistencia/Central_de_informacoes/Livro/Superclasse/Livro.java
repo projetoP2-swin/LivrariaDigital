@@ -9,11 +9,12 @@ public  abstract class Livro {
     private String editora;
     private int quantidade;
     private float preco;
+    private int anoDePublicacao;
 
 
     public Livro(
             String tipo, String titulo, String resumo, String idioma,
-            String genero, String editora, int quantidade, float preco) {
+            String genero, String editora, int quantidade, float preco, int anoDePublicacao) {
         this.tipo = tipo;
         this.titulo = titulo;
         this.resumo = resumo;
@@ -22,6 +23,7 @@ public  abstract class Livro {
         this.editora = editora;
         this.quantidade = quantidade;
         this.preco = preco;
+        this.anoDePublicacao = anoDePublicacao;
     }
 
     public String getTitulo() {

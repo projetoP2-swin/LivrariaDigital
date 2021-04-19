@@ -12,7 +12,8 @@ public class DesenvolvimentoPessoal extends Livro{
         super(
             info.get(0),info.get(1), info.get(2), info.get(3),
             info.get(4), info.get(6),
-            Integer.parseInt(info.get(7)), Long.parseLong(info.get(8)));
+            Integer.parseInt(info.get(7)), Long.parseLong(info.get(8)),
+            Integer.parseInt(info.get(9)));
 
         this.autores = autores.contains(",")?autores.split(","):autores.split(" ");
     }
