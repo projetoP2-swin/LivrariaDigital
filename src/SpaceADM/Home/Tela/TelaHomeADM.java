@@ -74,26 +74,31 @@ public class TelaHomeADM extends TelaPadrao {
 
 
         cadastrar.setBounds(75, 90, 150, 25);
+        cadastrar.addActionListener(ouvinte);
         cadastrar.setFont(font);
         cadastrar.setBackground(cor);
         cadastrar.setBorder(null);
 
         loja.setBounds(75, 130, 150, 25);
+        loja.addActionListener(ouvinte);
         loja.setFont(font);
         loja.setBackground(cor);
         loja.setBorder(null);
 
         interessados.setBounds(75, 170, 150, 25);
+        interessados.addActionListener(ouvinte);
         interessados.setFont(font);
         interessados.setBackground(cor);
         interessados.setBorder(null);
 
         visualizados.setBounds(75, 210, 150, 25);
+        visualizados.addActionListener(ouvinte);
         visualizados.setFont(font);
         visualizados.setBackground(cor);
         visualizados.setBorder(null);
 
         planilha.setBounds(75, 250, 150, 25);
+        planilha.addActionListener(ouvinte);
         planilha.setFont(font);
         planilha.setBackground(cor);
         planilha.setBorder(null);

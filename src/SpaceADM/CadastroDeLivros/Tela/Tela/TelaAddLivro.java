@@ -21,6 +21,16 @@ public class TelaAddLivro extends TelaPadrao {
         this.addBackground();
         this.setVisible(true);
     }
+
+    private JTextField titulo;
+    private JTextField imagem;
+    private JTextArea resumo;
+    private JTextField idioma;
+    private JComboBox<String> tipos;
+    private JTextField editora;
+    private JTextField quantidade;
+    private JTextField preco;
+
     public void addJLabelParaOtipo(String titulo){
         JLabel livro = new JLabel(titulo, JLabel.CENTER);
         Font font = new Font("Arial",Font.BOLD,17);
@@ -30,17 +40,6 @@ public class TelaAddLivro extends TelaPadrao {
 
         this.JP_PAINEL.add(livro);
     }
-
-    private JTextField titulo;
-
-    private JTextField imagem;
-    private JTextArea resumo;
-    private JTextField idioma;
-    private JComboBox<String> tipos;
-    private JTextField editora;
-    private JTextField quantidade;
-    private JTextField preco;
-
     public void addPainel() {
         this.JP_PAINEL.setBounds(200, 0, 300, 330);
         this.JP_PAINEL.setBackground(Color.DARK_GRAY);

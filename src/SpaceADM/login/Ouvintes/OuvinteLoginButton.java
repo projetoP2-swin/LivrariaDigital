@@ -47,7 +47,6 @@ public class OuvinteLoginButton implements ActionListener, Login {
             central.addLogin(loginSingleton);
             central.salvar();
             telaLoginADM.dispose();
-
             new TelaHomeADM();
         }else{
             JOptionPane.showMessageDialog(telaLoginADM,"Email ou senha incorreto(s)");

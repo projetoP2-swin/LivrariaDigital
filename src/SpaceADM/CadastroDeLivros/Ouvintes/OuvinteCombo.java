@@ -3,7 +3,7 @@ package SpaceADM.CadastroDeLivros.Ouvintes;
 
 
 import Interfaces.Package_SpaceADM.ComponentesAddNaTela;
-import SpaceADM.CadastroDeLivros.Factory.ChamaComponentesAddNaTela;
+import SpaceADM.CadastroDeLivros.Factory.ComBox.ChamaComponentesAddNaTela;
 import SpaceADM.CadastroDeLivros.Tela.Tela.TelaAddLivro;
 
 import javax.swing.*;;
@@ -21,7 +21,7 @@ public class OuvinteCombo implements ActionListener {
 
     }
     public void addJButtons(){
-        JButton cancelar = new JButton("Cancelar");
+        JButton cancelar = new JButton("Voltar");
         JButton adicionar = new JButton("Adicionar");
         Font font = new Font("Arial",Font.BOLD,13);
         OuvinteDosJButtons ouvinte = new OuvinteDosJButtons(tela,componentes);
@@ -45,11 +45,13 @@ public class OuvinteCombo implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JComboBox combo = (JComboBox) e.getSource();
         int index = combo.getSelectedIndex();
+
         tela.JP_PAINEL.removeAll();
         tela.JP_PAINEL.setPreferredSize(new Dimension(0,320));
         tela.addCabecalho(index);
+
         if(index !=0){
-            componentes = ChamaComponentesAddNaTela.fabricaDeComponentes(index);
+            componentes = ChamaComponentesAddNaTela.factory(index);
             try{
                 tela.JP_PAINEL.setPreferredSize(new Dimension(0,componentes.getMaiorAltura()+100));
                 tela.addJLabelParaOtipo(componentes.getTipo());
@@ -62,8 +64,7 @@ public class OuvinteCombo implements ActionListener {
                 this.addJButtons();
 
             }catch (Exception ex){
-
-                System.out.println("Os componentes não foram desenvolvidos ainda");
+                JOptionPane.showMessageDialog(tela,"Houve um erro, entre em contato com o desenvolvedor");
             }
         }
         tela.repaint();
