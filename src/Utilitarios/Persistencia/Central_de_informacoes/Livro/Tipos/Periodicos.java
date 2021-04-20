@@ -17,8 +17,7 @@ public class Periodicos extends Livro {
         super(
             info.get(0), info.get(1), info.get(2),
             info.get(3), info.get(4), info.get(8),
-            Integer.parseInt(info.get(9)),Long.parseLong(info.get(10)),
-            Integer.parseInt(info.get(11)));
+            Integer.parseInt(info.get(9)),Long.parseLong(info.get(10)));
         this.numeroDaEdicao = Long.parseLong(numeroDaEdicao);
         this.mesDeLancamento = mesDeLancamento;
         this.autor = autor;

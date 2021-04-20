@@ -33,7 +33,6 @@ public class OuvinteDosJButtons implements ActionListener {
         todasAsInformoces.add(tela.getEditora());
         todasAsInformoces.add(tela.getQuantidade());
         todasAsInformoces.add(tela.getPreco());
-        todasAsInformoces.add(tela.getAno());
 
         return todasAsInformoces;
     }

@@ -32,6 +32,7 @@ public class TelaCadastroCliente extends TelaPadrao {
     public void addScrollPane(){
         this.addPainel();
         JScrollPane scroll = new JScrollPane(JP_PAINEL);
+        scroll.getVerticalScrollBar().setUnitIncrement(10);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scroll.setBounds(330, 0,370 , 375);
 

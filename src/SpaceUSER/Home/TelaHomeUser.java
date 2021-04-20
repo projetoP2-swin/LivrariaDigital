@@ -8,13 +8,16 @@ import java.awt.*;
 
 public class TelaHomeUser extends TelaPadrao {
     private JPanel painelTitulo,panelComScroll;
+    private JPanel painelfiltros;
     private JScrollPane scroll;
     private JTextField pesquisa;
+    private Color padraocombo = new Color(74, 148, 154, 255);
 
     public TelaHomeUser() {
         super("Home");
-        this.setSize(700,500);
+        this.setSize(800,600);
         this.addJPainelTitulo();
+        this.addPainelFiltros();
         this.addLabelsIntoPainel();
         this.addImgGoToPerfil();
         this.addLabels();
@@ -28,66 +31,82 @@ public class TelaHomeUser extends TelaPadrao {
 
     public void addJPainelTitulo(){
         painelTitulo = new JPanel();
-        painelTitulo.setBounds(0,0,700,45);
-        painelTitulo.setBackground(new Color(204, 230, 255));
-        painelTitulo.setLayout(new BorderLayout());
+        painelTitulo.setLayout(null);
+        painelTitulo.setBounds(0,0,800,50);
+        painelTitulo.setBackground(new Color(250, 196, 196, 163));
         this.add(this.painelTitulo);
+
+
+    }
+
+    public void addPainelFiltros() {
+        painelfiltros = new JPanel();
+        painelfiltros.setLayout(null);
+        painelfiltros.setBounds(0, 50, 800, 70);
+        painelfiltros.setBackground(new Color(245, 135, 104, 255));
+        this.add(this.painelfiltros);
     }
 
     public void addLabelsIntoPainel(){
-        Font font = new Font("Arial",Font.BOLD,22);
-        JSeparator separador = new JSeparator();
-
-        JLabel recomendados = new JLabel("Estante Virtual",JLabel.CENTER);
-        recomendados.setFont(font);
-        recomendados.setForeground(Color.BLACK);
-
-        separador.setOrientation(JSeparator.HORIZONTAL);
-        separador.setBounds(0,45,700,60);
-        separador.setBackground(Color.BLACK);
-        this.add(separador);
-
-        this.painelTitulo.add(recomendados, BorderLayout.CENTER);
+        Font font = new Font("Impact",Font.PLAIN,40);
+        JLabel estantenome = new JLabel("Estante Virtual", JLabel.CENTER);
+        estantenome.setForeground(Color.black);
+        estantenome.setFont(font);
+        estantenome.setBounds(0, 0, 800, 45);
+        this.painelTitulo.add(estantenome);
 
 
     }
+
+    /*public void addLabelsIntoPainel(){
+        Font font = new Font("Impact",Font.PLAIN,40);
+        JLabel estantenome = new JLabel("Estante Virtual", JLabel.CENTER);
+        estantenome.setForeground(Color.DARK_GRAY);
+        estantenome.setFont(font);
+        estantenome.setBounds(0, 0, 700, 45);
+
+        this.painelTitulo.add(estantenome);
+
+
+    }*/
 
     public void addImgGoToPerfil(){
         ImageIcon perfil = new ImageIcon("img/loja/avatar.png");
-        JLabel label = new JLabel(perfil);
-        JLabel complemento = new JLabel("                   ");
+        JLabel label = new JLabel(perfil, JLabel.RIGHT);
+        label.setBounds(720,0, 50, 50);
 
-        this.painelTitulo.add(label,BorderLayout.EAST);
-        this.painelTitulo.add(complemento,BorderLayout.WEST);
+
+        this.painelTitulo.add(label);
+
     }
 
     public void addLabels(){
-        Font font = new Font("Arial",Font.BOLD,19);
+        Font font = new Font("Arial",Font.BOLD,16);
 
-        JLabel categoria = new JLabel("Categoria",JLabel.CENTER);
-        JLabel filtrar = new JLabel("Filtrar",JLabel.CENTER);
-        JLabel ordenar = new JLabel("Ordenar",JLabel.CENTER);
+        JLabel categoria = new JLabel("Categoria");
+        JLabel filtrar = new JLabel("Filtrar");
+        JLabel ordenar = new JLabel("Ordenar");
+        JLabel pesquisar = new JLabel("Pesquisar");
 
-        categoria.setBounds(25,50,210,30);
+        categoria.setBounds(60,3,100,22);
         categoria.setForeground(Color.BLACK);
-        categoria.setOpaque(true);
-        categoria.setBackground(new Color(252, 83, 28));
         categoria.setFont(font);
-        this.add(categoria);
+        this.painelfiltros.add(categoria);
 
-        filtrar.setBounds(235,50,230,30);
+        filtrar.setBounds(277,3,100,22);
         filtrar.setForeground(Color.BLACK);
-        filtrar.setOpaque(true);
-        filtrar.setBackground(new Color(252, 83, 28));
         filtrar.setFont(font);
-        this.add(filtrar);
+        this.painelfiltros.add(filtrar);
 
-        ordenar.setBounds(465,50,210,30);
+        ordenar.setBounds(460,3,100,22);
         ordenar.setForeground(Color.BLACK);
-        ordenar.setOpaque(true);
-        ordenar.setBackground(new Color(252, 83, 28));
         ordenar.setFont(font);
-        this.add(ordenar);
+        this.painelfiltros.add(ordenar);
+
+        pesquisar.setBounds(630, 3, 100, 22);
+        pesquisar.setForeground(Color.BLACK);
+        pesquisar.setFont(font);
+        this.painelfiltros.add(pesquisar);
     }
     public void addComboBox(){
         String []categorias={"Todos os Livros",
@@ -103,46 +122,46 @@ public class TelaHomeUser extends TelaPadrao {
                 "Religião", "Saúde", "Paradidático", "Formação profissional"};
 
         String [] ordem ={"Todos os Livros","A-Z","Mais Procurados","Menos procurados","Em Falta"};
-
         JComboBox<String> categoria = new JComboBox<>(categorias);
         JComboBox<String> filtrar = new JComboBox<>(generos);
         JComboBox<String> ordenar = new JComboBox<>(ordem);
         Font font = new Font("Arial",Font.BOLD,13);
 
-        categoria.setBackground(Color.GRAY);
+        categoria.setBackground(padraocombo);
         categoria.setForeground(Color.BLACK);
         categoria.setSelectedIndex(0);
         categoria.setFont(font);
-        categoria.setBounds(25, 80, 210, 30 );
-        this.add(categoria);
+        categoria.setBounds(10, 30, 180, 30 );
+        this.painelfiltros.add(categoria);
 
 
-        filtrar.setBackground(Color.GRAY);
+        filtrar.setBackground(padraocombo);
         filtrar.setForeground(Color.BLACK);
         filtrar.setSelectedIndex(0);
         filtrar.setFont(font);
-        filtrar.setBounds(245, 80, 210, 30 );
-        this.add(filtrar);
+        filtrar.setBounds(205, 30, 180, 30 );
+        this.painelfiltros.add(filtrar);
 
-        ordenar.setBackground(Color.GRAY);
+        ordenar.setBackground(padraocombo);
         ordenar.setForeground(Color.BLACK);
+        ordenar.setBorder(null);
         ordenar.setSelectedIndex(0);
         ordenar.setFont(font);
-        ordenar.setBounds(465, 80, 210, 30 );
-        this.add(ordenar);
+        ordenar.setBounds(400, 30, 180, 30 );
+        this.painelfiltros.add(ordenar);
     }
 
     public void addPesquisa(){
-        Font font = new Font("Arial",Font.BOLD,12);
+        Font font = new Font("Arial",Font.BOLD,13);
 
         this.pesquisa = new JTextField();
-        this.pesquisa.setBounds(465,120,150,25);
-        this.pesquisa.setBackground(new Color(204, 230, 255));
+        this.pesquisa.setBounds(595,30,150,30);
+        this.pesquisa.setBackground(padraocombo);
         this.pesquisa.setFont(font);
         this.pesquisa.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
         this.pesquisa.setForeground(Color.BLACK);
 
-        this.add(this.pesquisa);
+        this.painelfiltros.add(this.pesquisa);
 
 
     }
@@ -154,24 +173,24 @@ public class TelaHomeUser extends TelaPadrao {
         button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         button.setBackground(null);
         button.setBorder(null);
-        button.setBounds(625,116,35,35);
+        button.setBounds(745,28,35,35);
 
-        this.add(button);
+        this.painelfiltros.add(button);
 
 
     }
 
     public void addJScrollPane(){
         this.panelComScroll = new JPanel();
-        this.panelComScroll.setBounds(50, 160, 600, 300);
-        this.panelComScroll.setBackground(new Color(204, 230, 255));
+        this.panelComScroll.setBounds(40, 155, 710, 370);
+        this.panelComScroll.setBackground(new Color(255, 252, 197, 255));
         this.panelComScroll.setLayout(new GridLayout(6,5));
         this.panelComScroll.setPreferredSize(new Dimension(0,560));
 
 
         this.scroll = new JScrollPane(this.panelComScroll);
         this.scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.scroll.setBounds(50, 160,600 , 300);
+        this.scroll.setBounds(40, 155,710 , 370);
 
         this.add(this.scroll);
 

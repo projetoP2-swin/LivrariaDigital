@@ -12,10 +12,9 @@ public class Tecnicos extends Livro {
 
     public Tecnicos(ArrayList<String> info, String assunto, String autor) {
         super(
-                info.get(0), info.get(1), info.get(2),
-                info.get(3), info.get(4), info.get(7),
-                Integer.parseInt(info.get(8)), Long.parseLong(info.get(9)),
-                Integer.parseInt(info.get(10)));
+            info.get(0), info.get(1), info.get(2),
+            info.get(3), info.get(4), info.get(7),
+            Integer.parseInt(info.get(8)), Long.parseLong(info.get(9)));
         this.assunto = assunto;
         this.autor = autor;
     }
