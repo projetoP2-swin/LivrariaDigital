@@ -1,7 +1,5 @@
-package SpaceADM.Home.Tela;
+package SpaceUSER.Home;
 
-import ClasseMain.ExisteLivreiro.ExisteLivreiroQuestion;
-import SpaceUSER.Home.TelaHomeUser;
 import net.infonode.gui.laf.InfoNodeLookAndFeel;
 import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 
