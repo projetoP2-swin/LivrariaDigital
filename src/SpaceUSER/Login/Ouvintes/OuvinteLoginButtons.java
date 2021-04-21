@@ -1,6 +1,7 @@
 package SpaceUSER.Login.Ouvintes;
 
 import Interfaces.Package_Space.Login;
+import SpaceUSER.Home.TelaHomeUser;
 import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
 import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
@@ -49,13 +50,14 @@ public class OuvinteLoginButtons implements ActionListener, Login {
             login.setUsuario(b);
             central.addLogin(login);
             central.salvar();
-            mensagem = "<html>Você está logado<br>"+
-                    ",Seja bem vindo, <html>";
+
+            new TelaHomeUser(central.getUsuario().get(b).getNome());
 
         }catch(Exception e){
             mensagem = "Email ou senha incorretos";
+            JOptionPane.showMessageDialog(telaLoginCliente,mensagem);
         }
-        JOptionPane.showMessageDialog(telaLoginCliente,mensagem);
+
     }
 
     @Override

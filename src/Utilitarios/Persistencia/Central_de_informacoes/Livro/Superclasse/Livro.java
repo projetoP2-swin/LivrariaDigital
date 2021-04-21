@@ -10,6 +10,11 @@ public  abstract class Livro {
     private int quantidade;
     private float preco;
 
+    public String getTipo() {
+        return tipo;
+    }
+
+
 
     public Livro(
             String tipo, String titulo, String resumo, String idioma,

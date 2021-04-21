@@ -19,6 +19,9 @@ public class Tecnicos extends Livro {
         this.autor = autor;
     }
 
+    public String getAutor() {
+        return autor;
+    }
 
     public String getAssunto() {
         return assunto;

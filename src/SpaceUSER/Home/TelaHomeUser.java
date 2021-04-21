@@ -8,9 +8,10 @@ import java.awt.*;
 public class TelaHomeUser extends TelaPadrao {
     private final JPanel JP_PAINEL =  new JPanel();
 
-
-    public TelaHomeUser() {
+    private String nome;
+    public TelaHomeUser(String nome) {
         super("Home - Cliente");
+        this.nome = nome;
         this.addPainel();
         this.addBackground();
         this.addLabels();
@@ -18,11 +19,11 @@ public class TelaHomeUser extends TelaPadrao {
         this.setVisible(true);
     }
 
-    
+
 
     public void addLabels() {
         JLabel bemvindo = new JLabel("Bem vindo(a),", JLabel.CENTER);
-        JLabel nome = new JLabel("Cliente!", JLabel.CENTER);
+        JLabel nome = new JLabel(this.nome, JLabel.CENTER);
         Font font = new Font("Arial",Font.BOLD,20);
 
         bemvindo.setBounds(0, 10, 300, 60);
