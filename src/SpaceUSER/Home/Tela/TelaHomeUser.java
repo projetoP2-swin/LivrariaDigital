@@ -1,6 +1,8 @@
-package SpaceUSER.Home;
+package SpaceUSER.Home.Tela;
 
+import SpaceUSER.Home.Ouvinte.OuvinteDosJButtons;
 import TelaPadrao.TelaPadrao;
+import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,9 +11,16 @@ public class TelaHomeUser extends TelaPadrao {
     private final JPanel JP_PAINEL =  new JPanel();
 
     private String nome;
-    public TelaHomeUser(String nome) {
+    private Usuario user;
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public TelaHomeUser(Usuario user) {
         super("Home - Cliente");
-        this.nome = nome;
+        this.nome = user.getNome();
+        this.user = user;
         this.addPainel();
         this.addBackground();
         this.addLabels();
@@ -40,6 +49,8 @@ public class TelaHomeUser extends TelaPadrao {
     }
 
     public void addButtons() {
+        OuvinteDosJButtons ouvinte = new OuvinteDosJButtons(this);
+
         Color cor = new Color(102, 102, 102);
         Font font = new Font("Arial",Font.BOLD,13);
 
@@ -49,6 +60,7 @@ public class TelaHomeUser extends TelaPadrao {
         JButton sair = new JButton("Sair");
 
         loja.setBounds(75, 110, 150, 25);
+        loja.addActionListener(ouvinte);
         loja.setFont(font);
         loja.setBackground(cor);
         loja.setBorder(null);
@@ -66,6 +78,7 @@ public class TelaHomeUser extends TelaPadrao {
         sair.setBounds(75, 230, 150, 25);
         sair.setFont(font);
         sair.setBackground(cor);
+        sair.addActionListener(ouvinte);
         sair.setBorder(null);
 
         this.JP_PAINEL.add(loja);

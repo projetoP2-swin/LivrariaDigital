@@ -28,7 +28,6 @@ public class CentralDeInformacoes {
         this.livreiro = livreiro;
 
     }
-
     public void addUser(Usuario usuario){
         this.usuarios.add(usuario);
     }
@@ -37,12 +36,21 @@ public class CentralDeInformacoes {
         this.loginSingleton = loginSingleton;
     }
 
+    public void addArrayDeLivros(ArrayList<Livro> livros){
+        this.livros.addAll(livros);
+
+    }
+
     public void addLivro(Livro livro){
         this.livros.add(livro);
 
     }
+    public void addLivro(int index,Livro livro){
+        this.livros.add(index,livro);
 
-    
+    }
+
+
     public Livreiro getLivreiro() {
         return this.livreiro;
     }

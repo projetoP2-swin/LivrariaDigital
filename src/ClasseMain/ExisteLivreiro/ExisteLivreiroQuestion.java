@@ -2,6 +2,7 @@ package ClasseMain.ExisteLivreiro;
 
 import SpaceADM.Cadastro.Tela.TelaAddLivreiro;
 import SpaceADM.Home.Tela.TelaHomeADM;
+import SpaceUSER.Home.Tela.TelaHomeUser;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import TelaPadrao.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
@@ -29,16 +30,26 @@ public class ExisteLivreiroQuestion {
         }
     }
 
+
+
     public TelaPadrao primeiraTelaFactory() throws Exception{
         boolean existeLiveiero = existLivreiro();
-        boolean existeLogin = existeLoginLivreiro();
+        boolean existeLoginLivreiro = existeLoginLivreiro();
+        int existeLoginUsuario;
+        try{
+            existeLoginUsuario = central.getLogin().getUsuario();
+        }catch (Exception e){
+            existeLoginUsuario = -1;
+        }
 
-        if(existeLiveiero && !existeLogin){
-            return new TelaLoginCliente();
+        if(existeLoginUsuario!=-1){
+            return new TelaHomeUser(central.getUsuario().get(existeLoginUsuario));
 
-        }else if(existeLogin){
+        }else if(existeLoginLivreiro){
             return new TelaHomeADM();
 
+        }else if(existeLiveiero && !existeLoginLivreiro){
+            return new TelaLoginCliente();
         }else{
             return new TelaAddLivreiro();
 

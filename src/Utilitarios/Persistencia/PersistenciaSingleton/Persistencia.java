@@ -59,7 +59,7 @@ public class Persistencia{
 	public void alias(){
 		xStream.alias("CentralDeInformacoes", CentralDeInformacoes.class);
 		xStream.alias("Livreiro", Livreiro.class);
-		xStream.alias("Login", LoginSingleton.class);
+		xStream.alias("login", LoginSingleton.class);
 
 	}
 

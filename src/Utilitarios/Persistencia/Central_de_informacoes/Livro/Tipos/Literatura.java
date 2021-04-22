@@ -6,23 +6,17 @@ import java.util.ArrayList;
 
 public class Literatura  extends Livro{
 
-    private String[] autores;
+    private final String TIPO = "Literatura";
 
-    public Literatura(ArrayList<String> info, String autores ) {
-        super(
-            info.get(0),info.get(1), info.get(2), info.get(3),
-            info.get(4), info.get(6),
-            Integer.parseInt(info.get(7)), Long.parseLong(info.get(8)));
-        this.autores = autores.contains(",")?autores.split(","):autores.split(" ");
+    public Literatura(String titulo, int anoDePublicacao, String resumo,
+        String idioma, String editora, int quantidade, float preco,String genero,
+        String autores) {
+        super(titulo, anoDePublicacao, resumo, idioma, editora, quantidade, preco,genero,autores);
     }
 
-
-    public String[] getAutores() {
-        return autores;
+    public String getTIPO() {
+        return TIPO;
     }
 
-    public void setAutores(String[] autores) {
-        this.autores = autores;
-    }
 
 }

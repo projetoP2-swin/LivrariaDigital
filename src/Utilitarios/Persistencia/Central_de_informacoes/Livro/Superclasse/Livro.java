@@ -1,25 +1,46 @@
 package Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse;
 
+import javax.swing.*;
+import java.util.ArrayList;
+
 public  abstract class Livro {
 
-    private String titulo, tipo;
+    private String titulo;
     private String resumo;
     private String idioma;
     private String genero;
     private String editora;
     private int quantidade;
     private float preco;
+    private int anoDePublicacao;
+    private final String TIPO ="";
+    private int numeroDeVisualizacoes=0;
+    private String autor;
 
-    public String getTipo() {
-        return tipo;
+    public String getAutor() {
+        return autor;
     }
 
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
+    public int getNumeroDeVisualizacoes() {
+        return numeroDeVisualizacoes;
+    }
+
+    public void setNumeroDeVisualizacoes(int numeroDeVisualizacoes) {
+        this.numeroDeVisualizacoes = numeroDeVisualizacoes;
+    }
+
+    public String getTIPO() {
+        return TIPO;
+    }
 
     public Livro(
-            String tipo, String titulo, String resumo, String idioma,
-            String genero, String editora, int quantidade, float preco) {
-        this.tipo = tipo;
+            String titulo,int anoDePublicacao, String resumo, String idioma,
+            String editora, int quantidade, float preco, String genero,String autor) {
+
         this.titulo = titulo;
         this.resumo = resumo;
         this.idioma = idioma;
@@ -27,6 +48,8 @@ public  abstract class Livro {
         this.editora = editora;
         this.quantidade = quantidade;
         this.preco = preco;
+        this.anoDePublicacao = anoDePublicacao;
+        this.autor = autor;
     }
 
     public String getTitulo() {
@@ -83,5 +106,13 @@ public  abstract class Livro {
 
     public void setPreco(float preco) {
         this.preco = preco;
+    }
+
+    public int getAnoDePublicacao() {
+        return anoDePublicacao;
+    }
+
+    public void setAnoDePublicacao(int anoDePublicacao) {
+        this.anoDePublicacao = anoDePublicacao;
     }
 }

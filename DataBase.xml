@@ -1,24 +1,139 @@
 <CentralDeInformacoes>
   <livreiro>
-    <nome>Karlos Almeida</nome>
-    <email>almeidakarlos02@gmail.com</email>
-    <senha>29183,292d0,53gd1,</senha>
+    <nome>victor queiroz</nome>
+    <email>v@</email>
+    <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
   </livreiro>
   <usuarios>
     <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
-      <nome>karlos</nome>
-      <email>almeidakarlos02@gmail.com</email>
-      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+      <nome>Vitor queiroz</nome>
+      <email>v@</email>
+      <senha>29183,</senha>
       <sexo>Masculino</sexo>
-      <dataDeNascimento>16/09/2001</dataDeNascimento>
-      <genero1>Literatura brasileira</genero1>
-      <genero2>Biografias</genero2>
-      <genero3>Artes</genero3>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+      <genero1>Literatura estrangeira</genero1>
+      <genero2>Infanto juvenil</genero2>
+      <genero3>Poesia</genero3>
+      <compras/>
+      <indexInteresse/>
+    </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+      <nome>Vitor queiroz</nome>
+      <email>v@</email>
+      <senha>29183,</senha>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+      <genero1>Literatura estrangeira</genero1>
+      <genero2>Infanto juvenil</genero2>
+      <genero3>Poesia</genero3>
+      <compras>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+          <titulo>Livro1</titulo>
+          <resumo>dlkjaslkdjlasjdlkasjdajsdlkajsldkjaskldjaskldjaklsdjasljdlkasjlkdajslkdjaslkdjlskjdalksjdlaksjdlkajsdlkasjdlkasjdlkasjdlkasjdlaskjdlaksdjalksdjlsadja</resumo>
+          <idioma>PT-BR</idioma>
+          <genero>Literatura Estrangeira</genero>
+          <editora>alma</editora>
+          <quantidade>55</quantidade>
+          <preco>15.0</preco>
+          <anoDePublicacao>2020</anoDePublicacao>
+          <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+          <numeroDeVisualizacoes>-1</numeroDeVisualizacoes>
+          <autor>aaaa, bbbb</autor>
+          <TIPO>Literatura</TIPO>
+        </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      </compras>
+      <indexInteresse/>
+    </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+      <nome>Vitor queiroz</nome>
+      <email>v@</email>
+      <senha>29183,</senha>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+      <genero1>Literatura estrangeira</genero1>
+      <genero2>Infanto juvenil</genero2>
+      <genero3>Poesia</genero3>
+      <compras>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+          <titulo>Livro1</titulo>
+          <resumo>dlkjaslkdjlasjdlkasjdajsdlkajsldkjaskldjaskldjaklsdjasljdlkasjlkdajslkdjaslkdjlskjdalksjdlaksjdlkajsdlkasjdlkasjdlkasjdlkasjdlaskjdlaksdjalksdjlsadja</resumo>
+          <idioma>PT-BR</idioma>
+          <genero>Literatura Estrangeira</genero>
+          <editora>alma</editora>
+          <quantidade>55</quantidade>
+          <preco>15.0</preco>
+          <anoDePublicacao>2020</anoDePublicacao>
+          <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+          <numeroDeVisualizacoes>-1</numeroDeVisualizacoes>
+          <autor>aaaa, bbbb</autor>
+          <TIPO>Literatura</TIPO>
+        </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura reference="../Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura"/>
+      </compras>
+      <indexInteresse/>
+    </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+      <nome>Vitor queiroz</nome>
+      <email>v@</email>
+      <senha>29183,</senha>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+      <genero1>Literatura estrangeira</genero1>
+      <genero2>Infanto juvenil</genero2>
+      <genero3>Poesia</genero3>
+      <compras>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+          <titulo>Livro1</titulo>
+          <resumo>dlkjaslkdjlasjdlkasjdajsdlkajsldkjaskldjaskldjaklsdjasljdlkasjlkdajslkdjaslkdjlskjdalksjdlaksjdlkajsdlkasjdlkasjdlkasjdlkasjdlaskjdlaksdjalksdjlsadja</resumo>
+          <idioma>PT-BR</idioma>
+          <genero>Literatura Estrangeira</genero>
+          <editora>alma</editora>
+          <quantidade>55</quantidade>
+          <preco>15.0</preco>
+          <anoDePublicacao>2020</anoDePublicacao>
+          <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+          <numeroDeVisualizacoes>-1</numeroDeVisualizacoes>
+          <autor>aaaa, bbbb</autor>
+          <TIPO>Literatura</TIPO>
+        </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura reference="../Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura"/>
+        <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura reference="../Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura"/>
+      </compras>
+      <indexInteresse/>
     </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
   </usuarios>
-  <livros/>
+  <livros>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>Livro1</titulo>
+      <resumo>dlkjaslkdjlasjdlkasjdajsdlkajsldkjaskldjaskldjaklsdjasljdlkasjlkdajslkdjaslkdjlskjdalksjdlaksjdlkajsdlkasjdlkasjdlkasjdlkasjdlaskjdlaksdjalksdjlsadja</resumo>
+      <idioma>PT-BR</idioma>
+      <genero>Literatura Estrangeira</genero>
+      <editora>alma</editora>
+      <quantidade>55</quantidade>
+      <preco>15.0</preco>
+      <anoDePublicacao>2020</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>5</numeroDeVisualizacoes>
+      <autor>aaaa, bbbb</autor>
+      <TIPO>Literatura</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>Livro1</titulo>
+      <resumo>dlkjaslkdjlasjdlkasjdajsdlkajsldkjaskldjaskldjaklsdjasljdlkasjlkdajslkdjaslkdjlskjdalksjdlaksjdlkajsdlkasjdlkasjdlkasjdlkasjdlaskjdlaksdjalksdjlsadja</resumo>
+      <idioma>PT-BR</idioma>
+      <genero>Literatura Estrangeira</genero>
+      <editora>alma</editora>
+      <quantidade>55</quantidade>
+      <preco>15.0</preco>
+      <anoDePublicacao>2020</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>4</numeroDeVisualizacoes>
+      <autor>aaaa, bbbb</autor>
+      <TIPO>Literatura</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+  </livros>
   <loginSingleton>
-    <livreiro>true</livreiro>
-    <usuario>-1</usuario>
+    <livreiro>false</livreiro>
+    <usuario>0</usuario>
   </loginSingleton>
 </CentralDeInformacoes>

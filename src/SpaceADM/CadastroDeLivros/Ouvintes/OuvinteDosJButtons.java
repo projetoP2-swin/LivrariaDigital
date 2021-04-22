@@ -25,14 +25,14 @@ public class OuvinteDosJButtons implements ActionListener {
     public ArrayList<String> getInfomacoes(){
         ArrayList<String> todasAsInformoces = new ArrayList<String>();
         todasAsInformoces.add(comp.getTipo());
-
         todasAsInformoces.add(tela.getTitulo());
+        todasAsInformoces.add(tela.getAno());
         todasAsInformoces.add(tela.getResumo());
         todasAsInformoces.add(tela.getIdioma());
-        todasAsInformoces.addAll(comp.getInfo());
         todasAsInformoces.add(tela.getEditora());
         todasAsInformoces.add(tela.getQuantidade());
         todasAsInformoces.add(tela.getPreco());
+        todasAsInformoces.addAll(comp.getInfo());
 
         return todasAsInformoces;
     }
@@ -57,12 +57,17 @@ public class OuvinteDosJButtons implements ActionListener {
 
 
                 }catch (Exception ex){
-                    JOptionPane.showMessageDialog(tela,"Houve um erro, tente novamente");
+                    this.showMessageDialog("Houve um erro, tente novamente");
                 }
 
             }else{
-                System.out.println("Não deixe campos em branco");
+                this.showMessageDialog("Não deixe campos em branco");
             }
         }
+
+    }
+    public void showMessageDialog(String msg){
+        JOptionPane.showMessageDialog(tela, msg);
+
     }
 }

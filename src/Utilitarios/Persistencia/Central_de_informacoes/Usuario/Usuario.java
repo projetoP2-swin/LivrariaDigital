@@ -1,5 +1,9 @@
 package Utilitarios.Persistencia.Central_de_informacoes.Usuario;
 
+import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
+
+import java.util.ArrayList;
+
 public class Usuario {
     private String nome;
     private String email;
@@ -8,10 +12,30 @@ public class Usuario {
     private String sexo;
     private String dataDeNascimento;
     private String genero1, genero2, genero3;
+    private ArrayList<Livro> compras=new ArrayList<Livro>();
+    private ArrayList<String> indexInteresse=new ArrayList<String>();
+
+
+    public ArrayList<Livro> getCompras() {
+        return compras;
+    }
+
+    public void addCompras(Livro compras) {
+        this.compras.add(compras);
+    }
+
+    public ArrayList<String> getIndexInteresse() {
+        return indexInteresse;
+    }
+
+    public void saddIndexInteresse(String indexInteresse) {
+        this.indexInteresse.add(indexInteresse);
+    }
 
     public Usuario(String nome, String email,
                    String senha, String sexo,
                    String dataDeNascimento, String genero1, String genero2, String genero3) {
+
         this.nome = nome;
         this.email = email;
         this.senha = senha;

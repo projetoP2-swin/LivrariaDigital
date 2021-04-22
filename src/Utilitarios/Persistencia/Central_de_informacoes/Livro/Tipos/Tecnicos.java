@@ -8,19 +8,20 @@ import java.util.ArrayList;
 public class Tecnicos extends Livro {
 
     private String assunto;
-    private String autor;
+    private final String TIPO = "Técnicos";
 
-    public Tecnicos(ArrayList<String> info, String assunto, String autor) {
-        super(
-            info.get(0), info.get(1), info.get(2),
-            info.get(3), info.get(4), info.get(7),
-            Integer.parseInt(info.get(8)), Long.parseLong(info.get(9)));
+    public Tecnicos(
+        String titulo, int anoDePublicacao, String resumo, String idioma,
+        String editora, int quantidade, float preco,String genero,
+        String assunto, String autor) {
+
+        super(titulo, anoDePublicacao, resumo, idioma, editora, quantidade, preco,genero,autor);
+
         this.assunto = assunto;
-        this.autor = autor;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getTIPO() {
+        return TIPO;
     }
 
     public String getAssunto() {

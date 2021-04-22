@@ -14,13 +14,32 @@ public class ChamaTiposDeLivros {
         String tipo = info.get(0);
         switch (tipo) {
             case "Literatura":
-                return new Literatura(info, info.get(5));
+                return new Literatura(
+                        info.get(1), Integer.parseInt(info.get(2)),
+                        info.get(3),info.get(4), info.get(5),
+                        Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
+                        info.get(8),info.get(9));
+
+            // tipo,titulo,anoDePublicacao, resumo, idioma ,editora,
+            // quantidade, preco,genero AUTORES
             case "Desenvolvimento Pessoal":
-                return new DesenvolvimentoPessoal(info, info.get(5));
+                return new DesenvolvimentoPessoal(
+                        info.get(1), Integer.parseInt(info.get(2)),
+                        info.get(3),info.get(4), info.get(5),
+                        Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
+                        info.get(8),info.get(9));
             case "Periódicos":
-                return new Periodicos(info, info.get(7), info.get(5), info.get(6));
+                return new Periodicos(
+                        info.get(1), Integer.parseInt(info.get(2)),
+                        info.get(3),info.get(4), info.get(5),
+                        Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
+                        info.get(8),Long.parseLong(info.get(11)),info.get(9),info.get(10));
             case "Técnico":
-                return new Tecnicos(info, info.get(5), info.get(6));
+                return new Tecnicos(
+                        info.get(1), Integer.parseInt(info.get(2)),
+                        info.get(3),info.get(4), info.get(5),
+                        Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
+                        info.get(8),info.get(9), info.get(10));
             default:
                 return null;
         }

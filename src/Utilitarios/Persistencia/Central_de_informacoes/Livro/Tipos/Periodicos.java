@@ -8,27 +8,21 @@ import java.util.ArrayList;
 public class Periodicos extends Livro {
     private long numeroDaEdicao;
     private String mesDeLancamento;
-    private String autor;
+    private final String TIPO = "Periódicos";
 
-    public Periodicos(ArrayList<String> info,
-                      String numeroDaEdicao,
-                      String mesDeLancamento,
-                      String autor) {
-        super(
-            info.get(0), info.get(1), info.get(2),
-            info.get(3), info.get(4), info.get(8),
-            Integer.parseInt(info.get(9)),Long.parseLong(info.get(10)));
-        this.numeroDaEdicao = Long.parseLong(numeroDaEdicao);
+    public Periodicos(
+         String titulo, int anoDePublicacao, String resumo, String idioma,
+        String editora, int quantidade, float preco,String genero,
+        long numeroDaEdicao, String mesDeLancamento, String autor) {
+
+        super(titulo, anoDePublicacao, resumo, idioma, editora, quantidade, preco,genero,autor);
+
+        this.numeroDaEdicao = numeroDaEdicao;
         this.mesDeLancamento = mesDeLancamento;
-        this.autor = autor;
     }
 
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public String getTIPO() {
+        return TIPO;
     }
 
     public long getNumeroDaEdicao() {

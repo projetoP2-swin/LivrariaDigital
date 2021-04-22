@@ -1,8 +1,10 @@
 package SpaceADM.Home.Ouvinte;
 
 import SpaceADM.CadastroDeLivros.Tela.Tela.TelaAddLivro;
+import SpaceADM.CarregarPlanilha.Tela.TelaCarregarPlanilha;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceADM.login.Tela.TelaLoginADM;
+import Loja.Tela.Loja.TelaLoja;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
@@ -37,6 +39,15 @@ public class OuvinteDosButtons implements ActionListener {
         new TelaAddLivro();
     }
 
+    public void btnCarregarPlanilha(){
+        tela.dispose();
+        new TelaCarregarPlanilha();
+    }
+
+    public void btnVerALoja(){
+        this.tela.dispose();
+        new TelaLoja();
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton) e.getSource();
@@ -47,6 +58,12 @@ public class OuvinteDosButtons implements ActionListener {
                 break;
             case"Cadastrar Livro":
                 this.btnCadastrarLivro();
+                break;
+            case"Carregar planilha":
+                this.btnCarregarPlanilha();
+                break;
+            case"Ver a loja":
+                this.btnVerALoja();
                 break;
         }
 
