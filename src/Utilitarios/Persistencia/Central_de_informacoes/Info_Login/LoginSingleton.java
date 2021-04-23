@@ -1,8 +1,10 @@
 package Utilitarios.Persistencia.Central_de_informacoes.Info_Login;
 
+import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
+
 public class LoginSingleton {
     private boolean livreiro;
-    private int usuario=-1;
+    private Usuario emailUsuario=null;
 
     private static LoginSingleton login;
     private LoginSingleton() {
@@ -26,11 +28,12 @@ public class LoginSingleton {
         this.livreiro = livreiro;
     }
 
-    public int getUsuario() {
-        return usuario;
+
+    public Usuario getEmailUsuario() {
+        return emailUsuario;
     }
 
-    public void setUsuario(int usuario) {
-        this.usuario = usuario;
+    public void setEmailUsuario(Usuario emailUsuario) {
+        this.emailUsuario = emailUsuario;
     }
 }

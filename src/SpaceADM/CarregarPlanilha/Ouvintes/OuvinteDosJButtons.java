@@ -81,9 +81,9 @@ public class OuvinteDosJButtons implements ActionListener {
                 "artes"+
                 "biografia"+
                 "poesia"},
-                {"Gibi Revista de notícias"},
-                {"Autoajuda Religião,Saúde"},
-                {"Paradidático Formação Profissional"}
+                {"gibi revista de notícias"},
+                {"autoajuda religião saúde"},
+                {"paradidático formação profissional"}
 
         };
         int index = generos.indexOf(tipo);

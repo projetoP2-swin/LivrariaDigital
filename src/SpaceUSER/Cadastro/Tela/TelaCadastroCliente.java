@@ -122,10 +122,10 @@ public class TelaCadastroCliente extends TelaPadrao {
 
 
     public void addCombos () {
-        String[] generos = {".","Literatura brasileira", "Literatura estrangeira",
-                "Infanto juvenil", "Artes", "Biografias",
-                "Poesia", "Gibi", "Revista de Notícias", "Autoajuda",
-                "Religião", "Saúde", "Paradidático", "Formação profissional"};
+        String[] generos = {".","Literatura Brasileira", "Literatura Estrangeira",
+                "Infanto Juvenil", "Artes", "Biografia",
+                "Poesia", "Gibi", "Revista de notícias", "Autoajuda",
+                "Religião", "Saúde", "Paradidático", "Formação Profissional"};
         Font font = new Font("Arial",Font.BOLD,13);
         JSeparator separador = new JSeparator();
         separador.setBounds(15, 310, 325, 30);

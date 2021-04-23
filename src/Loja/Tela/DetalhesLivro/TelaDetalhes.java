@@ -3,13 +3,19 @@ package Loja.Tela.DetalhesLivro;
 
 import Loja.Imagens.Imagens;
 import Loja.OuvintesDetalhes.OuvinteDosJButtons;
+import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
+import SpaceUSER.Home.Tela.TelaHomeUser;
 import TelaPadrao.TelaPadrao;
+import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
+import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -34,15 +40,14 @@ public class TelaDetalhes extends TelaPadrao {
 
     public void chamaTodosOsMetodos(){
         this.addPainelDetalhes();
-        this.addPainelComentarios();
         this.addPainelBackg();
         this.addButtons();
+        this.addJButtonSalvar();
+        this.addButtonVoltarUser();
         this.addImagem();
         this.addFormDetalhes();
         this.addInfos();
-        this.addComentario();
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     public TelaDetalhes(Livro livro) {
@@ -67,10 +72,33 @@ public class TelaDetalhes extends TelaPadrao {
         return false;
     }
 
+    private class BackgroundTela extends JPanel {
+        private ImageIcon img;
 
+        public BackgroundTela(){
+            img = new ImageIcon("img/loja/telaDetalhes.jpeg");
+        }
+
+        @Override
+        public void paintComponent(Graphics g){
+            super.paintComponent(g);
+
+            g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
+
+        }
+
+        public void setImg(ImageIcon img){
+            this.img = img;
+        }
+
+        public ImageIcon getImg(){
+            return this.img;
+        }
+
+    }
 
     public void addPainelBackg() {
-        back = new JPanel();
+        back = new BackgroundTela();
         back.setLayout(null);
         back.setBounds(0, 0, 700, 400);
         back.setBackground(Color.DARK_GRAY);
@@ -81,33 +109,25 @@ public class TelaDetalhes extends TelaPadrao {
     public void addPainelDetalhes() {
         detalhesDoLivro = new JPanel();
         detalhesDoLivro.setLayout(null);
-        detalhesDoLivro.setBounds(10, 10, 230, 340);
+        detalhesDoLivro.setBounds(0, 0, 230, 373);
         detalhesDoLivro.setBackground(Color.DARK_GRAY);
-        this.detalhesDoLivro.setPreferredSize(new Dimension(0,1000));
+        int i;
+        if(this.user==null){
+            i=1060;
+        }else{
+            i=1000;
+        }
+        this.detalhesDoLivro.setPreferredSize(new Dimension(0,i));
 
         JScrollPane scroll = new JScrollPane(detalhesDoLivro);
         scroll.getVerticalScrollBar().setUnitIncrement(10);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.setBounds(10, 10,230 , 340);
+        scroll.setBounds(0, 0, 230 , 373);
 
         this.add(scroll);
 
     }
 
-    public void addPainelComentarios() {
-        painelComentarios = new JPanel();
-        painelComentarios.setLayout(null);
-        painelComentarios.setBounds(260, 10, 410, 145);
-        painelComentarios.setBackground(new Color(95, 92, 92, 255));
-        this.painelComentarios.setPreferredSize(new Dimension(0,300));
-
-        JScrollPane scroll = new JScrollPane(painelComentarios);
-        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.setBounds(260, 10,410 , 145);
-
-        this.add(scroll);
-
-    }
 
     public void addImagem() {
         String tipo = "Desenvolvimento Pessoal,Literatura,Periódicos,Técnicos";
@@ -177,9 +197,19 @@ public class TelaDetalhes extends TelaPadrao {
 
         this.detalhesDoLivro.add(preco);
     }
+    private JTextArea quantidade;
 
+    public JTextArea getQuantidade() {
+        return quantidade;
+    }
+    private JTextArea titulo;
+    private JTextArea resumoArea;
+    private JTextArea  idioma;
+    private JTextArea  editora;
+    private JTextArea  autor;
+    private JTextArea preco;
     public void addInfos() {
-        JTextArea titulo = new JTextArea(livro.getTitulo());
+        titulo = new JTextArea(livro.getTitulo());
 
         titulo.setFont(font);
         titulo.setEnabled(this.isUser());
@@ -192,7 +222,7 @@ public class TelaDetalhes extends TelaPadrao {
 
         JTextArea tipo = new JTextArea(livro.getTIPO());
         tipo.setForeground(corInfo);
-        tipo.setEnabled(this.isUser());
+        tipo.setEnabled(false);
         tipo.setBounds(10, 320, 190, 50);
         tipo.setFont(font);
         tipo.setBackground(new Color(51, 51, 51));
@@ -201,7 +231,7 @@ public class TelaDetalhes extends TelaPadrao {
         this.detalhesDoLivro.add(tipo);
 
 
-        JTextArea resumoArea = new JTextArea(livro.getResumo());
+        resumoArea = new JTextArea(livro.getResumo());
         JScrollPane painel = new JScrollPane(resumoArea);
         painel.setBounds(10, 410, 190, 70);
         resumoArea.setEnabled(this.isUser());
@@ -213,7 +243,7 @@ public class TelaDetalhes extends TelaPadrao {
         this.detalhesDoLivro.add(painel);
 
 
-        JTextArea  idioma = new JTextArea(livro.getIdioma());
+        idioma = new JTextArea(livro.getIdioma());
         idioma.setFont(font);
         idioma.setEnabled(this.isUser());
         idioma.setForeground(corInfo);
@@ -223,9 +253,9 @@ public class TelaDetalhes extends TelaPadrao {
         idioma.setWrapStyleWord(true);
         this.detalhesDoLivro.add(idioma);
 
-        JTextArea  genero = new JTextArea(livro.getGenero());
+        JTextArea genero = new JTextArea(livro.getGenero());
         genero.setFont(font);
-        genero.setEnabled(this.isUser());
+        genero.setEnabled(false);
         genero.setForeground(corInfo);
         genero.setBounds(10, 595, 190, 50);
         genero.setBackground(new Color(51, 51, 51));
@@ -233,7 +263,7 @@ public class TelaDetalhes extends TelaPadrao {
         genero.setWrapStyleWord(true);
         this.detalhesDoLivro.add(genero);
 
-        JTextArea  editora = new JTextArea(livro.getEditora());
+        editora = new JTextArea(livro.getEditora());
         editora.setFont(font);
         editora.setEnabled(this.isUser());
         editora.setForeground(corInfo);
@@ -243,7 +273,7 @@ public class TelaDetalhes extends TelaPadrao {
         editora.setWrapStyleWord(true);
         this.detalhesDoLivro.add(editora);
 
-        JTextArea  autor = new JTextArea(livro.getAutor());
+        autor = new JTextArea(livro.getAutor());
         autor.setFont(font);
         autor.setEnabled(this.isUser());
         autor.setForeground(corInfo);
@@ -253,8 +283,9 @@ public class TelaDetalhes extends TelaPadrao {
         autor.setWrapStyleWord(true);
         this.detalhesDoLivro.add(autor);
 
-        JTextArea quantidade = new JTextArea(String.valueOf(livro.getQuantidade()));
+        quantidade = new JTextArea(String.valueOf(livro.getQuantidade()));
         quantidade.setFont(font);
+        quantidade.addKeyListener(new OuvinteKeyBord());
         quantidade.setEnabled(this.isUser());
         quantidade.setForeground(corInfo);
         quantidade.setBounds(10, 850, 190, 50);
@@ -263,7 +294,7 @@ public class TelaDetalhes extends TelaPadrao {
         quantidade.setWrapStyleWord(true);
         this.detalhesDoLivro.add(quantidade);
 
-        JTextArea preco = new JTextArea(String.valueOf(livro.getPreco()));
+        preco = new JTextArea(String.valueOf(livro.getPreco())+" R$");
         preco.setFont(font);
         preco.setEnabled(this.isUser());
         preco.setForeground(corInfo);
@@ -276,29 +307,73 @@ public class TelaDetalhes extends TelaPadrao {
 
     }
 
-    public void addComentario() {
-        comentario = new JTextArea();
-        JScrollPane painel = new JScrollPane(comentario);
-        painel.setBounds(260, 220, 270, 128);
-        comentario.setText("Deixe um comentário sobre o livro");
-        comentario.setForeground(corInfo);
-        comentario.setLineWrap(true);
-        comentario.setFont(font);
-        comentario.setWrapStyleWord(true);
+    public void addJButtonSalvar(){
+        JButton salvar = new JButton("Salvar");
+        salvar.setBounds(45, 1010, 130, 25);
+        salvar.setFont(font);
+        salvar.setBackground(new Color(102, 102, 102));
+        salvar.setBorder(null);
+        salvar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ArrayList<String> info = new ArrayList<String>();
+                info.add(titulo.getText());
+                info.add(resumoArea.getText());
+                info.add(idioma.getText());
+                info.add(editora.getText());
+                info.add(autor.getText());
+                info.add(preco.getText());
 
-        this.back.add(painel);
+                if(info.contains("")||info.contains(" ")){
+                    JOptionPane.showMessageDialog(null, "Preencha todos os Campos");
+                }else{
+                    CentralDeInformacoes central = Persistencia.getUnicaInstancia().recuperar();
+                    ArrayList<Livro> livrosArray = central.getLivros();
+                    for(int i =0;i<livrosArray.size();i++){
+                        if(livrosArray.get(i).getTitulo().equals(livro.getTitulo())&&
+                                livrosArray.get(i).getTIPO().equals(livro.getTIPO())){
+                            central.getLivros().remove(i);
+                            central.salvar();
+                        }
+                    }
+                    livro.setTitulo(info.get(0));
+                    livro.setResumo(info.get(1));
+                    livro.setIdioma(info.get(2));
+                    livro.setEditora(info.get(3));
+                    livro.setAutor(info.get(4));
+                    livro.setPreco(Float.parseFloat(info.get(5).replace("R$","")));
+
+                    livro.setQuantidade(Integer.parseInt(quantidade.getText()));
+                    central.addLivro(livro);
+                    central.salvar();
+                    JOptionPane.showMessageDialog(null, "Alterado com sucesso");
+                }
+
+            }
+        });
+        this.detalhesDoLivro.add(salvar);
 
     }
-
+    private  Color cor = new Color(102, 102, 102);
     public void addButtons() {
         OuvinteDosJButtons ouvinte = new OuvinteDosJButtons(this);
-        Color cor = new Color(102, 102, 102);
 
         JButton comprar = new JButton("Comprar");
         JButton addColecao = new JButton("Add a Coleção");
         JButton interesse = new JButton("Tenho interesse");
-        JButton comentar = new JButton("Comentar");
+        interesse.setEnabled(false);
+        if(this.livro.getQuantidade()==0){
+            comprar.setText("Esgotado");
+            comprar.setEnabled(false);
+            interesse.setEnabled(true);
 
+        }
+        if(this.isUser()){
+            comprar.setEnabled(true);
+            comprar.setText("Voltar");
+            addColecao.setEnabled(false);
+            interesse.setEnabled(false);
+        }
         comprar.setBounds(260, 170, 130, 35);
         comprar.addActionListener(ouvinte);
         comprar.setFont(font);
@@ -306,26 +381,40 @@ public class TelaDetalhes extends TelaPadrao {
         comprar.setBorder(null);
 
         addColecao.setBounds(400, 170, 130, 35);
+        addColecao.addActionListener(ouvinte);
         addColecao.setFont(font);
         addColecao.setBackground(cor);
         addColecao.setBorder(null);
 
         interesse.setBounds(540, 170, 130, 35);
+        interesse.addActionListener(ouvinte);
         interesse.setFont(font);
         interesse.setBackground(cor);
         interesse.setBorder(null);
 
-        comentar.setBounds(540, 270, 130, 25);
-        comentar.setFont(font);
-        comentar.setBackground(cor);
-        comentar.setBorder(null);
-
         this.back.add(comprar);
         this.back.add(addColecao);
         this.back.add(interesse);
-        this.back.add(comentar);
+
 
     }
 
+    public void addButtonVoltarUser() {
+        if (!this.isUser()) {
+            JButton voltar = new JButton("Voltar");
+            voltar.setBounds(400, 220, 130, 35);
+            voltar.setFont(font);
+            voltar.setBackground(cor);
+            voltar.setBorder(null);
+            voltar.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    dispose();
+                    new TelaHomeUser(user);
+                }
+            });
+            this.back.add(voltar);
+        }
+    }
 
 }

@@ -6,6 +6,7 @@ import SpaceUSER.Home.Tela.TelaHomeUser;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
 import TelaPadrao.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
+import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
 public class ExisteLivreiroQuestion {
@@ -35,15 +36,15 @@ public class ExisteLivreiroQuestion {
     public TelaPadrao primeiraTelaFactory() throws Exception{
         boolean existeLiveiero = existLivreiro();
         boolean existeLoginLivreiro = existeLoginLivreiro();
-        int existeLoginUsuario;
+        Usuario existeLoginUsuario;
         try{
-            existeLoginUsuario = central.getLogin().getUsuario();
+            existeLoginUsuario = central.getLogin().getEmailUsuario();
         }catch (Exception e){
-            existeLoginUsuario = -1;
+            existeLoginUsuario = null;
         }
 
-        if(existeLoginUsuario!=-1){
-            return new TelaHomeUser(central.getUsuario().get(existeLoginUsuario));
+        if(existeLoginUsuario!=null){
+            return new TelaHomeUser(existeLoginUsuario);
 
         }else if(existeLoginLivreiro){
             return new TelaHomeADM();

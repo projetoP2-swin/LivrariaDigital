@@ -23,7 +23,7 @@ public class OuvinteDosJTable implements MouseListener {
             JTable cedula = (JTable) e.getSource();
             int i =cedula.getSelectedRow();
             Livro livro = tela.getLivros().get(i);
-
+            this.tela.dispose();
             if(tela.getUser()!=null){
                 CentralDeInformacoes central = Persistencia.getUnicaInstancia().recuperar();
                 central.getLivros().remove(i);

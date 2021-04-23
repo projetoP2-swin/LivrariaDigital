@@ -2,6 +2,7 @@ package SpaceADM.CadastroDeLivros.Tela.Tela;
 
 
 import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteCombo;
+import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
 import TelaPadrao.TelaPadrao;
 
 import javax.swing.*;
@@ -137,6 +138,7 @@ public class TelaAddLivro extends TelaPadrao {
         ano = new JTextField();
         ano.setBounds(165, 153, 100, 25);
         ano.setForeground(corPadrao);
+        ano.addKeyListener(new OuvinteKeyBord());
         ano.setFont(FONT);
 
         resumo = new JTextArea();
@@ -158,11 +160,13 @@ public class TelaAddLivro extends TelaPadrao {
         quantidade = new JTextField();
         quantidade.setBounds(108, 333, 50, 25);
         quantidade.setForeground(corPadrao);
+        quantidade.addKeyListener(new OuvinteKeyBord());
         quantidade.setFont(FONT);
 
         preco = new JTextField();
         preco.setBounds(215, 333, 50, 25);
         preco.setForeground(corPadrao);
+        preco.addKeyListener(new OuvinteKeyBord());
         preco.setFont(FONT);
 
 

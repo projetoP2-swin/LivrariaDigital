@@ -1,4 +1,6 @@
 package Loja.Tela.Loja;
+
+
 import Loja.OuvintesLoja.JTable.OuvinteDosJTable;
 import Loja.OuvintesLoja.JcomboBox.OuvinteCategorias;
 import SpaceADM.Home.Tela.TelaHomeADM;
@@ -7,7 +9,6 @@ import TelaPadrao.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +24,6 @@ import java.util.ArrayList;
 
 public class TelaLoja extends TelaPadrao {
     private JPanel painelTitulo;
-    private JPanel painelfiltros;
     private JTextField pesquisa;
     private Color padraocombo = new Color(74, 148, 154, 255);
     public final ArrayList<Livro> LIVROS = Persistencia.getUnicaInstancia().recuperar().getLivros();
@@ -37,7 +37,6 @@ public class TelaLoja extends TelaPadrao {
     public void chamaMetodosIniciais(){
         this.setSize(800,500);
         this.addJPainelTitulo();
-        this.addPainelFiltros();
         this.addLabelsIntoPainel();
         this.addImgGoToPerfil();
         this.addLabels();
@@ -102,29 +101,29 @@ public class TelaLoja extends TelaPadrao {
 
 
     public void addJPainelTitulo(){
-        painelTitulo = new JPanel();
+        painelTitulo = new JPanelDegrade(0,150,0,0);
         painelTitulo.setLayout(null);
-        painelTitulo.setBounds(0,0,800,50);
-        painelTitulo.setBackground(new Color(250, 196, 196, 163));
+        painelTitulo.setBounds(0,0,800,150);
+
         this.add(this.painelTitulo);
-
+        //this.addSeparador();
 
     }
+    /*public void addSeparador(){
+        JSeparator separator = new JSeparator();
 
-    public void addPainelFiltros() {
-        painelfiltros = new JPanel();
-        painelfiltros.setLayout(null);
-        painelfiltros.setBounds(0, 50, 800, 70);
-        painelfiltros.setBackground(new Color(245, 135, 104, 255));
-        this.add(this.painelfiltros);
-    }
+        separator.setBounds(0,43,800,100);
+        separator.setOrientation(JSeparator.HORIZONTAL);
+        separator.setBackground(Color.BLACK);
+        this.painelTitulo.add(separator);
+    }*/
 
     public void addLabelsIntoPainel(){
-        Font font = new Font("Impact",Font.BOLD,40);
+        Font font = new Font("Impact",Font.BOLD,37);
         JLabel estantenome = new JLabel("Estante Virtual", JLabel.CENTER);
         estantenome.setForeground(Color.black);
         estantenome.setFont(font);
-        estantenome.setBounds(0, 0, 800, 45);
+        estantenome.setBounds(10, 0, 800, 45);
         this.painelTitulo.add(estantenome);
 
 
@@ -135,15 +134,15 @@ public class TelaLoja extends TelaPadrao {
         JLabel categoria = new JLabel("Filtragem",JLabel.CENTER);
         JLabel pesquisar = new JLabel("Pesquisar",JLabel.CENTER);
 
-        categoria.setBounds(260,3,260,22);
+        categoria.setBounds(95,50,260,22);
         categoria.setForeground(Color.BLACK);
         categoria.setFont(font);
-        this.painelfiltros.add(categoria);
+        this.painelTitulo.add(categoria);
 
-        pesquisar.setBounds(550, 3, 250, 22);
+        pesquisar.setBounds(500, 50, 250, 22);
         pesquisar.setForeground(Color.BLACK);
         pesquisar.setFont(font);
-        this.painelfiltros.add(pesquisar);
+        this.painelTitulo.add(pesquisar);
     }
 
     public void addComboBox(){
@@ -164,8 +163,8 @@ public class TelaLoja extends TelaPadrao {
         filtrar.setForeground(Color.BLACK);
         filtrar.setSelectedIndex(0);
         filtrar.setFont(font);
-        filtrar.setBounds(255, 30, 255, 30 );
-        this.painelfiltros.add(filtrar);
+        filtrar.setBounds(100, 70, 255, 30 );
+        this.painelTitulo.add(filtrar);
 
     }
 
@@ -173,7 +172,7 @@ public class TelaLoja extends TelaPadrao {
         Font font = new Font("Arial",Font.BOLD,13);
 
         this.pesquisa = new JTextField();
-        this.pesquisa.setBounds(595,30,150,30);
+        this.pesquisa.setBounds(550,70,150,30);
         this.pesquisa.setBackground(padraocombo);
         this.pesquisa.setFont(font);
         this.pesquisa.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
@@ -207,7 +206,7 @@ public class TelaLoja extends TelaPadrao {
             }
         });
 
-        this.painelfiltros.add(this.pesquisa);
+        this.painelTitulo.add(this.pesquisa);
 
 
     }
@@ -230,7 +229,7 @@ public class TelaLoja extends TelaPadrao {
     private ArrayList<Livro> l;
     public void addLivros(ArrayList<Livro> livros){
         for(Livro livro: livros){
-            Object ob [] = {livros.indexOf(livro),livro.getTitulo(),livro.getTIPO()};
+            Object ob [] = {livro.getTitulo(),livro.getTIPO(),livro.getGenero(),livro.getQuantidade()};
             modelo.addRow(ob);
         }
         this.l =livros;
@@ -240,19 +239,22 @@ public class TelaLoja extends TelaPadrao {
     }
     public void addTabela(){
         Font font = new Font("Arial",Font.PLAIN,13);
-        modelo.addColumn("ID");
         modelo.addColumn("Título");
+        modelo.addColumn("Tipo");
         modelo.addColumn("Gênero");
+        modelo.addColumn("Quantidade");
 
         JTable tabela = new JTable();
         tabela.setModel(modelo);
         tabela.setBounds(50, 155, 690, 290);
-        tabela.getColumn("ID").setMaxWidth(70);
-        tabela.getColumn("Título").setMaxWidth(370);
-        tabela.getColumn("Gênero").setMaxWidth(260);
+
+        tabela.getColumn("Título").setMaxWidth(340);
+        tabela.getColumn("Tipo").setMaxWidth(220);
+        tabela.getColumn("Gênero").setMaxWidth(220);
+        tabela.getColumn("Quantidade").setMaxWidth(110);
+
         tabela.getTableHeader().setFont(font);
         tabela.getTableHeader().setForeground(Color.black);
-
         tabela.getTableHeader().setReorderingAllowed(false);
         tabela.addMouseListener(new OuvinteDosJTable(this));
         tabela.setFont(font);

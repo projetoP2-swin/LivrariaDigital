@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import ClasseMain.ExisteLivreiro.ExisteLivreiroQuestion;
-import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import net.infonode.gui.laf.InfoNodeLookAndFeel;
 import net.infonode.gui.laf.InfoNodeLookAndFeelTheme;
 

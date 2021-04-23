@@ -16,6 +16,24 @@ public  abstract class Livro {
     private final String TIPO ="";
     private int numeroDeVisualizacoes=0;
     private String autor;
+    private ArrayList<String> comentarios;
+    private int numeroDePessoasQueIndicaramInteresse = 0;
+
+    public int getNumeroDePessoasQueIndicaramInteresse() {
+        return numeroDePessoasQueIndicaramInteresse;
+    }
+
+    public void setNumeroDePessoasQueIndicaramInteresse(int numeroDePessoasQueIndicaramInteresse) {
+        this.numeroDePessoasQueIndicaramInteresse = numeroDePessoasQueIndicaramInteresse;
+    }
+
+    public ArrayList<String> getComentarios() {
+        return comentarios;
+    }
+
+    public void addComentarios(String comentarios) {
+        this.comentarios.add(comentarios);
+    }
 
     public String getAutor() {
         return autor;

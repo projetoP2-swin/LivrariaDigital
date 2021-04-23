@@ -2,6 +2,7 @@ package SpaceADM.CadastroDeLivros.Tela.Componentes;
 
 
 import Interfaces.Package_SpaceADM.ComponentesAddNaTela;
+import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
 import SpaceADM.CadastroDeLivros.Tela.Componentes.Superclasse.SuperclasseTipos;
 
 import javax.swing.*;
@@ -58,6 +59,7 @@ public class Periodicos extends SuperclasseTipos implements ComponentesAddNaTela
         numero = new JTextField();
         numero.setBounds(165, 476, 110, 30);
         numero.setForeground(COR_PADRAO);
+        numero.addKeyListener(new OuvinteKeyBord());
         numero.setFont(FONT);
 
 

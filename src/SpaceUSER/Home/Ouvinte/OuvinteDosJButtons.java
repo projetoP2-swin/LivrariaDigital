@@ -28,7 +28,7 @@ public class OuvinteDosJButtons implements ActionListener {
             case"Sair":
                 this.tela.dispose();
                 CentralDeInformacoes central = Persistencia.getUnicaInstancia().recuperar();
-                central.getLogin().setUsuario(-1);
+                central.getLogin().setEmailUsuario(null);
                 central.salvar();
                 new TelaLoginCliente();
 

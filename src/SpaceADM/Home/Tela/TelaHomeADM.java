@@ -106,7 +106,7 @@ public class TelaHomeADM extends TelaPadrao {
         sair.setBounds(75, 290, 150, 25);
         sair.addActionListener(ouvinte);
         sair.setFont(font);
-        sair.setBackground(cor);
+        sair.setBackground(new Color(229, 33, 33));
         sair.setBorder(null);
 
 

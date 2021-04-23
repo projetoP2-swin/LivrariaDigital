@@ -24,7 +24,7 @@ public class OuvinteLoginButtons implements ActionListener, Login {
     }
     @Override
     //
-    public Object isLogin(){
+    public Usuario isLogin(){
         String email = telaLoginCliente.getEmail();
 
         String senha = telaLoginCliente.getSenha();
@@ -35,7 +35,7 @@ public class OuvinteLoginButtons implements ActionListener, Login {
         for(Usuario user: central.getUsuario()){
             if(user.getEmail().equals(email) &&
                     CriptografiaDeSenha.descriptografia(user.getSenha()).equals(senha)){
-                return central.getUsuario().indexOf(user);
+                return user;
 
             }
         }
@@ -44,13 +44,14 @@ public class OuvinteLoginButtons implements ActionListener, Login {
     public void login(){
         String mensagem;
         try{
-            int b = (int) this.isLogin();
+            Usuario user = this.isLogin();
+            String email = user.getEmail();
             LoginSingleton login = LoginSingleton.getUnicaInstancia();
-            login.setUsuario(b);
+            login.setEmailUsuario(user);
             central.addLogin(login);
             central.salvar();
             telaLoginCliente.dispose();
-            new TelaHomeUser(central.getUsuario().get(b));
+            new TelaHomeUser(user);
 
         }catch(Exception e){
             mensagem = "Email ou senha incorretos";

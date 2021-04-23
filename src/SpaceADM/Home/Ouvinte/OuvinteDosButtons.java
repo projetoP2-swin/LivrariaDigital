@@ -2,16 +2,19 @@ package SpaceADM.Home.Ouvinte;
 
 import SpaceADM.CadastroDeLivros.Tela.Tela.TelaAddLivro;
 import SpaceADM.CarregarPlanilha.Tela.TelaCarregarPlanilha;
+import SpaceADM.Home.GeradorDePDF.GenadorDeFDP;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceADM.login.Tela.TelaLoginADM;
 import Loja.Tela.Loja.TelaLoja;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Info_Login.LoginSingleton;
+import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class OuvinteDosButtons implements ActionListener {
 
@@ -48,6 +51,52 @@ public class OuvinteDosButtons implements ActionListener {
         this.tela.dispose();
         new TelaLoja();
     }
+    private CentralDeInformacoes central= Persistencia.getUnicaInstancia().recuperar();
+    private ArrayList<Livro> livros = central.getLivros();
+    private ArrayList<Livro>livrosFinal=new ArrayList<>();
+
+    public void btnMaisVisualizados(){
+        for(int i = 0;i<10;i++){
+            int num =0;
+            Livro livro=null;
+            for(Livro l :livros){
+                if(l.getNumeroDeVisualizacoes()>num){
+                    num = l.getNumeroDeVisualizacoes();
+                    livro = l;
+                }
+
+            }
+            if(livro!=null){
+                livrosFinal.add(livro);
+                livros.remove(livro);
+            }
+        }
+        GenadorDeFDP.gerarRelatorio(livrosFinal,
+                "MaisVisualizados.pdf","Esses são os Livros mais procurados","Visualizações");
+
+
+    }
+    public void btnMaisInteressado(){
+
+        for(int i = 0;i<10;i++){
+            int num =0;
+            Livro livro=null;
+            for(Livro l :livros){
+                if(l.getNumeroDePessoasQueIndicaramInteresse()>num){
+                    num = l.getNumeroDePessoasQueIndicaramInteresse();
+                    livro = l;
+                }
+
+            }
+            if(livro!=null){
+                livrosFinal.add(livro);
+                livros.remove(livro);
+            }
+        }
+        GenadorDeFDP.gerarRelatorio(livrosFinal,
+                "MaisInteressados.pdf","Esses são os Livros esgotados com mais interessados","N°Interessados");
+
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton) e.getSource();
@@ -65,7 +114,27 @@ public class OuvinteDosButtons implements ActionListener {
             case"Ver a loja":
                 this.btnVerALoja();
                 break;
+            case"Mais visualizados":
+                this.btnMaisVisualizados();
+                break;
+            case"Mais interessados":
+                this.btnMaisInteressado();
+                break;
         }
 
     }
 }
+ /*for(int i =0;i<10;i++){
+                    livrosFinal[i]=livros.get(i);
+                }
+                for(int i =0;i<10;i++){
+                    Livro l2=null;
+                    for(Livro l : livros){
+                        if(livrosFinal[i].getNumeroDeVisualizacoes()<l.getNumeroDeVisualizacoes()){
+                            livrosFinal[i]=l;
+                            l2=l;
+                        }
+                    }
+                    livros.remove(l2);
+
+                }*/

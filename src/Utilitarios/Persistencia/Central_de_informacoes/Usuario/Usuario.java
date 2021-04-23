@@ -12,24 +12,24 @@ public class Usuario {
     private String sexo;
     private String dataDeNascimento;
     private String genero1, genero2, genero3;
-    private ArrayList<Livro> compras=new ArrayList<Livro>();
-    private ArrayList<String> indexInteresse=new ArrayList<String>();
+    private ArrayList<String> compras=new ArrayList<String>();
+    private ArrayList<String> colecao=new ArrayList<String>();
 
 
-    public ArrayList<Livro> getCompras() {
+    public ArrayList<String> getCompras() {
         return compras;
     }
 
-    public void addCompras(Livro compras) {
+    public void addCompras(String compras) {
         this.compras.add(compras);
     }
 
-    public ArrayList<String> getIndexInteresse() {
-        return indexInteresse;
+    public ArrayList<String> getColecao() {
+        return colecao;
     }
 
-    public void saddIndexInteresse(String indexInteresse) {
-        this.indexInteresse.add(indexInteresse);
+    public void addColecao(String indexInteresse) {
+        this.colecao.add(indexInteresse);
     }
 
     public Usuario(String nome, String email,

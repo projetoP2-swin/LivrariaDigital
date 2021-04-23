@@ -27,15 +27,25 @@ public class OuvinteCategorias implements ActionListener {
         ArrayList<Livro> finalLivros = this.tela.LIVROS;
 
         if(tipo.equals("Todos os Livros")){
-            String volta = (String) combo.getSelectedItem();
-            if(volta.equals("Todos os Livros")){
+            String itemSelecionado = (String) combo.getSelectedItem();
+            if(itemSelecionado.equals("Em Falta")){
+                ArrayList<Livro> livros = new ArrayList<Livro>();
+                for(Livro l : finalLivros){
+                    if(l.getQuantidade()==0){
+                        livros.add(l);
+                    }
+                }
+                this.tela.limpaPlanilha();
+                this.tela.addLivros(livros);
+
+            }else if(itemSelecionado.equals("Todos os Livros")){
                 this.tela.limpaPlanilha();
                 this.tela.addLivros(this.tela.LIVROS);
 
             }else{
                 ArrayList<Livro> l = new ArrayList<Livro>();
                 for(Livro livro : this.tela.LIVROS){
-                    if(livro.getTIPO().equals(volta)){
+                    if(livro.getTIPO().equals(itemSelecionado)){
                         l.add(livro);
                     }
                 }
