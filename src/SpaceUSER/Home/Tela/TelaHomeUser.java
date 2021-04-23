@@ -67,17 +67,19 @@ public class TelaHomeUser extends TelaPadrao {
 
         comprados.setBounds(75, 150, 150, 25);
         comprados.setFont(font);
+        comprados.addActionListener(ouvinte);
         comprados.setBackground(cor);
         comprados.setBorder(null);
 
         colecao.setBounds(75, 190, 150, 25);
         colecao.setFont(font);
+        colecao.addActionListener(ouvinte);
         colecao.setBackground(cor);
         colecao.setBorder(null);
 
         sair.setBounds(75, 230, 150, 25);
         sair.setFont(font);
-        sair.setBackground(cor);
+        sair.setBackground(new Color(229, 33, 33));
         sair.addActionListener(ouvinte);
         sair.setBorder(null);
 

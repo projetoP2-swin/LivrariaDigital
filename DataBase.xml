@@ -30,54 +30,77 @@
       </compras>
       <colecao>
         <string>titulo,Literatura,Literatura Estrangeira,Resumo</string>
+        <string>Titulo,Periódicos,Gibi,Resmo</string>
+        <string>dadas,Literatura,Literatura Estrangeira,das</string>
+      </colecao>
+    </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+      <nome>João Victor</nome>
+      <email>victorqueiroz90@outlook.com</email>
+      <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+      <numeroDeRecuperacao>1619222032331</numeroDeRecuperacao>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
+      <genero1>Literatura Brasileira</genero1>
+      <genero2>Literatura Estrangeira</genero2>
+      <genero3>Infanto Juvenil</genero3>
+      <compras>
+        <string>fdas,Literatura,Literatura Estrangeira,dsada</string>
+        <string>dasd,Técnicos,Formação Profissional,dasd</string>
+        <string>Gelado,Técnicos,Formação Profissional,dasd</string>
+      </compras>
+      <colecao>
+        <string>das,Periódicos,Revista de notícias,das</string>
+        <string>Titulo,Periódicos,Gibi,Resmo</string>
+      </colecao>
+    </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario reference="../Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario[2]"/>
+    <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
+      <nome>dasda</nome>
+      <email>da@</email>
+      <senha>29183,</senha>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>12/03/2001</dataDeNascimento>
+      <genero1>Literatura Brasileira</genero1>
+      <genero2>Literatura Estrangeira</genero2>
+      <genero3>Artes</genero3>
+      <compras>
+        <string>das,Periódicos,Revista de notícias,das</string>
+      </compras>
+      <colecao>
+        <string>Titulo,Periódicos,Gibi,Resmo</string>
       </colecao>
     </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
   </usuarios>
   <livros>
     <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
-      <titulo>titulo</titulo>
-      <resumo>Resumo</resumo>
-      <idioma>idioma</idioma>
-      <genero>Literatura Estrangeira</genero>
-      <editora>editora</editora>
-      <quantidade>190</quantidade>
-      <preco>100.0</preco>
-      <anoDePublicacao>2018</anoDePublicacao>
-      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>1</numeroDeVisualizacoes>
-      <autor>karlos,vitor</autor>
-      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
-      <TIPO>Literatura</TIPO>
-    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
-    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
-      <titulo>Gelado</titulo>
-      <resumo>Este é o resumo do livro. Seja bem vindo</resumo>
-      <idioma>EN-EUA</idioma>
-      <genero>Formação Profissional</genero>
-      <editora>alma</editora>
-      <quantidade>121</quantidade>
-      <preco>100.0</preco>
-      <anoDePublicacao>121</anoDePublicacao>
-      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>3</numeroDeVisualizacoes>
-      <autor>Júlio</autor>
-      <numeroDePessoasQueIndicaramInteresse>6</numeroDePessoasQueIndicaramInteresse>
-      <assunto>dad</assunto>
-      <TIPO>Técnicos</TIPO>
-    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
-    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
-      <titulo>fdas</titulo>
-      <resumo>dsada</resumo>
-      <idioma>dasda</idioma>
+      <titulo>dadas</titulo>
+      <resumo>das</resumo>
+      <idioma>das</idioma>
       <genero>Literatura Estrangeira</genero>
       <editora>dasda</editora>
-      <quantidade>21</quantidade>
-      <preco>12.0</preco>
+      <quantidade>0</quantidade>
+      <preco>121.0</preco>
       <anoDePublicacao>121</anoDePublicacao>
       <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>0</numeroDeVisualizacoes>
-      <autor>fsdfd,hg</autor>
-      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
+      <numeroDeVisualizacoes>7</numeroDeVisualizacoes>
+      <autor>cxzcz,fsd</autor>
+      <numeroDePessoasQueIndicaramInteresse>3</numeroDePessoasQueIndicaramInteresse>
+      <TIPO>Literatura</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>dadas</titulo>
+      <resumo>das</resumo>
+      <idioma>das</idioma>
+      <genero>Literatura Estrangeira</genero>
+      <editora>dasda</editora>
+      <quantidade>0</quantidade>
+      <preco>121.0</preco>
+      <anoDePublicacao>121</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>6</numeroDeVisualizacoes>
+      <autor>cxzcz,fsd</autor>
+      <numeroDePessoasQueIndicaramInteresse>2</numeroDePessoasQueIndicaramInteresse>
       <TIPO>Literatura</TIPO>
     </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
     <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
@@ -111,22 +134,6 @@
       <TIPO>Literatura</TIPO>
     </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
     <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
-      <titulo>dasd</titulo>
-      <resumo>dasd</resumo>
-      <idioma>das</idioma>
-      <genero>Formação Profissional</genero>
-      <editora>das</editora>
-      <quantidade>12</quantidade>
-      <preco>12.0</preco>
-      <anoDePublicacao>121</anoDePublicacao>
-      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>0</numeroDeVisualizacoes>
-      <autor>das</autor>
-      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
-      <assunto>das</assunto>
-      <TIPO>Técnicos</TIPO>
-    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
-    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
       <titulo>dasdas</titulo>
       <resumo>dasd</resumo>
       <idioma>dasad</idioma>
@@ -157,23 +164,37 @@
       <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
       <TIPO>Desenvolvimento Pessoal</TIPO>
     </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.DesenvolvimentoPessoal>
-    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
-      <titulo>das</titulo>
-      <resumo>das</resumo>
-      <idioma>das</idioma>
-      <genero>Revista de notícias</genero>
-      <editora>das</editora>
-      <quantidade>12</quantidade>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>fdas</titulo>
+      <resumo>dsada</resumo>
+      <idioma>dasda</idioma>
+      <genero>Literatura Estrangeira</genero>
+      <editora>dasda</editora>
+      <quantidade>20</quantidade>
       <preco>12.0</preco>
-      <anoDePublicacao>12</anoDePublicacao>
+      <anoDePublicacao>121</anoDePublicacao>
       <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>0</numeroDeVisualizacoes>
-      <autor>eqw</autor>
+      <numeroDeVisualizacoes>1</numeroDeVisualizacoes>
+      <autor>fsdfd,hg</autor>
       <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
-      <numeroDaEdicao>545</numeroDaEdicao>
-      <mesDeLancamento>Janeiro</mesDeLancamento>
-      <TIPO>Periódicos</TIPO>
-    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
+      <TIPO>Literatura</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
+      <titulo>Gelado</titulo>
+      <resumo>dasd</resumo>
+      <idioma>das</idioma>
+      <genero>Formação Profissional</genero>
+      <editora>das</editora>
+      <quantidade>10</quantidade>
+      <preco>12.0</preco>
+      <anoDePublicacao>121</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>2</numeroDeVisualizacoes>
+      <autor>das</autor>
+      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
+      <assunto>das</assunto>
+      <TIPO>Técnicos</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Tecnicos>
     <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
       <titulo>Titulo</titulo>
       <resumo>Resmo</resumo>
@@ -184,30 +205,44 @@
       <preco>12.0</preco>
       <anoDePublicacao>2019</anoDePublicacao>
       <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>14</numeroDeVisualizacoes>
+      <numeroDeVisualizacoes>24</numeroDeVisualizacoes>
       <autor>josé</autor>
-      <numeroDePessoasQueIndicaramInteresse>8</numeroDePessoasQueIndicaramInteresse>
+      <numeroDePessoasQueIndicaramInteresse>10</numeroDePessoasQueIndicaramInteresse>
       <numeroDaEdicao>5556</numeroDaEdicao>
       <mesDeLancamento>Janeiro</mesDeLancamento>
       <TIPO>Periódicos</TIPO>
     </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
-    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
-      <titulo>dadas</titulo>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
+      <titulo>das</titulo>
       <resumo>das</resumo>
       <idioma>das</idioma>
-      <genero>Literatura Estrangeira</genero>
-      <editora>dasda</editora>
-      <quantidade>0</quantidade>
-      <preco>121.0</preco>
-      <anoDePublicacao>121</anoDePublicacao>
+      <genero>Revista de notícias</genero>
+      <editora>das</editora>
+      <quantidade>11</quantidade>
+      <preco>12.0</preco>
+      <anoDePublicacao>12</anoDePublicacao>
       <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>4</numeroDeVisualizacoes>
-      <autor>cxzcz,fsd</autor>
-      <numeroDePessoasQueIndicaramInteresse>2</numeroDePessoasQueIndicaramInteresse>
-      <TIPO>Literatura</TIPO>
-    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <numeroDeVisualizacoes>2</numeroDeVisualizacoes>
+      <autor>eqw</autor>
+      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
+      <numeroDaEdicao>545</numeroDaEdicao>
+      <mesDeLancamento>Janeiro</mesDeLancamento>
+      <TIPO>Periódicos</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Periodicos>
   </livros>
   <loginSingleton>
     <livreiro>true</livreiro>
+    <emailUsuario>
+      <nome>dasda</nome>
+      <email>da@</email>
+      <senha>29183,</senha>
+      <sexo>Masculino</sexo>
+      <dataDeNascimento>12/03/2001</dataDeNascimento>
+      <genero1>Literatura Brasileira</genero1>
+      <genero2>Literatura Estrangeira</genero2>
+      <genero3>Artes</genero3>
+      <compras/>
+      <colecao/>
+    </emailUsuario>
   </loginSingleton>
 </CentralDeInformacoes>

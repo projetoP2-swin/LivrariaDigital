@@ -3,6 +3,7 @@ package SpaceUSER.Home.Ouvinte;
 import Loja.Tela.Loja.TelaLoja;
 import SpaceUSER.Home.Tela.TelaHomeUser;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
+import SpaceUSER.TelaParaColeções.Tela;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
@@ -31,6 +32,15 @@ public class OuvinteDosJButtons implements ActionListener {
                 central.getLogin().setEmailUsuario(null);
                 central.salvar();
                 new TelaLoginCliente();
+                break;
+            case"Livros comprados":
+                this.tela.dispose();
+                new Tela(this.tela.getUser(), "Minhas compras");
+                break;
+            case"Minha coleção":
+                this.tela.dispose();
+                new Tela(this.tela.getUser(), "Minha Coleção");
+                break;
 
         }
     }
