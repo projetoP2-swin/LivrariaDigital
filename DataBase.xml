@@ -152,7 +152,7 @@
       <preco>12.0</preco>
       <anoDePublicacao>121</anoDePublicacao>
       <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
-      <numeroDeVisualizacoes>4</numeroDeVisualizacoes>
+      <numeroDeVisualizacoes>15</numeroDeVisualizacoes>
       <autor>das</autor>
       <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
       <assunto>das</assunto>
@@ -223,6 +223,5 @@
   </livros>
   <loginSingleton>
     <livreiro>false</livreiro>
-    <emailUsuario reference="../../usuarios/Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario[5]"/>
   </loginSingleton>
 </CentralDeInformacoes>
