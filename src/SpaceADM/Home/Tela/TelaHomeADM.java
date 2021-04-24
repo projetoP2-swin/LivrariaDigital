@@ -3,7 +3,7 @@ package SpaceADM.Home.Tela;
 import SpaceADM.Home.Ouvinte.OuvinteDosButtons;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;

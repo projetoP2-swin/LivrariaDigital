@@ -5,8 +5,7 @@ import Loja.Imagens.Imagens;
 import Loja.OuvintesDetalhes.OuvinteDosJButtons;
 import Loja.Tela.Loja.TelaLoja;
 import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
-import SpaceUSER.Home.Tela.TelaHomeUser;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
@@ -77,7 +76,7 @@ public class TelaDetalhes extends TelaPadrao {
         private ImageIcon img;
 
         public BackgroundTela(){
-            img = new ImageIcon("img/loja/telaDetalhes.jpeg");
+            img = new ImageIcon(TelaDetalhes.class.getResource("/loja/telaDetalhes.jpeg"));
         }
 
         @Override
@@ -134,7 +133,7 @@ public class TelaDetalhes extends TelaPadrao {
         String tipo = "Desenvolvimento Pessoal,Literatura,Periódicos,Técnicos";
         ArrayList<String> tipos = new ArrayList<String>(Arrays.asList(tipo.split(",")));
         int index = tipos.indexOf(livro.getTIPO());
-        JLabel simula = new JLabel(new ImageIcon(Imagens.todasAsImg[index]));
+        JLabel simula = new JLabel(new ImageIcon(TelaDetalhes.class.getResource(Imagens.todasAsImg[index])));
         simula.setBounds(40, 15, 135, 185);
         this.detalhesDoLivro.add(simula);
     }

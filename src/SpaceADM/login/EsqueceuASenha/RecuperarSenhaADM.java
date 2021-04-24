@@ -3,7 +3,7 @@ import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.EnvioDeEmail.EnviarEmail;
 import Utilitarios.Persistencia.Central_de_informacoes.Livreiro.Livreiro;
 import SpaceADM.login.Tela.TelaLoginADM;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;

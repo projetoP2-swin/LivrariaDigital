@@ -5,7 +5,7 @@ import Loja.OuvintesLoja.JTable.OuvinteDosJTable;
 import Loja.OuvintesLoja.JcomboBox.OuvinteCategorias;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceUSER.Home.Tela.TelaHomeUser;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
@@ -59,7 +59,7 @@ public class TelaLoja extends TelaPadrao {
     }
 
     public void addImgGoToPerfil(){
-        ImageIcon perfil = new ImageIcon("img/loja/avatar.png");
+        ImageIcon perfil = new ImageIcon(TelaLoja.class.getResource("/loja/avatar.png"));
         JLabel label = new JLabel(perfil,JLabel.RIGHT);
         label.setBounds(720,0, 50, 50);
         label.addMouseListener(new MouseListener() {
@@ -106,17 +106,10 @@ public class TelaLoja extends TelaPadrao {
         painelTitulo.setBounds(0,0,800,150);
 
         this.add(this.painelTitulo);
-        //this.addSeparador();
+        
 
     }
-    /*public void addSeparador(){
-        JSeparator separator = new JSeparator();
-
-        separator.setBounds(0,43,800,100);
-        separator.setOrientation(JSeparator.HORIZONTAL);
-        separator.setBackground(Color.BLACK);
-        this.painelTitulo.add(separator);
-    }*/
+   
 
     public void addLabelsIntoPainel(){
         Font font = new Font("Impact",Font.BOLD,37);

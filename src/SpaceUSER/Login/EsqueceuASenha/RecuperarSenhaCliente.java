@@ -4,7 +4,7 @@ import Utilitarios.Criptografia.CriptografiaDeSenha;
 import Utilitarios.EnvioDeEmail.EnviarEmail;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;

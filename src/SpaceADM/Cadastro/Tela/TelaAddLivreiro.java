@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 import SpaceADM.Cadastro.Ouvintes.OuvinteDaClasseTelaAddLivreiro;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 public class TelaAddLivreiro extends TelaPadrao{
 

@@ -1,6 +1,6 @@
 package Interfaces.Package_Utilitarios;
 
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 public interface EnvioDeEmail {
     public String getEmailDestino();

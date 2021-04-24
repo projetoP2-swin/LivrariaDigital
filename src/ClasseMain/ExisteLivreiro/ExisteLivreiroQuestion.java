@@ -4,7 +4,7 @@ import SpaceADM.Cadastro.Tela.TelaAddLivreiro;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceUSER.Home.Tela.TelaHomeUser;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;

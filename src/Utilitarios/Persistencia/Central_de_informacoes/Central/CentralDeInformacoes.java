@@ -13,8 +13,6 @@ public class CentralDeInformacoes {
     private ArrayList<Livro> livros = new ArrayList<Livro>();
     private LoginSingleton loginSingleton;
 
-    private static Persistencia pADM = Persistencia.getUnicaInstancia();
-
     public void salvar(){
         Persistencia persistencia = Persistencia.getUnicaInstancia();
         try {

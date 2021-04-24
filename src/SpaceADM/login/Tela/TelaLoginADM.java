@@ -6,7 +6,7 @@ import javax.swing.*;
 
 import SpaceADM.login.Ouvintes.OuvinteDoEsqueceuASenha;
 import SpaceADM.login.Ouvintes.OuvinteLoginButton;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 public class TelaLoginADM extends TelaPadrao {
 
@@ -34,7 +34,7 @@ public class TelaLoginADM extends TelaPadrao {
 	}
 
 	public void addImagemUser() {
-		ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
+		ImageIcon imagemUser = new ImageIcon(TelaLoginADM.class.getResource("/img_ADM/img/userADM.png"));
 		JLabel boasVindas = new JLabel();
 		boasVindas.setBounds(0, 2, 300, 100);
 		boasVindas.setHorizontalAlignment(JLabel.CENTER);

@@ -30,10 +30,9 @@ public class Persistencia{
 	public void salvarCentral(CentralDeInformacoes central) throws Exception {
 		File arquivo = new File("DataBase.xml");
 		String xml="";
-		if(!arquivo.exists()) {
-			arquivo.createNewFile();
-			xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
-		}
+		
+		arquivo.createNewFile();
+		xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 		PrintWriter pw = new PrintWriter(arquivo);
 		this.alias();
@@ -54,7 +53,6 @@ public class Persistencia{
 		}catch(Exception ignored){
 		}
 		return null;
-
 	}
 	public void alias(){
 		xStream.alias("CentralDeInformacoes", CentralDeInformacoes.class);

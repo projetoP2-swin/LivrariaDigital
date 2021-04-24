@@ -23,7 +23,7 @@ public class PDFCompra {
                 OutputStream os = new FileOutputStream(dir+"/compra.pdf");
                 PdfWriter.getInstance(doc,os);
                 doc.open();
-                Image boleto = Image.getInstance("img/loja/Boleto/boletofk.jpg");
+                Image boleto = Image.getInstance(PDFCompra.class.getResource("/loja/Boleto/boletofk.jpg"));
                 doc.add(boleto);
                 doc.close();
             } catch (Exception e) {

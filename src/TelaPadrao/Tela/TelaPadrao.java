@@ -1,6 +1,8 @@
-package TelaPadrao;
+package TelaPadrao.Tela;
+
 
 import java.awt.*;
+
 
 import javax.swing.*;
 
@@ -11,7 +13,7 @@ public abstract class TelaPadrao extends JFrame{
 		private ImageIcon img;
 
 		public BackgroundTela(){
-			img = new ImageIcon("img/loja/livros.png");
+			img = new ImageIcon(TelaPadrao.class.getResource("/loja/livros.png"));
 		}
 
 		@Override

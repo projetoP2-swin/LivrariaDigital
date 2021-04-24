@@ -3,7 +3,7 @@ package SpaceADM.CarregarPlanilha.Tela;
 
 import SpaceADM.CarregarPlanilha.Ouvintes.OuvinteDosJButtons;
 import SpaceADM.Home.Tela.TelaHomeADM;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

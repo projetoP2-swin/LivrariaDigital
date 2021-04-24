@@ -1,7 +1,7 @@
 package Loja.Imagens;
 
 public class Imagens {
-    private static String caminho="img/loja/LivrosIMG/";
+    private static String caminho="/loja/LivrosIMG/";
     public static final String DESENVOLVIMENTO_PESSOAL=caminho+"dev_pessoal2.png";
     public static final String LITERATURA=caminho+"literatura2.png";
     public static final String PERIODICOS=caminho+"periodicos2.png";

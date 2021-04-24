@@ -1,7 +1,7 @@
 package SpaceUSER.Cadastro.Tela;
 
 import SpaceUSER.Cadastro.Ouvintes.OuvinteDosButtons;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,7 +41,7 @@ public class TelaCadastroCliente extends TelaPadrao {
     }
 
     public void addImagemUser() {
-        ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
+        ImageIcon imagemUser = new ImageIcon(TelaCadastroCliente.class.getResource("/img_ADM/img/userADM.png"));
         JLabel boasVindas = new JLabel();
 
         boasVindas.setBounds(5, 10, 100, 110);
@@ -51,7 +51,7 @@ public class TelaCadastroCliente extends TelaPadrao {
     }
 
     public void addImgLivraria() {
-        ImageIcon imagem = new  ImageIcon("img/img_ADM/img/tela1.png");
+        ImageIcon imagem = new  ImageIcon(TelaCadastroCliente.class.getResource("/img_ADM/img/tela1.png"));
         JLabel lbImg = new JLabel();
         lbImg.setBounds(0, 0, 330, 400);
         lbImg.setIcon(imagem);
@@ -248,7 +248,7 @@ public class TelaCadastroCliente extends TelaPadrao {
 
 
         enviar.setBounds(190, 515, 135, 30);
-        enviar.setIcon(new ImageIcon("./img/img_ADM/img/botao.png"));
+        enviar.setIcon(new ImageIcon(TelaCadastroCliente.class.getResource("/img_ADM/img/botao.png")));
         enviar.setFont(font);
         enviar.addActionListener(ouvinte);
         enviar.setForeground(Color.BLACK);

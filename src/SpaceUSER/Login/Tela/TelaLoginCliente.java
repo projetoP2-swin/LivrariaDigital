@@ -2,7 +2,7 @@ package SpaceUSER.Login.Tela;
 
 import SpaceUSER.Login.Ouvintes.OuvinteClienteEsqueceuASenha;
 import SpaceUSER.Login.Ouvintes.OuvinteLoginButtons;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +34,7 @@ public class TelaLoginCliente extends TelaPadrao {
     }
 
     public void addImagemUser() {
-        ImageIcon imagemUser = new ImageIcon("img/img_ADM/img/userADM.png");
+        ImageIcon imagemUser = new ImageIcon(TelaLoginCliente.class.getResource("/img_ADM/img/userADM.png"));
         JLabel boasVindas = new JLabel();
         boasVindas.setBounds(0, 2, 300, 100);
         boasVindas.setHorizontalAlignment(JLabel.CENTER);

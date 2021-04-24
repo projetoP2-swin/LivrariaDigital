@@ -1,7 +1,7 @@
 package SpaceUSER.Home.Tela;
 
 import SpaceUSER.Home.Ouvinte.OuvinteDosJButtons;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 
 import javax.swing.*;

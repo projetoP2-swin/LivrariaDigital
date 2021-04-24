@@ -1,8 +1,7 @@
 package SpaceUSER.TelaParaColeções;
 
 import SpaceUSER.Home.Tela.TelaHomeUser;
-import TelaPadrao.TelaPadrao;
-import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
+import TelaPadrao.Tela.TelaPadrao;
 import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 
 import javax.swing.*;

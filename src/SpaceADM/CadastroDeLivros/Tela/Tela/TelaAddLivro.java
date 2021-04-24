@@ -3,11 +3,10 @@ package SpaceADM.CadastroDeLivros.Tela.Tela;
 
 import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteCombo;
 import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
-import TelaPadrao.TelaPadrao;
+import TelaPadrao.Tela.TelaPadrao;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class TelaAddLivro extends TelaPadrao {
     private final Color COR_PADRAO = new Color(128, 196, 255);
