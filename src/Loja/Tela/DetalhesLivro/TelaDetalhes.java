@@ -3,6 +3,7 @@ package Loja.Tela.DetalhesLivro;
 
 import Loja.Imagens.Imagens;
 import Loja.OuvintesDetalhes.OuvinteDosJButtons;
+import Loja.Tela.Loja.TelaLoja;
 import SpaceADM.CadastroDeLivros.Ouvintes.OuvinteKeyBord;
 import SpaceUSER.Home.Tela.TelaHomeUser;
 import TelaPadrao.TelaPadrao;
@@ -410,7 +411,7 @@ public class TelaDetalhes extends TelaPadrao {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     dispose();
-                    new TelaHomeUser(user);
+                    new TelaLoja(user);
                 }
             });
             this.back.add(voltar);

@@ -1,7 +1,6 @@
 package SpaceADM.Home.GeradorDePDF;
 
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
-import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -14,7 +13,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class GenadorDeFDP {
+public class GeradorDePDF {
     public static boolean gerarRelatorio(
             ArrayList<Livro>livrosFinal,
             String nomeDoArquivo, String tituloPDF,String primeiraCell) {
@@ -88,5 +87,7 @@ public class GenadorDeFDP {
         }
       return false;
     }
+
+
 
 }

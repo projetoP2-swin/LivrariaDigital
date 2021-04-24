@@ -2,7 +2,7 @@ package SpaceADM.Home.Ouvinte;
 
 import SpaceADM.CadastroDeLivros.Tela.Tela.TelaAddLivro;
 import SpaceADM.CarregarPlanilha.Tela.TelaCarregarPlanilha;
-import SpaceADM.Home.GeradorDePDF.GenadorDeFDP;
+import SpaceADM.Home.GeradorDePDF.GeradorDePDF;
 import SpaceADM.Home.Tela.TelaHomeADM;
 import SpaceADM.login.Tela.TelaLoginADM;
 import Loja.Tela.Loja.TelaLoja;
@@ -71,7 +71,7 @@ public class OuvinteDosButtons implements ActionListener {
                 livros.remove(livro);
             }
         }
-        GenadorDeFDP.gerarRelatorio(livrosFinal,
+        GeradorDePDF.gerarRelatorio(livrosFinal,
                 "MaisVisualizados.pdf","Esses são os Livros mais procurados","Visualizações");
 
 
@@ -93,7 +93,7 @@ public class OuvinteDosButtons implements ActionListener {
                 livros.remove(livro);
             }
         }
-        GenadorDeFDP.gerarRelatorio(livrosFinal,
+        GeradorDePDF.gerarRelatorio(livrosFinal,
                 "MaisInteressados.pdf","Esses são os Livros esgotados com mais interessados","N°Interessados");
 
     }

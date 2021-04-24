@@ -10,6 +10,7 @@ import Utilitarios.Persistencia.Central_de_informacoes.Usuario.Usuario;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class OuvinteDosJButtons implements ActionListener {
         Usuario user = tela.getUser();
         ArrayList<Usuario> usuarios = central.getUsuario();
 
-        String mensagem="houve um erro";
+        String mensagem="";
         for(int i =0;i<usuarios.size();i++){
             if(usuarios.get(i).getEmail().equals(user.getEmail())){
                 user=central.getUsuario().get(i);
@@ -42,24 +43,31 @@ public class OuvinteDosJButtons implements ActionListener {
         }
         switch (botao){
             case"Comprar":
-                if(tela.getUser()!=null){
+                JFileChooser fc = new JFileChooser();
+                fc.setPreferredSize(new Dimension(700,400));
+                fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                int result = fc.showOpenDialog(fc);
 
-                    ArrayList<Livro> livros = central.getLivros();
-                    for(int i =0;i<livros.size();i++){
-                        if(livros.get(i).getTitulo().equals(livroEscolhido.getTitulo())&&
-                                livros.get(i).getTIPO().equals(livroEscolhido.getTIPO())){
-                            central.getLivros().remove(i);
-                            central.salvar();
+                if (result!=JFileChooser.CANCEL_OPTION) {
+                    String dir = fc.getSelectedFile().getAbsolutePath();
+                    PDFCompra.gerarBoleto(dir);
+                        ArrayList<Livro> livros = central.getLivros();
+                        for(int i =0;i<livros.size();i++){
+                            if(livros.get(i).getTitulo().equals(livroEscolhido.getTitulo())&&
+                                    livros.get(i).getTIPO().equals(livroEscolhido.getTIPO())){
+                                central.getLivros().remove(i);
+                                central.salvar();
+                            }
                         }
-                    }
-                    int quantidade = livroEscolhido.getQuantidade();
-                    livroEscolhido.setQuantidade(quantidade-1);
+                        int quantidade = livroEscolhido.getQuantidade();
+                        livroEscolhido.setQuantidade(quantidade-1);
 
-                    central.addLivro(livroEscolhido);
-                    central.salvar();
+                        central.addLivro(livroEscolhido);
+                        central.salvar();
 
-                    user.addCompras(livroInfo);
-                    mensagem = "Operação Realizada com sucesso";
+                        user.addCompras(livroInfo);
+                    mensagem = "Boleto Gerado \n"+"Operação Realizada com Sucesso";
+
                 }
                 break;
             case"Add a Coleção":
@@ -89,7 +97,7 @@ public class OuvinteDosJButtons implements ActionListener {
             this.comprarAndAddColecao(botao.getText());
         }else if(botao.getText().equals("Voltar")){
             this.tela.dispose();
-            new TelaHomeADM();
+            new TelaLoja();
         }else if(botao.getText().equals("Tenho interesse")){
             CentralDeInformacoes central = Persistencia.getUnicaInstancia().recuperar();
             Livro livroEscolhido = tela.getLivro();
@@ -108,7 +116,7 @@ public class OuvinteDosJButtons implements ActionListener {
             central.salvar();
             JOptionPane.showMessageDialog(tela,"Interesse contabilizado");
             tela.dispose();
-            new TelaHomeUser(tela.getUser());
+            new TelaLoja(tela.getUser());
         }
     }
 }
