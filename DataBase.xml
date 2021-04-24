@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CentralDeInformacoes>
   <livreiro>
-    <nome>Livreiro teste</nome>
+    <nome>Livreiro Teste</nome>
     <email>victorqueiroz90@outlook.com</email>
     <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
   </livreiro>
   <usuarios>
     <Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
       <nome>teste</nome>
-      <email>g@</email>
+      <email>v@</email>
       <senha>29183,</senha>
       <sexo>Masculino</sexo>
-      <dataDeNascimento>13/06/2000</dataDeNascimento>
+      <dataDeNascimento>13/09/2001</dataDeNascimento>
       <genero1>Infanto Juvenil</genero1>
-      <genero2>Paradidático</genero2>
-      <genero3>Literatura Brasileira</genero3>
-      <compras/>
+      <genero2>Literatura Brasileira</genero2>
+      <genero3>Infanto Juvenil</genero3>
+      <compras>
+        <string>dasda,Literatura,Artes,dasda</string>
+      </compras>
       <colecao/>
     </Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario>
   </usuarios>
-  <livros/>
+  <livros>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+      <titulo>dasda</titulo>
+      <resumo>dasda</resumo>
+      <idioma>das</idioma>
+      <genero>Artes</genero>
+      <editora>dsa</editora>
+      <quantidade>11</quantidade>
+      <preco>12.0</preco>
+      <anoDePublicacao>12</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>1</numeroDeVisualizacoes>
+      <autor>dasd</autor>
+      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
+      <TIPO>Literatura</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.Literatura>
+  </livros>
   <loginSingleton>
     <livreiro>false</livreiro>
     <emailUsuario reference="../../usuarios/Utilitarios.Persistencia.Central__de__informacoes.Usuario.Usuario"/>
