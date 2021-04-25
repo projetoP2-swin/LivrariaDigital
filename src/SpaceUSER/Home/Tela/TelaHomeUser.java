@@ -22,9 +22,9 @@ public class TelaHomeUser extends TelaPadrao {
         this.nome = user.getNome();
         this.user = user;
         this.addPainel();
-        this.addBackground();
         this.addLabels();
         this.addButtons();
+        this.addBackground();
         this.setVisible(true);
     }
 
@@ -56,7 +56,7 @@ public class TelaHomeUser extends TelaPadrao {
 
         JButton loja = new JButton("Ir para a loja");
         JButton comprados = new JButton("Livros comprados");
-        JButton colecao = new JButton("Minha coleÃ§Ã£o");
+        JButton colecao = new JButton("Minha coleção");
         JButton sair = new JButton("Sair");
 
         loja.setBounds(75, 110, 150, 25);

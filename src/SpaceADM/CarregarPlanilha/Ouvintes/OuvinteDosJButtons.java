@@ -60,17 +60,17 @@ public class OuvinteDosJButtons implements ActionListener {
             Integer.parseInt(info.get(2));
             Integer.parseInt(info.get(6));
             Float.parseFloat(info.get(7));
-            if(info.get(0).toLowerCase().equals("periÃ³dicos")){
+            if(info.get(0).toLowerCase().equals("periódicos")){
                 Long.parseLong(info.get(11));
             }
         }catch(Exception e){
-            throw new Exception("Digite um nÃºmero no campo de nÃºmero");
+            throw new Exception("Digite um número no campo de número");
         }
     }
     public void testeGeneros(ArrayList<String> info, int numeroDaLinha) throws Exception {
         String tipo = info.get(0).toLowerCase();
         String generoString =
-                "literatura,periÃ³dicos,desenvolvimento pessoal,tÃ©cnico";
+                "literatura,periódicos,desenvolvimento pessoal,técnico";
 
         ArrayList<String> generos = new ArrayList<>(
                 Arrays.asList(generoString.split(",")));
@@ -81,9 +81,9 @@ public class OuvinteDosJButtons implements ActionListener {
                 "artes"+
                 "biografia"+
                 "poesia"},
-                {"gibi revista de notÃ­cias"},
-                {"autoajuda religiÃ£o saÃºde"},
-                {"paradidÃ¡tico formaÃ§Ã£o profissional"}
+                {"gibi revista de notícias"},
+                {"autoajuda religião saúde"},
+                {"paradidático formação profissional"}
 
         };
         int index = generos.indexOf(tipo);
@@ -93,7 +93,7 @@ public class OuvinteDosJButtons implements ActionListener {
                 throw new Exception("Problema com os Generos");
             }
         }else{
-            throw new Exception("Livro na linha: "+numeroDaLinha+1+" nÃ£o reconhecido");
+            throw new Exception("Livro na linha: "+numeroDaLinha+1+" Não reconhecido");
         }
     }
 

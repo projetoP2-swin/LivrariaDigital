@@ -72,7 +72,7 @@ public class OuvinteDosButtons implements ActionListener {
             }
         }
         GeradorDePDF.gerarRelatorio(livrosFinal,
-                "MaisVisualizados.pdf","Esses sÃ£o os Livros mais procurados","VisualizaÃ§Ãµes");
+                "MaisVisualizados.pdf","Esses são os Livros mais procurados","Visualizações");
 
 
     }
@@ -94,7 +94,7 @@ public class OuvinteDosButtons implements ActionListener {
             }
         }
         GeradorDePDF.gerarRelatorio(livrosFinal,
-                "MaisInteressados.pdf","Esses sÃ£o os Livros esgotados com mais interessados","NÂ°Interessados");
+                "MaisInteressados.pdf","Esses são os Livros esgotados com mais interessados","N°Interessados");
 
     }
     @Override
@@ -124,17 +124,3 @@ public class OuvinteDosButtons implements ActionListener {
 
     }
 }
- /*for(int i =0;i<10;i++){
-                    livrosFinal[i]=livros.get(i);
-                }
-                for(int i =0;i<10;i++){
-                    Livro l2=null;
-                    for(Livro l : livros){
-                        if(livrosFinal[i].getNumeroDeVisualizacoes()<l.getNumeroDeVisualizacoes()){
-                            livrosFinal[i]=l;
-                            l2=l;
-                        }
-                    }
-                    livros.remove(l2);
-
-                }*/

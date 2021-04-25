@@ -142,8 +142,8 @@ public class TelaLoja extends TelaPadrao {
         String[] generos = {"Todos os Livros",
                 "Recomendados",
                 "Literatura",
-                "TÃ©cnicos",
-                "PeriÃ³dicos",
+                "Técnicos",
+                "Periódicos",
                 "Desenvolvimento Pessoal",
                 "Em Falta"};
 
@@ -232,18 +232,18 @@ public class TelaLoja extends TelaPadrao {
     }
     public void addTabela(){
         Font font = new Font("Arial",Font.PLAIN,13);
-        modelo.addColumn("TÃ­tulo");
+        modelo.addColumn("Título");
         modelo.addColumn("Tipo");
-        modelo.addColumn("GÃªnero");
+        modelo.addColumn("Gênero");
         modelo.addColumn("Quantidade");
 
         JTable tabela = new JTable();
         tabela.setModel(modelo);
         tabela.setBounds(50, 155, 690, 290);
 
-        tabela.getColumn("TÃ­tulo").setMaxWidth(340);
+        tabela.getColumn("Tíulo").setMaxWidth(340);
         tabela.getColumn("Tipo").setMaxWidth(220);
-        tabela.getColumn("GÃªnero").setMaxWidth(220);
+        tabela.getColumn("Gênero").setMaxWidth(220);
         tabela.getColumn("Quantidade").setMaxWidth(110);
 
         tabela.getTableHeader().setFont(font);

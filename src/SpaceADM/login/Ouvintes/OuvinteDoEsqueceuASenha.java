@@ -30,12 +30,12 @@ public class OuvinteDoEsqueceuASenha implements MouseListener {
                 new RecuperarSenhaADM(telaLoginADM,label);
             }catch(Exception ex){
                 JOptionPane.showMessageDialog(telaLoginADM,
-                        "Houve algum problema","RecuperaÃ§Ã£o de senha",
+                        "Houve algum problema","Recuperação de senha",
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
         thread.start();
-        ImageIcon gif = new ImageIcon("img/img_ADM/load/Book.gif");
+        ImageIcon gif = new ImageIcon(OuvinteDoEsqueceuASenha.class.getResource("/img_ADM/load/Book.gif"));
         label.setText("");
         label.setIcon(gif);
     }

@@ -57,7 +57,7 @@ public class GeradorDePDF {
                 }
                 for(Livro l:livrosFinal){
                     String numeroDeVisualizacoes;
-                    if(primeiraCell.equals("VisualizaÃ§Ãµes")){
+                    if(primeiraCell.equals("Visualizações")){
                         numeroDeVisualizacoes = Integer.toString(l.getNumeroDeVisualizacoes());
                     }else{
                         numeroDeVisualizacoes = Integer.toString(l.getNumeroDePessoasQueIndicaramInteresse());

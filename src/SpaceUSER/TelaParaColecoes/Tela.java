@@ -1,4 +1,4 @@
-package SpaceUSER.TelaParaColeÃ§Ãµes;
+package SpaceUSER.TelaParaColecoes;
 
 import SpaceUSER.Home.Tela.TelaHomeUser;
 import TelaPadrao.Tela.TelaPadrao;
@@ -17,7 +17,7 @@ public class Tela extends TelaPadrao {
     private String label;
 
     public Tela(Usuario info, String label) {
-        super("Minha ColeÃ§Ã£o");
+        super("Minha Coleção");
         this.info = info;
         this.label=label;
 
@@ -89,17 +89,17 @@ public class Tela extends TelaPadrao {
 
     public void addTabela(){
         Font font = new Font("Arial",Font.PLAIN,13);
-        modelo.addColumn("TÃ­tulo");
+        modelo.addColumn("Título");
         modelo.addColumn("Tipo");
-        modelo.addColumn("GÃªnero");
+        modelo.addColumn("Gênero");
         modelo.addColumn("Resumo");
 
         JTable tabela = new JTable();
         tabela.setModel(modelo);
         tabela.setBounds(10, 70, 665, 250);
-        tabela.getColumn("TÃ­tulo").setMaxWidth(340);
+        tabela.getColumn("Título").setMaxWidth(340);
         tabela.getColumn("Tipo").setMaxWidth(220);
-        tabela.getColumn("GÃªnero").setMaxWidth(220);
+        tabela.getColumn("Gênero").setMaxWidth(220);
         tabela.getColumn("Resumo").setMaxWidth(110);
         tabela.getTableHeader().setFont(font);
         tabela.getTableHeader().setForeground(Color.black);

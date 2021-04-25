@@ -33,17 +33,17 @@ public class TelaCarregarPlanilha extends TelaPadrao {
     public void addModeloDaTabel(){
         this.model1 = new DefaultTableModel();
         this.model1.addColumn("Tipo");
-        this.model1.addColumn("TÃ­tulo");
+        this.model1.addColumn("Título");
         this.model1.addColumn("Ano");
         this.model1.addColumn("Resumo");
         this.model1.addColumn("Idioma");
         this.model1.addColumn("Editora");
         this.model1.addColumn("Quantidade");
-        this.model1.addColumn("PreÃ§o");
+        this.model1.addColumn("Preço");
         this.model1.addColumn("Genero");
-        this.model1.addColumn("MÃªs");
+        this.model1.addColumn("Mês");
         this.model1.addColumn("Autore(s)");
-        this.model1.addColumn("NÂ° EdiÃ§Ã£o");
+        this.model1.addColumn("N° Edição");
         this.model1.addColumn("Assunto");
 
     }

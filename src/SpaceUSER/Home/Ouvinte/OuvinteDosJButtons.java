@@ -3,7 +3,7 @@ package SpaceUSER.Home.Ouvinte;
 import Loja.Tela.Loja.TelaLoja;
 import SpaceUSER.Home.Tela.TelaHomeUser;
 import SpaceUSER.Login.Tela.TelaLoginCliente;
-import SpaceUSER.TelaParaColeções.Tela;
+import SpaceUSER.TelaParaColecoes.Tela;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
 

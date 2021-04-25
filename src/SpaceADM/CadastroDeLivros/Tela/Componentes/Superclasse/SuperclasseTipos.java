@@ -28,7 +28,7 @@ public abstract class SuperclasseTipos {
     }
 
     private JLabel addLabelGenero(){
-        JLabel genero = new JLabel("Genero: ",JLabel.CENTER);
+        JLabel genero = new JLabel("Gênero: ",JLabel.CENTER);
         genero.setBounds(0,375,90,30);
         genero.setFont(FONT);
         return genero;

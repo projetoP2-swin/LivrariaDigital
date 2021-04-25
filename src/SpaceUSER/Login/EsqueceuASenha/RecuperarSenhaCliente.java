@@ -33,7 +33,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
             label.setForeground(Color.WHITE);
             label.setText("Esqueceu a senha?");
 
-            String codigo= this.showInputDialog_QUESTION("Digite o c√≥digo: ");
+            String codigo= this.showInputDialog_QUESTION("Digite o cÛdigo: ");
             if(codigo.equals(this.getCodigo())){
                 this.codigoCorreto();
             }else{
@@ -56,7 +56,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
 
     }
     public void codigoIncorreto(){
-        this.showMessageDialog_INFORMATION("Seu c√≥digo est√° errado");
+        this.showMessageDialog_INFORMATION("Seu cÛdigo est· errado");
     }
 
     public void gerenciarEnvioDeEmail(){
@@ -70,10 +70,10 @@ public class RecuperarSenhaCliente extends EnviarEmail {
             this.envioDeEmail();
             this.pedeOCodigo();
         }else{
-            String botoes[] ={"Sim","N√£o"};
+            String botoes[] ={"Sim","N„oo"};
             int index = JOptionPane.showOptionDialog(telaClientes,
-                    "<html>J√° enviamos uma mensagem para este email <br>" +
-                    "Desenja reenviar outro c√≥digo? <html>",
+                    "<html>J·° enviamos uma mensagem para este email <br>" +
+                    "Desenja reenviar outro cÛdigo? <html>",
                     TITULO_DAS_JANELAS,
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
@@ -97,7 +97,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
         Thread thread = new Thread(() -> {
             this.gerenciarEnvioDeEmail();
         });
-        ImageIcon gif = new ImageIcon("img/img_ADM/load/Book.gif");
+        ImageIcon gif = new ImageIcon(RecuperarSenhaCliente.class.getResource("/img_ADM/load/Book.gif"));
         this.label.setText("");
         this.label.setIcon(gif);
         thread.start();
@@ -105,7 +105,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
     }
     public void verificaSeExisteEmail(){
         String emailDigitado = this.showInputDialog_QUESTION(
-                "<html>Digite seu email<br> para recupera√ß√£o de senha: <html>");
+                "<html>Digite seu email<br> para recuperaÁ„o de senha: <html>");
         if(emailDigitado!=null){
             for(Usuario user: central.getUsuario()){
                 if(user.getEmail().equals(emailDigitado)){
@@ -120,7 +120,7 @@ public class RecuperarSenhaCliente extends EnviarEmail {
         if(user!=null){
             this.iniciaThread();
         }else{
-            this.showMessageDialog_INFORMATION("N√£o existe uma conta com esse email");
+            this.showMessageDialog_INFORMATION("N„o existe uma conta com esse email");
         }
     }
 

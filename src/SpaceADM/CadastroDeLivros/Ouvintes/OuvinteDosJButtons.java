@@ -61,7 +61,7 @@ public class OuvinteDosJButtons implements ActionListener {
                 }
 
             }else{
-                this.showMessageDialog("NÃ£o deixe campos em branco");
+                this.showMessageDialog("Nãoo deixe campos em branco");
             }
         }
 

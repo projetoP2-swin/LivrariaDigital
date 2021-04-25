@@ -130,7 +130,7 @@ public class TelaDetalhes extends TelaPadrao {
 
 
     public void addImagem() {
-        String tipo = "Desenvolvimento Pessoal,Literatura,PeriÃ³dicos,TÃ©cnicos";
+        String tipo = "Desenvolvimento Pessoal,Literatura,Periódicos,Téccnicos";
         ArrayList<String> tipos = new ArrayList<String>(Arrays.asList(tipo.split(",")));
         int index = tipos.indexOf(livro.getTIPO());
         JLabel simula = new JLabel(new ImageIcon(TelaDetalhes.class.getResource(Imagens.todasAsImg[index])));
@@ -139,7 +139,7 @@ public class TelaDetalhes extends TelaPadrao {
     }
 
     public void addFormDetalhes() {
-        JLabel titulo = new JLabel("  TÃ­tulo:",JLabel.LEFT);
+        JLabel titulo = new JLabel("  Título:",JLabel.LEFT);
         JLabel tipo = new JLabel("  Tipo:",JLabel.LEFT);
         JLabel  resumo = new JLabel("  Resumo:",JLabel.LEFT);
         JLabel  idioma = new JLabel("  Idioma:",JLabel.LEFT);
@@ -359,7 +359,7 @@ public class TelaDetalhes extends TelaPadrao {
         OuvinteDosJButtons ouvinte = new OuvinteDosJButtons(this);
 
         JButton comprar = new JButton("Comprar");
-        JButton addColecao = new JButton("Add a ColeÃ§Ã£o");
+        JButton addColecao = new JButton("Add a Coleção");
         JButton interesse = new JButton("Tenho interesse");
         interesse.setEnabled(false);
         if(this.livro.getQuantidade()==0){

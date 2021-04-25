@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Tecnicos extends Livro {
 
     private String assunto;
-    private final String TIPO = "TÃ©cnicos";
+    private final String TIPO = "Técnicos";
 
     public Tecnicos(
         String titulo, int anoDePublicacao, String resumo, String idioma,
