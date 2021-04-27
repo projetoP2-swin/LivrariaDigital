@@ -46,7 +46,8 @@ public class RecuperarSenhaADM extends EnviarEmail {
     }
 
     public void codigoIncorreto(){
-        this.showMessageDialog_INFORMATION("Seu codigo est· errado, tente novamente.");
+    	
+        this.showMessageDialog_INFORMATION("Seu codigo est√° errado, tente novamente.");
     }
 
     public String pegaEmailEscondido(){
@@ -71,22 +72,25 @@ public class RecuperarSenhaADM extends EnviarEmail {
         this.gerenciarEnvioDeEmail();
         this.addNumeroDeRecuperacao(Long.toString(CODIGO));
 
-        //Saindo da tela de Load do jLabel
+        String resultado = this.showInputDialog_QUESTION(
+                "<html>Enviamos um c√≥digo de recupera√ß√£o para: <br>"+
+                emailMETHOD+
+                "<br><br>Digite o c√≥digo: <html>");
+        
+      //Saindo da tela de Load do jLabel
         label.setText("Esqueceu sua senha?");
         label.setForeground(Color.WHITE);
         label.setIcon(null);
-
-        String resultado = this.showInputDialog_QUESTION(
-                "<html>Enviamos um cÛdigo de recuperaÁ„o para: <br>"+
-                emailMETHOD+
-                "<br><br>Digite o cÛdigo: <html>");
 
         String codigoAsString = Long.toString(CODIGO);
         if(resultado.equals(codigoAsString)){
             this.codigoCorreto();
         }else{
             this.codigoIncorreto();
+          
         }
+      
+      
 
     }
 
@@ -109,7 +113,5 @@ public class RecuperarSenhaADM extends EnviarEmail {
     public TelaPadrao getTelaDeReferencia() {
         return telaLoginAdm;
     }
-
-
 
 }

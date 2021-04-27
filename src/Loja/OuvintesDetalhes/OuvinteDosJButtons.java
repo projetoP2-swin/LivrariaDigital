@@ -66,17 +66,17 @@ public class OuvinteDosJButtons implements ActionListener {
                         central.salvar();
 
                         user.addCompras(livroInfo);
-                    mensagem = "Boleto Gerado \n"+"Operação Realizada com sucesso";
+                    	mensagem = "Boleto Gerado \n"+"OperaÃ§Ã£o Realizada com sucesso";
 
                 }
                 break;
-            case"Add a Coleçãoo":
+            case"Add a ColeÃ§Ã£o":
 
                 if(!user.getColecao().contains(livroInfo)){
                     user.addColecao(livroInfo);
-                    mensagem = "Operação Realizada com sucesso";
+                    mensagem = "OperaÃ§Ã£o Realizada com sucesso";
                 }else{
-                    mensagem="Você ja adicionou este livro à  sua coleção";
+                    mensagem="VocÃª ja adicionou este livro Ã  sua coleÃ§Ã£o";
                 }
                 break;
 

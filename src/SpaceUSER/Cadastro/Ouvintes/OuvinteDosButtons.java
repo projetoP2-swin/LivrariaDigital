@@ -67,11 +67,11 @@ public class OuvinteDosButtons implements ActionListener {
             Date hoje = new Date();
             Date dataObject = formato.parse(data);
             if(dataObject.after(hoje)){
-                throw new Exception("Informe uma data v·lida");
+                throw new Exception("Informe uma data v√°lida");
             }
 
         }catch(Exception e){
-            throw new Exception("Informe uma data v·lida");
+            throw new Exception("Informe uma data v√°lida");
         }
 
     }
@@ -85,13 +85,13 @@ public class OuvinteDosButtons implements ActionListener {
                 ArrayList<Usuario> usuarios=central.getUsuario();
                 for (Usuario user : usuarios) {
                     if (user.getEmail().equals(info[1])) {
-                        throw new Exception("Esse email ja est· cadastrado");
+                        throw new Exception("Esse email ja est√° cadastrado");
                     }
                 }
                 return info;
 
             }
-            throw new Exception("Insira um email v·lido");
+            throw new Exception("Insira um email v√°lido");
         }else{
             throw new Exception("Preencha todos os campos");
         }

@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.util.Properties;
 
 public abstract class EnviarEmail implements EnvioDeEmail {
-    public final String TITULO_DAS_JANELAS="Recuperação de senha";
+    public final String TITULO_DAS_JANELAS="RecuperaÃ§Ã£o de senha";
     public Persistencia persistencia = Persistencia.getUnicaInstancia();
     public CentralDeInformacoes central = persistencia.recuperar();
 

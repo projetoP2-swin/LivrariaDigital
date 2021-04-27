@@ -28,13 +28,13 @@ public class Periodicos extends SuperclasseTipos implements ComponentesAddNaTela
 
     @Override
     public String[] getGeneros() {
-        return new String[] {"Gibi", "Revista de notícias"};
+        return new String[] {"Gibi", "Revista de notÃ­cias"};
     }
 
     public void addFormLabel() {
         Font font2 = new Font("Arial",Font.BOLD,17);
-        JLabel mes = new JLabel("  Mês de lançamento:", JLabel.LEFT);
-        JLabel numero = new JLabel("  Número da edição:", JLabel.LEFT);
+        JLabel mes = new JLabel("  MÃªs de lanÃ§amento:", JLabel.LEFT);
+        JLabel numero = new JLabel("  NÃºmero da ediÃ§Ã£o:", JLabel.LEFT);
         JLabel autor = new JLabel("Autor: ", JLabel.CENTER);
 
         autor.setBounds(0,445,170,20);
@@ -68,7 +68,7 @@ public class Periodicos extends SuperclasseTipos implements ComponentesAddNaTela
 
     }
     public void addCombos() {
-        String[] arrayMeses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        String[] arrayMeses = {"Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho",
                 "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
 
         meses = new JComboBox(arrayMeses);

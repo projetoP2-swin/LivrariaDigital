@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Periodicos extends Livro {
     private long numeroDaEdicao;
     private String mesDeLancamento;
-    private final String TIPO = "Periódicos";
+    private final String TIPO = "PeriÃ³dicos";
 
     public Periodicos(
          String titulo, int anoDePublicacao, String resumo, String idioma,

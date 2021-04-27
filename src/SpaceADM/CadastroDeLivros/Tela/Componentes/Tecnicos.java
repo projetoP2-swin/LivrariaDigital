@@ -51,7 +51,7 @@ public class Tecnicos extends SuperclasseTipos implements ComponentesAddNaTela {
 
     @Override
     public String[] getGeneros() {
-        return new String[] {"Paradid·tico","FormaÁ„o Profissional"};
+        return new String[] {"Paradid√°tico","Forma√ß√£o Profissional"};
     }
 
 

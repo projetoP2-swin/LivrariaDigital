@@ -31,7 +31,7 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 		String[] info = this.permitirCadastroSe();
 
 		if(info[3].equals("1")){
-			this.showMessageDialog("Nãoo deixe campos em branco");
+			this.showMessageDialog("NÃ£o deixe campos em branco");
 		}else if(info[3].equals("2")){
 			this.showMessageDialog("Digite seu nome completo");
 
@@ -54,7 +54,7 @@ public class OuvinteDaClasseTelaAddLivreiro implements ActionListener{
 			}
 
 		}else{
-			this.showMessageDialog("Digite um email válido");
+			this.showMessageDialog("Digite um email vï¿½lido");
 		}
 	}
 

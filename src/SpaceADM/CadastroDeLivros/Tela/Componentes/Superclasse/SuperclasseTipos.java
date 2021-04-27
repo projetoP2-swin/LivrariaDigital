@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class SuperclasseTipos {
-
-
+	
     private static final Font FONT = new Font("Arial",Font.BOLD,13);
     private static final Color COR_PADRAO = new Color(128, 196, 255);
 
@@ -28,7 +27,7 @@ public abstract class SuperclasseTipos {
     }
 
     private JLabel addLabelGenero(){
-        JLabel genero = new JLabel("Gênero: ",JLabel.CENTER);
+        JLabel genero = new JLabel("GÃªnero: ",JLabel.CENTER);
         genero.setBounds(0,375,90,30);
         genero.setFont(FONT);
         return genero;

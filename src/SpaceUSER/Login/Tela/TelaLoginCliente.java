@@ -55,10 +55,12 @@ public class TelaLoginCliente extends TelaPadrao {
 
         email.setBounds(0, 145, 80, 20);
         email.setFont(font);
+        email.setBorder(null);
         this.JP_PAINEL.add(email);
 
         senha.setBounds(0, 185, 80, 20);
         senha.setFont(font);
+        senha.setBorder(null);
         this.JP_PAINEL.add(senha);
 
     }

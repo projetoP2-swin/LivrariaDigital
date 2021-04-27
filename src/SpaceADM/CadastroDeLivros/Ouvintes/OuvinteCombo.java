@@ -12,7 +12,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OuvinteCombo implements ActionListener {
-
+	
+	/**
+	 * @author Victor
+	 * 
+	 * Este ouvinte está servindo para o cadastro de livros de forma única.
+	 * Acho que ela é uma classe importante dentro do projeto.
+	 * Sem ela o cadastro de livros só poderá ser feito através da planilha.
+	 * 
+	 * Quando o Livreiro mudar o valor comboBox, o ouvinte será solicitado
+	 * e irá pegar as infomações de classes que extende uma superclasse de  Tipos e uma interface de components.
+	 * com isso em mente, é possível adicionar os JComponentes de forma polimórfica na tela.
+	 * Ja que cada subtipo da interface vai implementar seus próprios métodos retorando uma lista de Objetos do tipo
+	 * JComponent(e todo objeto swing extende de Jcomponent), é só adicionar na tela e
+	 * e passar as informações para o ouvinte dos JButtons que irá salvar como um Objeto do tipo correto na persistencia
+	 * (feito com o padrão factory) sem perca ou modifiação de informações
+	 *  
+	 * 
+	 */
+	
     private TelaAddLivro tela;
     private ComponentesAddNaTela componentes;
 

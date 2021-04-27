@@ -33,17 +33,17 @@ public class TelaCarregarPlanilha extends TelaPadrao {
     public void addModeloDaTabel(){
         this.model1 = new DefaultTableModel();
         this.model1.addColumn("Tipo");
-        this.model1.addColumn("Título");
+        this.model1.addColumn("TÃ­tulo");
         this.model1.addColumn("Ano");
         this.model1.addColumn("Resumo");
         this.model1.addColumn("Idioma");
         this.model1.addColumn("Editora");
         this.model1.addColumn("Quantidade");
-        this.model1.addColumn("Preço");
+        this.model1.addColumn("PreÃ§o");
         this.model1.addColumn("Genero");
-        this.model1.addColumn("Mês");
+        this.model1.addColumn("MÃªs");
         this.model1.addColumn("Autore(s)");
-        this.model1.addColumn("N° Edição");
+        this.model1.addColumn("NÂ° EdiÃ§Ã£o");
         this.model1.addColumn("Assunto");
 
     }
@@ -65,7 +65,6 @@ public class TelaCarregarPlanilha extends TelaPadrao {
     }
 
     public void addJButtons(){
-        JButton arquivo = new JButton("Pegar .XLS");
         JButton carregar = new JButton("Carregar");
         JButton addLinha = new JButton("Adicionar Linha");
         JButton removeLinha = new JButton("Remover Linha");
@@ -80,11 +79,6 @@ public class TelaCarregarPlanilha extends TelaPadrao {
         carregar.setForeground(Color.BLACK);
         carregar.setFont(FONT);
 
-        arquivo.setBounds(185,350,160,30);
-        arquivo.addActionListener(ouvinte);
-        arquivo.setForeground(Color.BLACK);
-        arquivo.setFont(FONT);
-
 
         removeLinha.setBounds(355,350,160,30);
         removeLinha.addActionListener(ouvinte);
@@ -96,12 +90,12 @@ public class TelaCarregarPlanilha extends TelaPadrao {
         addLinha.setForeground(Color.BLACK);
         addLinha.setFont(FONT);
 
-        limparTabela.setBounds(355,390,160,30);
+        limparTabela.setBounds(185,350,160,30);
         limparTabela.addActionListener(ouvinte);
         limparTabela.setForeground(Color.BLACK);
         limparTabela.setFont(FONT);
 
-        voltar.setBounds(185,390,160,30);
+        voltar.setBounds(265,390,160,30);
         voltar.setForeground(Color.BLACK);
         voltar.setFont(FONT);
         voltar.addActionListener(new ActionListener() {
@@ -112,7 +106,7 @@ public class TelaCarregarPlanilha extends TelaPadrao {
             }
         });
 
-        this.add(arquivo);
+ 
         this.add(carregar);
         this.add(addLinha);
         this.add(removeLinha);

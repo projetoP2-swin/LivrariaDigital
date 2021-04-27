@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CentralDeInformacoes>
+  <livreiro>
+    <nome>victor Queiroz</nome>
+    <email>victorqueiroz90@outlook.com</email>
+    <senha>29183,292d0,53gd1,53gcg,95767,958c2,</senha>
+  </livreiro>
+  <usuarios/>
+  <livros>
+    <Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.DesenvolvimentoPessoal>
+      <titulo>dasda</titulo>
+      <resumo>dsada</resumo>
+      <idioma>das</idioma>
+      <genero>Saúde</genero>
+      <editora>das</editora>
+      <quantidade>9</quantidade>
+      <preco>12.0</preco>
+      <anoDePublicacao>121</anoDePublicacao>
+      <TIPO defined-in="Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro"></TIPO>
+      <numeroDeVisualizacoes>7</numeroDeVisualizacoes>
+      <autor>das</autor>
+      <numeroDePessoasQueIndicaramInteresse>0</numeroDePessoasQueIndicaramInteresse>
+      <TIPO>Desenvolvimento Pessoal</TIPO>
+    </Utilitarios.Persistencia.Central__de__informacoes.Livro.Tipos.DesenvolvimentoPessoal>
+  </livros>
+  <loginSingleton>
+    <livreiro>false</livreiro>
+  </loginSingleton>
+</CentralDeInformacoes>

@@ -98,6 +98,7 @@ public class TelaLoginADM extends TelaPadrao {
 		
 	}
 
+
 	public void addButtons(){
 		JButton entrar = new JButton("Entrar");
 		OuvinteLoginButton ouvinte = new OuvinteLoginButton(this);

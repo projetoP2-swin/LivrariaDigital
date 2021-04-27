@@ -16,7 +16,6 @@
 	<classpathentry kind="lib" path="lib/lookAndFeel/idw-gpl.jar"/>
 	<classpathentry kind="lib" path="lib/persistencia/xstream-1.4.15.jar"/>
 	<classpathentry kind="lib" path="lib/PDF/iText-5.0.5.jar"/>
-	<classpathentry kind="lib" path="lib/planilha/jxl-2.6.10.jar"/>
 	<classpathentry kind="lib" path="img"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -69,9 +69,9 @@ public class TelaAddLivro extends TelaPadrao {
 
         String[] arrayTipos = {"",
                 "Literatura",
-                "Periódico",
+                "PeriÃ³dico",
                 "Desenvolvimento Pessoal",
-                "Técnico"};
+                "TÃ©cnico"};
 
         tipos = new JComboBox(arrayTipos);
         tipos.setBackground(Color.DARK_GRAY);
@@ -86,13 +86,13 @@ public class TelaAddLivro extends TelaPadrao {
     }
 
     public void addFormLabel() {
-        JLabel titulo = new JLabel("Título:",JLabel.RIGHT);
-        JLabel ano = new JLabel("Ano de publicação:",JLabel.RIGHT);
+        JLabel titulo = new JLabel("TÃ­tulo:",JLabel.RIGHT);
+        JLabel ano = new JLabel("Ano de publicaÃ§Ã£o:",JLabel.RIGHT);
         JLabel resumo = new JLabel("Resumo:",JLabel.RIGHT);
         JLabel idioma = new JLabel("Idioma:",JLabel.RIGHT);
         JLabel editora = new JLabel("Editora:",JLabel.RIGHT);
         JLabel quantidade = new JLabel("Quantidade:",JLabel.CENTER);
-        JLabel preco = new JLabel("Preço:",JLabel.RIGHT);
+        JLabel preco = new JLabel("PreÃ§o:",JLabel.RIGHT);
 
         titulo.setBounds(0, 120, 80, 20);
         titulo.setFont(FONT);

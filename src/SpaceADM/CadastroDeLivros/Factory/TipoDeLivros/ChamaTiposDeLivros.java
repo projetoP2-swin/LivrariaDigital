@@ -28,13 +28,13 @@ public class ChamaTiposDeLivros {
                         info.get(3),info.get(4), info.get(5),
                         Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
                         info.get(8),info.get(9));
-            case "Periódicos":
+            case "PeriÃ³dicos":
                 return new Periodicos(
                         info.get(1), Integer.parseInt(info.get(2)),
                         info.get(3),info.get(4), info.get(5),
                         Integer.parseInt(info.get(6)),Float.parseFloat(info.get(7)),
                         info.get(8),Long.parseLong(info.get(11)),info.get(9),info.get(10));
-            case "Téccnico":
+            case "TÃ©cnico":
                 return new Tecnicos(
                         info.get(1), Integer.parseInt(info.get(2)),
                         info.get(3),info.get(4), info.get(5),

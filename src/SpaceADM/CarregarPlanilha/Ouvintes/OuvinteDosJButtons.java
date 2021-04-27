@@ -6,13 +6,9 @@ import SpaceADM.Home.Tela.TelaHomeADM;
 import Utilitarios.Persistencia.Central_de_informacoes.Central.CentralDeInformacoes;
 import Utilitarios.Persistencia.Central_de_informacoes.Livro.Superclasse.Livro;
 import Utilitarios.Persistencia.PersistenciaSingleton.Persistencia;
-import jxl.Sheet;
-import jxl.Workbook;
-
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -20,57 +16,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
+
 public class OuvinteDosJButtons implements ActionListener {
     private File file;
-    private Workbook workbook;
     private TelaCarregarPlanilha tela;
     private String caminhoFile;
 
     public OuvinteDosJButtons(TelaCarregarPlanilha tela){
         this.tela=tela;
     }
-
-    public void addFileSchooser() throws Exception {
-        JFileChooser fc = new JFileChooser();
-
-        fc.setPreferredSize(new Dimension(700,400));
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-
-        int result = fc.showOpenDialog(fc);
-        if(result != JFileChooser.CANCEL_OPTION){
-            this.file = fc.getSelectedFile();
-            caminhoFile = file.toString().trim();
-
-            this.workbook = Workbook.getWorkbook(new File(caminhoFile));
-            Sheet sheet = workbook.getSheet(0);
-            int numeroDeLinhas = sheet.getRows();
-
-            for(int i =1;i<numeroDeLinhas;i++){
-                Object[] linha = new Object[13];
-                for(int j=0;j<13;j++){
-                    linha[j]=sheet.getCell(j, i).getContents();
-                }
-                this.tela.getModel1().addRow(linha);
-            }
-        }
-    }
-
-    public void testeNumeros(ArrayList<String> info) throws Exception {
+   
+	public void testeNumeros(ArrayList<String> info) throws Exception {
         try{
             Integer.parseInt(info.get(2));
             Integer.parseInt(info.get(6));
             Float.parseFloat(info.get(7));
-            if(info.get(0).toLowerCase().equals("periódicos")){
+            if(info.get(0).toLowerCase().equals("periÃ³dicos")){
                 Long.parseLong(info.get(11));
             }
         }catch(Exception e){
-            throw new Exception("Digite um número no campo de número");
+            throw new Exception("Digite um nÃºmero no campo de nÃºmero");
         }
     }
     public void testeGeneros(ArrayList<String> info, int numeroDaLinha) throws Exception {
         String tipo = info.get(0).toLowerCase();
         String generoString =
-                "literatura,periódicos,desenvolvimento pessoal,técnico";
+                "literatura,periÃ³dicos,desenvolvimento pessoal,tÃ©cnico";
 
         ArrayList<String> generos = new ArrayList<>(
                 Arrays.asList(generoString.split(",")));
@@ -81,19 +52,19 @@ public class OuvinteDosJButtons implements ActionListener {
                 "artes"+
                 "biografia"+
                 "poesia"},
-                {"gibi revista de notícias"},
-                {"autoajuda religião saúde"},
-                {"paradidático formação profissional"}
+                {"gibi revista de notÃ­cias"},
+                {"autoajuda religiÃ£o saÃºde"},
+                {"paradidÃ¡tico formaÃ§Ã£o profissional"}
 
         };
         int index = generos.indexOf(tipo);
         if(index !=-1){
-            if(!matrizGenero[index][0].contains(info.get(8).toLowerCase())||
+            if((!matrizGenero[index][0].contains(info.get(8).toLowerCase()))||
                 info.get(8).equals(" ")||info.get(8).equals("")){
-                throw new Exception("Problema com os Generos");
+                throw new Exception("Problema com os GÃªneros");
             }
         }else{
-            throw new Exception("Livro na linha: "+numeroDaLinha+1+" Não reconhecido");
+            throw new Exception("Livro na linha: "+numeroDaLinha+1+" NÃ£o reconhecido");
         }
     }
 
@@ -125,7 +96,7 @@ public class OuvinteDosJButtons implements ActionListener {
             central.salvar();
 
         }else{
-            throw new Exception("Abra uma planilha .XLS");
+            throw new Exception("Nenhum dado na tabela");
         }
 
     }
@@ -135,9 +106,8 @@ public class OuvinteDosJButtons implements ActionListener {
         JButton button = (JButton) e.getSource();
         String textBTN = button.getText();
         try{
-            if(textBTN.equals("Pegar .XLS")){
-                this.addFileSchooser();
-            }else if(textBTN.equals("Carregar")) {
+        	
+            if(textBTN.equals("Carregar")) {
 
                 this.uparParaOBanco();
                 JOptionPane.showMessageDialog(tela,"Cadastro Realizado");

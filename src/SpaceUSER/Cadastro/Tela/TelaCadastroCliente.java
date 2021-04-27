@@ -65,7 +65,7 @@ public class TelaCadastroCliente extends TelaPadrao {
         JLabel emailc = new JLabel("Email:",JLabel.RIGHT);
         JLabel senhac = new JLabel("Senha:",JLabel.RIGHT);
         JLabel datac = new JLabel("Nascimento:", JLabel.RIGHT);
-        JLabel generoc = new JLabel("Selecione 3 gêneros", JLabel.CENTER);
+        JLabel generoc = new JLabel("Selecione 3 gÃªneros", JLabel.CENTER);
         Font font = new Font("Arial",Font.BOLD,15);
 
         boasVindas.setBounds(0, 10, 370, 25);
@@ -124,8 +124,8 @@ public class TelaCadastroCliente extends TelaPadrao {
     public void addCombos () {
         String[] generos = {".","Literatura Brasileira", "Literatura Estrangeira",
                 "Infanto Juvenil", "Artes", "Biografia",
-                "Poesia", "Gibi", "Revista de notícias", "Autoajuda",
-                "Religião", "Saúde", "Paradidático", "Formação Profissional"};
+                "Poesia", "Gibi", "Revista de notÃ­cias", "Autoajuda",
+                "ReligiÃ£o", "SaÃºde", "ParadidÃ¡tico", "FormaÃ§Ã£o Profissional"};
         Font font = new Font("Arial",Font.BOLD,13);
         JSeparator separador = new JSeparator();
         separador.setBounds(15, 310, 325, 30);

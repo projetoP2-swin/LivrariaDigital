@@ -30,7 +30,7 @@ public class OuvinteDoEsqueceuASenha implements MouseListener {
                 new RecuperarSenhaADM(telaLoginADM,label);
             }catch(Exception ex){
                 JOptionPane.showMessageDialog(telaLoginADM,
-                        "Houve algum problema","Recuperação de senha",
+                        "Houve algum problema","RecuperaÃ§Ã£o de senha",
                         JOptionPane.INFORMATION_MESSAGE);
             }
         });
